@@ -1,1 +1,3 @@
 # sangbok
+
+- By Magnus & Co.
