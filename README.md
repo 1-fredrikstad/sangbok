@@ -1,3 +1,3 @@
 # sangbok
 
-- By Magnus, Carl & Co.
+- By Magnus, Carl, Petter & Co.
