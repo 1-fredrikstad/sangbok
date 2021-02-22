@@ -1,0 +1,7 @@
+{
+  "packages": [
+    "cms",
+    "frontend"
+  ],
+  "version": "0.0.0"
+}
