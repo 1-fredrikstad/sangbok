@@ -20,9 +20,7 @@ const NavBar = () => {
           aria-label="Go to search view"
         />
       </Box>
-
       <Spacer />
-
       <IconButton
         variant="outline"
         border="none"
