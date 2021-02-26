@@ -12,7 +12,7 @@ const NavBar = () => {
       <Spacer />
       <Box>
         <IconButton
-          colorScheme="green"
+          colorScheme="blue"
           variant="outline"
           border="none"
           onClick={() => history.push("/search")}
