@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 import { Flex, IconButton, Spacer, Box } from "@chakra-ui/react";
-import { MdSearch, MdSettings } from "react-icons/md";
+import { FiSettings, FiSearch } from "react-icons/fi";
 
 const NavBar = () => {
   const history = useHistory();
@@ -12,11 +12,11 @@ const NavBar = () => {
       <Spacer />
       <Box>
         <IconButton
-          colorScheme="blue"
           variant="outline"
           border="none"
+          size="lg"
           onClick={() => history.push("/search")}
-          icon={<MdSearch />}
+          icon={<FiSearch />}
           aria-label="Go to search view"
         />
       </Box>
@@ -24,11 +24,11 @@ const NavBar = () => {
       <Spacer />
 
       <IconButton
-        colorScheme="blue"
         variant="outline"
         border="none"
+        size="lg"
         onClick={() => history.push("/settings")}
-        icon={<MdSettings />}
+        icon={<FiSettings />}
         aria-label="Go to settings view"
       ></IconButton>
       <Spacer />
