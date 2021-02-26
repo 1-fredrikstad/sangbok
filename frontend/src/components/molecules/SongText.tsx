@@ -17,12 +17,17 @@ const SongView = () => {
       <Box>
         <Stack spacing={6}>
           return (
-          {verses.map((verse) => {
+          {verses.map((verseText, verseNumber) => {
             return (
               <div>
-                1:
-                {verse.split("\n").map((strofe) => {
-                  return <Text fontSize="lg">{strofe}</Text>;
+                {verseText.split("\n").map((lineText, lineIndex) => {
+                  return lineIndex === 0 ? (
+                    <Text fontSize="lg">
+                      {verseNumber + 1}: {lineText}
+                    </Text>
+                  ) : (
+                    <Text fontSize="lg">{lineText}</Text>
+                  );
                 })}
               </div>
             );
