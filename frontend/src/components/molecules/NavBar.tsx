@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import { Flex, Container, IconButton, Spacer, Box } from "@chakra-ui/react";
+import { Flex, IconButton, Spacer, Box } from "@chakra-ui/react";
 import { MdSearch, MdSettings } from "react-icons/md";
 
 const NavBar = () => {
@@ -21,7 +21,7 @@ const NavBar = () => {
         />
       </Box>
 
-      <Spacer w="10px" />
+      <Spacer />
 
       <IconButton
         colorScheme="blue"
