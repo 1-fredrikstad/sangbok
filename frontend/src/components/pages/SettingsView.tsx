@@ -10,6 +10,7 @@ const SettingsView = () => {
   return (
     <div>
       <div>{t("settingsHeader")}</div>
+      <h3>Change lanuage</h3>
       <button type="button" onClick={() => changeLanguage("en")}>
         en
       </button>
