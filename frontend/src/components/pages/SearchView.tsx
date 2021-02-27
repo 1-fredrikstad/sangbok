@@ -1,10 +1,11 @@
 import React from "react";
 import NavBar from "../molecules/NavBar";
+import SongView from "./SongView";
 
 const SearchView = () => {
   return (
     <div>
-      <h1>Search</h1>
+      <SongView />
       <NavBar />
     </div>
   );
