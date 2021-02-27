@@ -28,6 +28,11 @@ const SongTemplate = ({ songs }: SongTemplateProps) => {
           <Text>Tittel: {song.title}</Text>
           <Text>Forfatter: {song.author}</Text>
           <Text>Melodi: {song.melody}</Text>
+          {song.verses ? (
+            song.verses.map((verse) => <p>{verse}</p>)
+          ) : (
+            <p>Ingen tekst 🤠</p>
+          )}
         </>
       ))}
     </Stack>
