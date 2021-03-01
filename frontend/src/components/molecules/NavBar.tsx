@@ -28,7 +28,7 @@ const NavBar = () => {
         onClick={() => history.push("/settings")}
         icon={<FiSettings />}
         aria-label="Go to settings view"
-      ></IconButton>
+       />
       <Spacer />
     </Flex>
   );

@@ -18,8 +18,7 @@ interface SongTemplateProps {
   songs: [Songs];
 }
 
-const SongTemplate = ({ songs }: SongTemplateProps) => {
-  return (
+const SongTemplate = ({ songs }: SongTemplateProps) => (
     <Stack>
       <Heading>Songs</Heading>
       {songs.map((song) => (
@@ -37,6 +36,5 @@ const SongTemplate = ({ songs }: SongTemplateProps) => {
       ))}
     </Stack>
   );
-};
 
 export default SongTemplate;
