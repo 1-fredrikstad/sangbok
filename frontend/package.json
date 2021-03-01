@@ -46,7 +46,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npm run lint-ts && npm run lint-less && npm run format",
+    "lint": "npm run lint-ts && npm run lint-prettier",
     "lint-ts": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint-ts-fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "lint-prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
