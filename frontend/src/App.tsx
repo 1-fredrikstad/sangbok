@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import SongView from "./components/pages/SongView";
 import SettingsView from "./components/pages/SettingsView";
-import { CSSReset, ThemeProvider, theme } from "@chakra-ui/react";
+import { ChakraProvider, theme } from "@chakra-ui/react";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./api/apolloClient";
 
@@ -14,8 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <ApolloProvider client={client}>
-        <ThemeProvider theme={theme}>
-          <CSSReset />
+        <ChakraProvider theme={theme}>
           <BrowserRouter>
             <Switch>
               <Route path="/" exact component={SearchView} />
@@ -24,7 +23,7 @@ const App = () => {
               <Route path="/search" component={SearchView} />
             </Switch>
           </BrowserRouter>
-        </ThemeProvider>
+        </ChakraProvider>
       </ApolloProvider>
     </div>
   );

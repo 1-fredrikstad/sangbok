@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import ThemeToggler from "../atoms/ThemeToggler";
 import NavBar from "../molecules/NavBar";
 
 const SettingsView = () => {
@@ -11,6 +12,7 @@ const SettingsView = () => {
   return (
     <div>
       <div>{t("settingsHeader")}</div>
+      <ThemeToggler />
       <h3>Change lanuage</h3>
       <button type="button" onClick={() => changeLanguage("en")}>
         en
