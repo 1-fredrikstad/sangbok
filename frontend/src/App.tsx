@@ -6,16 +6,14 @@ import SongView from "./components/pages/SongView";
 
 const App = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact component={SearchView} />
-          <Route path="/song" component={SongView} />
-          <Route path="/settings" component={SettingsView} />
-          <Route path="/search" component={SearchView} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={SearchView} />
+        <Route path="/song" component={SongView} />
+        <Route path="/settings" component={SettingsView} />
+        <Route path="/search" component={SearchView} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 

@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import { client } from "./api/apolloClient";
 import App from "./App";
 import "./i18n.ts";
+import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
