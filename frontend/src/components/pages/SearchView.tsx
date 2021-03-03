@@ -1,14 +1,12 @@
-import React from "react";
-import NavBar from "../molecules/NavBar";
-import SongView from "./SongView";
+import React from 'react';
+import NavBar from '../molecules/NavBar';
+import SongView from './SongView';
 
-const SearchView = () => {
-  return (
-    <div>
-      <SongView />
-      <NavBar />
-    </div>
-  );
-};
+const SearchView = () => (
+  <div>
+    <SongView />
+    <NavBar />
+  </div>
+);
 
 export default SearchView;
