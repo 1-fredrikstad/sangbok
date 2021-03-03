@@ -25,6 +25,7 @@ const SongTemplate = ({ songs }: SongTemplateProps) => {
       {songs.map((song) => (
         <>
           <hr />
+
           <Text>Tittel: {song.title}</Text>
           <Text>Forfatter: {song.author}</Text>
           <Text>Melodi: {song.melody}</Text>
