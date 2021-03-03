@@ -15,6 +15,5 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7",
     "lerna": "^3.22.1"
-  },
-  "dependencies": {}
+  }
 }
