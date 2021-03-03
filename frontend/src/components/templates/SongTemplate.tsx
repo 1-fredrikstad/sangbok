@@ -1,4 +1,13 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Center,
+  Container,
+  Grid,
+  GridItem,
+  Heading,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 
 // TODO: AUTOGENERE TYPENE
@@ -20,23 +29,18 @@ interface SongTemplateProps {
 
 const SongTemplate = ({ songs }: SongTemplateProps) => {
   return (
-    <Stack>
-      <Heading>Songs</Heading>
+    <Grid templateColumns="repeat(8, 1fr)" gap={4} padding={3}>
       {songs.map((song) => (
         <>
-          <hr />
-
-          <Text>Tittel: {song.title}</Text>
-          <Text>Forfatter: {song.author}</Text>
-          <Text>Melodi: {song.melody}</Text>
-          {song.verses ? (
-            song.verses.map((verse) => <p>{verse}</p>)
-          ) : (
-            <p>Ingen tekst 🤠</p>
+          {song.title && (
+            <>
+              <GridItem colSpan={1}></GridItem>
+              <GridItem colSpan={7}>{song.title}</GridItem>
+            </>
           )}
         </>
       ))}
-    </Stack>
+    </Grid>
   );
 };
 
