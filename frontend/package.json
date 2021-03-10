@@ -1,85 +1,53 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@apollo/client": "^3.3.11",
-    "@chakra-ui/react": "^1.3.3",
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
-    "eslint-config-prettier": "^8.1.0",
-    "framer-motion": "^3.6.7",
-    "graphql": "^15.5.0",
-    "i18next": "^19.9.0",
-    "i18next-browser-languagedetector": "^6.0.1",
-    "i18next-http-backend": "^1.1.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-i18next": "^11.8.8",
-    "react-icons": "^4.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.2",
-    "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4",
-    "workbox-background-sync": "^5.1.3",
-    "workbox-broadcast-update": "^5.1.3",
-    "workbox-cacheable-response": "^5.1.3",
-    "workbox-core": "^5.1.3",
-    "workbox-expiration": "^5.1.3",
-    "workbox-google-analytics": "^5.1.3",
-    "workbox-navigation-preload": "^5.1.3",
-    "workbox-precaching": "^5.1.3",
-    "workbox-range-requests": "^5.1.3",
-    "workbox-routing": "^5.1.3",
-    "workbox-strategies": "^5.1.3",
-    "workbox-streams": "^5.1.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "npm run lint-ts && npm run lint-prettier",
-    "lint-ts": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint-ts-fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint-prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
-
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.16.0",
-    "@typescript-eslint/parser": "^4.16.0",
-    "eslint": "^7.21.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
-  }
+    "name": "kek",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "apollo:download-schema": "apollo client:download-schema schema.graphql",
+        "apollo:generate-types": "rm -rf __generated__ && apollo client:codegen --target typescript --outputFlat",
+        "apollo:sync": "npm run apollo:download-schema && npm run apollo:generate-types",
+        "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
+        "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+    },
+    "dependencies": {
+        "next": "10.0.3",
+        "react": "17.0.1",
+        "react-dom": "17.0.1",
+        "next-compose-plugins": "^2.2.1",
+        "@chakra-ui/react": "^1.1.4",
+        "@emotion/react": "^11.1.4",
+        "@emotion/styled": "^11.0.0",
+        "framer-motion": "^3.2.1",
+        "@apollo/client": "^3.3.7",
+        "graphql": "^15.4.0",
+        "next-i18next": "^7.0.1",
+        "prettier": "^2.2.1"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.13",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "typescript": "^4.1.3",
+        "apollo": "^2.32.1",
+        "eslint": "^7.15.0",
+        "@typescript-eslint/eslint-plugin": "^4.9.1",
+        "@typescript-eslint/parser": "^4.9.1",
+        "eslint-config-prettier": "^7.0.0",
+        "eslint-plugin-prettier": "^3.2.0",
+        "husky": "^4.3.7",
+        "lint-staged": "^10.5.3"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "npm run lint -- --quiet --fix"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
 }
