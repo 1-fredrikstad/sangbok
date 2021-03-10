@@ -1,7 +1,8 @@
+import React from 'react';
+import { NextPage } from 'next';
 import { gql, useQuery } from '@apollo/client';
 import { Skeleton, Text } from '@chakra-ui/react';
-import React from 'react';
-import SongTemplate from '../templates/SongTemplate';
+import SongTemplate from '@components/templates/SongTemplate';
 
 const GET_SONGS = gql`
   query GetSongs {
@@ -14,7 +15,7 @@ const GET_SONGS = gql`
   }
 `;
 
-const SongView = () => {
+const Song: NextPage = () => {
   const { loading, error, data } = useQuery(GET_SONGS);
 
   if (loading) return <Skeleton height="500px" />;
@@ -25,4 +26,4 @@ const SongView = () => {
   return <SongTemplate songs={data.allSong} />;
 };
 
-export default SongView;
+export default Song;

@@ -1,57 +1,19 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    jest: true,
-  },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
+  root: true,
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
-  plugins: ['react', '@typescript-eslint', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
+  extends: ['react-app', 'prettier', 'plugin:@typescript-eslint/recommended'],
   rules: {
-    // note you must disable the base rule as it can report incorrect errors
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error'],
-    'react/no-children-prop': 'off',
+    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     'react/prop-types': 'off',
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/camelcase': 'off',
-    '@typescript-eslint/no-use-before-define': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
-    'import/prefer-default-export': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
   settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
+    react: {
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
     },
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
   },
 };

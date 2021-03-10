@@ -1,20 +1,21 @@
-import { Box, IconButton, Spacer } from '@chakra-ui/react';
 import React from 'react';
-import { FiSearch, FiSettings } from 'react-icons/fi';
-import { useHistory } from 'react-router-dom';
+
+import { Flex, IconButton, Spacer, Box } from '@chakra-ui/react';
+import { FiSettings, FiSearch } from 'react-icons/fi';
+import { useRouter } from 'next/dist/client/router';
 
 const NavBar = () => {
-  const history = useHistory();
+  const router = useRouter();
 
   return (
-    <>
+    <Flex>
       <Spacer />
       <Box>
         <IconButton
           variant="outline"
           border="none"
           size="lg"
-          onClick={() => history.push('/search')}
+          onClick={() => router.push('/search')}
           icon={<FiSearch />}
           aria-label="Go to search view"
         />
@@ -24,12 +25,12 @@ const NavBar = () => {
         variant="outline"
         border="none"
         size="lg"
-        onClick={() => history.push('/settings')}
+        onClick={() => router.push('/settings')}
         icon={<FiSettings />}
         aria-label="Go to settings view"
       />
       <Spacer />
-    </>
+    </Flex>
   );
 };
 
