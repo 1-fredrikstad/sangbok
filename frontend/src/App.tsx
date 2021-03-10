@@ -1,10 +1,10 @@
-import { Flex } from "@chakra-ui/react";
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import NavBar from "./components/molecules/NavBar";
-import SearchView from "./components/pages/SearchView";
-import SettingsView from "./components/pages/SettingsView";
-import SongView from "./components/pages/SongView";
+import { Flex } from '@chakra-ui/react';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavBar from './components/molecules/NavBar';
+import SearchView from './components/pages/SearchView';
+import SettingsView from './components/pages/SettingsView';
+import SongView from './components/pages/SongView';
 
 const App = () => {
   return (

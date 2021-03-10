@@ -1,5 +1,7 @@
 /// <reference lib="webworker" />
-/* eslint-disable no-restricted-globals */
+/* eslint-disable no-restricted-globals  */
+/* eslint-disable no-undef */
+/* eslint-disable no-underscore-dangle */
 
 // This service worker can be customized!
 // See https://developers.google.com/web/tools/workbox/modules
@@ -50,7 +52,7 @@ registerRoute(
     // Return true to signal that we want to use the handler.
     return true;
   },
-  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
+  createHandlerBoundToURL(`${process.env.PUBLIC_URL}/index.html`)
 );
 
 // An example runtime caching route for requests that aren't handled by the

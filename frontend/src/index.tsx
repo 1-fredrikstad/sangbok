@@ -1,14 +1,14 @@
-import { ApolloProvider } from "@apollo/client";
-import { ChakraProvider } from "@chakra-ui/react";
-import React from "react";
-import ReactDOM from "react-dom";
-import { client } from "./api/apolloClient";
-import App from "./App";
-import theme from "./components/particles/theme";
-import "./i18n.ts";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { ApolloProvider } from '@apollo/client';
+import { ChakraProvider } from '@chakra-ui/react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { client } from './api/apolloClient';
+import App from './App';
+import theme from './components/particles/theme';
+import './i18n.ts';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,7 +18,7 @@ ReactDOM.render(
       </ChakraProvider>
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 serviceWorkerRegistration.unregister();
