@@ -1,13 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
-import NavBar from '@components/molecules/NavBar';
-import SearchView from '@components/pages/SearchView';
+import Search from './search';
 
-const Home: NextPage = () => (
-  <div>
-    <SearchView />
-    <NavBar />
-  </div>
-);
+const Home: NextPage = () => <Search />;
 
 export default Home;
