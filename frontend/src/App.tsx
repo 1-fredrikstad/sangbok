@@ -6,8 +6,7 @@ import SearchView from './components/pages/SearchView';
 import SettingsView from './components/pages/SettingsView';
 import SongView from './components/pages/SongView';
 
-const App = () => {
-  return (
+const App = () => (
     <BrowserRouter>
       {/* HEADER LIGGER HER OG OPPDATERES */}
 
@@ -26,6 +25,5 @@ const App = () => {
       </Flex>
     </BrowserRouter>
   );
-};
 
 export default App;
