@@ -25,7 +25,9 @@ const SongTemplate = ({ songs }: SongTemplateProps) => (
         {song.title && (
           <>
             <GridItem colSpan={1} />
-            <GridItem colSpan={7}>{song.title}</GridItem>
+            <GridItem colSpan={7} onClick={() => console.log(song.title)}>
+              {song.title}
+            </GridItem>
           </>
         )}
       </>

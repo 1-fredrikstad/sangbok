@@ -5,6 +5,7 @@ import NavBar from './components/molecules/NavBar';
 import SearchView from './components/pages/SearchView';
 import SettingsView from './components/pages/SettingsView';
 import SongView from './components/pages/SongView';
+// import SongText from './components/molecules/SongText';
 
 const App = () => (
   <BrowserRouter>
@@ -17,6 +18,7 @@ const App = () => (
         <Route path="/song" component={SongView} />
         <Route path="/settings" component={SettingsView} />
         <Route path="/search" component={SearchView} />
+        {/* <Route path="/songtest" component={SongText} /> */}
       </Flex>
     </Switch>
 
