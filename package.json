@@ -16,5 +16,7 @@
     "@types/react-router-dom": "^5.1.7",
     "lerna": "^3.22.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.5"
+  }
 }

@@ -1,8 +1,7 @@
-import React from "react";
-
-import { gql, useQuery } from "@apollo/client";
-import { Skeleton, Text } from "@chakra-ui/react";
-import SongTemplate from "../templates/SongTemplate";
+import { gql, useQuery } from '@apollo/client';
+import { Skeleton, Text } from '@chakra-ui/react';
+import React from 'react';
+import SongTemplate from '../templates/SongTemplate';
 
 const GET_SONGS = gql`
     query GetSongs {
