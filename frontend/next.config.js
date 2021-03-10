@@ -1,17 +1,12 @@
-const withPlugins = require("next-compose-plugins");
+const { i18n } = require("./next-i18next.config");
 
-const { nextI18NextRewrites } = require("next-i18next/rewrites");
-
-const localeSubpaths = {
-    en: "en",
-    en: "en",
-};
-
-const config = {
-    rewrites: async () => nextI18NextRewrites(localeSubpaths),
+/* const config = {
     publicRuntimeConfig: {
         localeSubpaths,
     },
+} */
+module.exports = {
+    i18n,
 };
 
-module.exports = withPlugins([], config);
+//module.exports = withPlugins([], config);

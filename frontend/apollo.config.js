@@ -1,8 +1,8 @@
 module.exports = {
     client: {
         service: {
-            name: "SpaceX",
-            url: "https://api.spacex.land/graphql/",
+            name: "Sangbok",
+            url: "https://9up46puq.api.sanity.io/v1/graphql/production/default",
         },
     },
 };

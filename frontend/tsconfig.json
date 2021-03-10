@@ -31,5 +31,5 @@
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules", "__generated__/globalTypes.ts"]
+    "exclude": ["__generated__/globalTypes.ts"]
 }
