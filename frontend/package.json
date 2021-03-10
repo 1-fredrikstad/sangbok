@@ -1,12 +1,11 @@
 {
-    "name": "frontend",
+    "name": "kek",
     "version": "0.1.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next dev",
-        "start:prod": "next start",
+        "start": "next start",
         "apollo:download-schema": "apollo client:download-schema schema.graphql",
         "apollo:generate-types": "rm -rf __generated__ && apollo client:codegen --target typescript --outputFlat",
         "apollo:sync": "npm run apollo:download-schema && npm run apollo:generate-types",
@@ -15,7 +14,6 @@
     },
     "dependencies": {
         "@apollo/client": "^3.3.7",
-        "@chakra-ui/icons": "^1.0.6",
         "@chakra-ui/react": "^1.3.4",
         "@emotion/react": "^11.1.4",
         "@emotion/styled": "^11.0.0",
