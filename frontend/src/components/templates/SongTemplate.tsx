@@ -3,19 +3,19 @@ import React from 'react';
 
 // TODO: AUTOGENERE TYPENE
 interface Category {
-    name: string;
+  name: string;
 }
 
 interface Songs {
-    title: string;
-    melody: string;
-    author: string;
-    category: Category;
-    verses: string[];
+  title: string;
+  melody: string;
+  author: string;
+  category: Category;
+  verses: string[];
 }
 
 interface SongTemplateProps {
-    songs: [Songs];
+  songs: [Songs];
 }
 
 const SongTemplate = ({ songs }: SongTemplateProps) => (

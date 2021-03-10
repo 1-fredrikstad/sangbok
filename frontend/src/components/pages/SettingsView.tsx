@@ -3,11 +3,7 @@ import { useTranslation } from 'react-i18next';
 import ThemeToggler from '../atoms/ThemeToggler';
 
 const SettingsView = () => {
-    const { t, i18n } = useTranslation();
-
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -17,13 +13,9 @@ const SettingsView = () => {
 
       <h3>Change lanuage</h3>
 
-      <button type="button" onClick={() => changeLanguage('en')}>
-        en
-      </button>
+      <button type="button">en</button>
 
-      <button type="button" onClick={() => changeLanguage('no')}>
-        no
-      </button>
+      <button type="button">no</button>
     </div>
   );
 };
