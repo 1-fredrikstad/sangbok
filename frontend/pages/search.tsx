@@ -4,6 +4,7 @@ import { Flex } from '@chakra-ui/react';
 import SearchInput from '@components/atoms/SearchInput';
 import Header from '@components/molecules/Header';
 import Song from './song';
+import NavBar from '@components/molecules/NavBar';
 
 const Search: NextPage = () => (
   <Flex flexDir="column" w="100%">
@@ -11,6 +12,7 @@ const Search: NextPage = () => (
       <SearchInput />
     </Header>
     <Song />
+    <NavBar />
   </Flex>
 );
 
