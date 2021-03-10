@@ -1,14 +1,13 @@
+import { Box, IconButton, Spacer } from '@chakra-ui/react';
 import React from 'react';
+import { FiSearch, FiSettings } from 'react-icons/fi';
 import { useHistory } from 'react-router-dom';
-
-import { Flex, IconButton, Spacer, Box } from '@chakra-ui/react';
-import { FiSettings, FiSearch } from 'react-icons/fi';
 
 const NavBar = () => {
   const history = useHistory();
 
   return (
-    <Flex>
+    <>
       <Spacer />
       <Box>
         <IconButton
@@ -30,7 +29,7 @@ const NavBar = () => {
         aria-label="Go to settings view"
       />
       <Spacer />
-    </Flex>
+    </>
   );
 };
 

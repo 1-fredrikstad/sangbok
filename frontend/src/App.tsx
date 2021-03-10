@@ -1,28 +1,29 @@
+import { Flex } from '@chakra-ui/react';
 import React from 'react';
-import { ChakraProvider, Switch, theme } from '@chakra-ui/react';
-import { ApolloProvider } from '@apollo/client';
-import { BrowserRouter, Route } from 'react-router-dom';
-import './App.css';
-import SongView from './components/pages/SongView';
-import SettingsView from './components/pages/SettingsView';
-import { client } from './api/apolloClient';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavBar from './components/molecules/NavBar';
 import SearchView from './components/pages/SearchView';
+import SettingsView from './components/pages/SettingsView';
+import SongView from './components/pages/SongView';
 
 const App = () => (
-  <div className="App">
-    <ApolloProvider client={client}>
-      <ChakraProvider theme={theme}>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" exact component={SearchView} />
-            <Route path="/song" component={SongView} />
-            <Route path="/settings" component={SettingsView} />
-            <Route path="/search" component={SearchView} />
-          </Switch>
-        </BrowserRouter>
-      </ChakraProvider>
-    </ApolloProvider>
-  </div>
+  <BrowserRouter>
+    {/* HEADER LIGGER HER OG OPPDATERES */}
+
+    {/* CONTENT */}
+    <Switch>
+      <Flex overflow="scroll" height="100%">
+        <Route path="/" exact component={SearchView} />
+        <Route path="/song" component={SongView} />
+        <Route path="/settings" component={SettingsView} />
+        <Route path="/search" component={SearchView} />
+      </Flex>
+    </Switch>
+
+    <Flex>
+      <NavBar />
+    </Flex>
+  </BrowserRouter>
 );
 
 export default App;
