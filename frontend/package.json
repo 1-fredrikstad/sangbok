@@ -1,11 +1,12 @@
 {
-    "name": "kek",
+    "name": "frontend",
     "version": "0.1.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start",
+        "start": "next dev",
+        "start:prod": "next start",
         "apollo:download-schema": "apollo client:download-schema schema.graphql",
         "apollo:generate-types": "rm -rf __generated__ && apollo client:codegen --target typescript --outputFlat",
         "apollo:sync": "npm run apollo:download-schema && npm run apollo:generate-types",
