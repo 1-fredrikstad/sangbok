@@ -1,8 +1,6 @@
 import React from "react";
 import { NextPage } from "next";
-import Search from "./search";
-import Song from "./song";
-import Layout from "@components/templates/layout";
+import Layout from "@components/templates/Layout";
 
 const Home: NextPage = () => (
     <Layout>

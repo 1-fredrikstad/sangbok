@@ -5,15 +5,16 @@ import Song from "./song";
 import { Flex } from "@chakra-ui/react";
 import SearchInput from "@components/atoms/SearchInput";
 import Header from "@components/molecules/Header";
+import Layout from "@components/templates/Layout";
+import SongList from "@components/organisms/SongList";
 
 const Search: NextPage = () => (
-    <Flex flexDir="column" w="100%">
+    <Layout>
         <Header color="#FFD687">
             <SearchInput />
         </Header>
-        <Song />
-        <NavBar />
-    </Flex>
+        <SongList />
+    </Layout>
 );
 
 export default Search;
