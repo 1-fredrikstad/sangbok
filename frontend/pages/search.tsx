@@ -2,7 +2,7 @@ import React from "react";
 import { NextPage } from "next";
 import NavBar from "@components/molecules/NavBar";
 import Song from "./song";
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import SearchInput from "@components/atoms/SearchInput";
 import Header from "@components/molecules/Header";
 import Layout from "@components/templates/Layout";
@@ -13,7 +13,9 @@ const Search: NextPage = () => (
         <Header color="#FFD687">
             <SearchInput />
         </Header>
-        <SongList />
+        <Box padding="5">
+            <SongList />
+        </Box>
     </Layout>
 );
 
