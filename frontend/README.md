@@ -1,29 +1,27 @@
-# kek
+# Sangbok-Frontend
 
-This project was generated with [superplate](https://github.com/pankod/superplate).
+Denne pakken representerer frontenden til prosjektet
 
-## Getting Started
+## Utvikling
 
-superplate is a Next.js all-in-one project generator. Create your project with the tools you need without spending hours on setting them up.
-
-## Available Scripts
-
-### Running the development server.
+Etter å ha klonet repoet så kan du kjøre frontenden ved å skrive
 
 ```bash
-    npm run dev
+    npm install
 ```
 
-### Building for production.
+For å laste den dependencies. Deretter må man genere typer utifra backenden vår. Kjør derfor
 
 ```bash
-    npm run build
+    npm run apollo:generate-types
 ```
 
-### Running the production server.
+Deretter skal du kunne kjøre `npm run dev` for å kjøre opp utviklingsmiljøet
+
+### Linting & formatting your code.
 
 ```bash
-    npm run start
+    npm run lint
 ```
 
 ## Learn More
