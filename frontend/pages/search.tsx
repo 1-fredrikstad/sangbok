@@ -7,14 +7,14 @@ import Layout from "@components/templates/Layout";
 import SongList from "@components/organisms/SongList";
 
 const Search: NextPage = () => (
-    <Layout>
-        <Header color="#FFD687">
-            <SearchInput />
-        </Header>
-        <Box padding="5">
-            <SongList />
-        </Box>
-    </Layout>
+  <Layout>
+    <Header color="#FFD687">
+      <SearchInput />
+    </Header>
+    <Box padding="5">
+      <SongList />
+    </Box>
+  </Layout>
 );
 
 export default Search;
