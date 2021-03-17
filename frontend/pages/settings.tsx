@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import { useTranslation } from "next-i18next";
 import ThemeToggler from "@components/atoms/ThemeToggler";
 import NavBar from "@components/molecules/NavBar";
 
-const SettingsView = () => {
+const SettingsView: FC = () => {
     const { t, i18n } = useTranslation();
 
     const changeLanguage = (lng: string) => {
