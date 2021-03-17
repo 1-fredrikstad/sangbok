@@ -14,9 +14,9 @@ import fontSizes from "./foundations/fontSizes";
  */
 
 const overrides = {
-    ...styles,
-    colors,
-    fontSizes,
+  ...styles,
+  colors,
+  fontSizes,
 };
 
 const theme = extendTheme(overrides);

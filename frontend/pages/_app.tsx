@@ -7,15 +7,15 @@ import { ApolloProvider } from "@apollo/client";
 import { appWithTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-    const apolloClient = initializeApollo();
+  const apolloClient = initializeApollo();
 
-    return (
-        <ChakraProvider theme={theme}>
-            <ApolloProvider client={apolloClient}>
-                <Component {...pageProps} />
-            </ApolloProvider>
-        </ChakraProvider>
-    );
+  return (
+    <ChakraProvider theme={theme}>
+      <ApolloProvider client={apolloClient}>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </ChakraProvider>
+  );
 }
 
 export default appWithTranslation(MyApp);
