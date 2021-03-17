@@ -1,7 +1,28 @@
 import React from "react";
-import { NextPage } from "next";
-import SettingsView from "@components/pages/SettingsView";
+import { useTranslation } from "next-i18next";
+import ThemeToggler from "@components/atoms/ThemeToggler";
+import NavBar from "@components/molecules/NavBar";
 
-const Settings: NextPage = () => <SettingsView />;
+const SettingsView = () => {
+    const { t, i18n } = useTranslation();
 
-export default Settings;
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
+    return (
+        <div>
+            <div>{t("settingsHeader")}</div>
+            <ThemeToggler />
+            <h3>Change lanuage</h3>
+            <button type="button" onClick={() => changeLanguage("en")}>
+                en
+            </button>
+            <button type="button" onClick={() => changeLanguage("no")}>
+                no
+            </button>
+            <NavBar />
+        </div>
+    );
+};
+
+export default SettingsView;

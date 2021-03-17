@@ -1,13 +1,46 @@
 import React from "react";
 import { NextPage } from "next";
-import NavBar from "@components/molecules/NavBar";
-import SongView from "@components/pages/SongView";
+import Layout from "@components/templates/Layout";
 
 const Home: NextPage = () => (
-    <div>
-        <SongView />
-        <NavBar />
-    </div>
+    <Layout>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            molestiae libero voluptatibus itaque quidem ab fugit, iusto
+            obcaecati tenetur pariatur illum impedit saepe blanditiis facere
+            veritatis quaerat nulla, quis odit!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            molestiae libero voluptatibus itaque quidem ab fugit, iusto
+            obcaecati tenetur pariatur illum impedit saepe blanditiis facere
+            veritatis quaerat nulla, quis odit!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            molestiae libero voluptatibus itaque quidem ab fugit, iusto
+            obcaecati tenetur pariatur illum impedit saepe blanditiis facere
+            veritatis quaerat nulla, quis odit!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            molestiae libero voluptatibus itaque quidem ab fugit, iusto
+            obcaecati tenetur pariatur illum impedit saepe blanditiis facere
+            veritatis quaerat nulla, quis odit!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            molestiae libero voluptatibus itaque quidem ab fugit, iusto
+            obcaecati tenetur pariatur illum impedit saepe blanditiis facere
+            veritatis quaerat nulla, quis odit!
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+            molestiae libero voluptatibus itaque quidem ab fugit, iusto
+            obcaecati tenetur pariatur illum impedit saepe blanditiis facere
+            veritatis quaerat nulla, quis odit!
+        </p>
+    </Layout>
 );
 
 export default Home;

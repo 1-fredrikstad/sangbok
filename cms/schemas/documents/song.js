@@ -23,17 +23,23 @@ const song = {
       name: "category",
       type: "reference",
       to: [{ type: "category" }],
-      
     },
     {
       title: "Vers",
       name: "verses",
       type: "array",
-      of: [{
-        type: 'text'
-      }],
+      of: [
+        {
+          type: "text",
+        },
+      ],
+    },
+    {
+      title: "Nummering",
+      name: "numbering",
+      type: "number",
     },
   ],
-}; 
+};
 
-export default song
+export default song;
