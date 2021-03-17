@@ -1,10 +1,10 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { Link, Skeleton, Stack } from "@chakra-ui/react";
 import { GetSongNames } from "@graphqlTypes/GetSongNames";
-import React from "react";
+import React, { FC } from "react";
 import { SongNameQuery } from "src/api/songs";
 
-const SongList = () => {
+const SongList: FC = () => {
     const { data, loading } = useQuery<GetSongNames>(SongNameQuery);
     if (loading) return <Skeleton w="100%" h="100%" />;
     return (

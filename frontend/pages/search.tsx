@@ -1,8 +1,6 @@
 import React from "react";
 import { NextPage } from "next";
-import NavBar from "@components/molecules/NavBar";
-import Song from "./song";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import SearchInput from "@components/atoms/SearchInput";
 import Header from "@components/molecules/Header";
 import Layout from "@components/templates/Layout";

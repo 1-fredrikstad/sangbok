@@ -1,7 +1,7 @@
 import { FormControl, FormLabel, Switch, useColorMode } from "@chakra-ui/react";
-import React from "react";
+import React, { FC } from "react";
 
-const ThemeToggler = () => {
+const ThemeToggler: FC = () => {
     const { colorMode, toggleColorMode } = useColorMode();
 
     return (

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 
-import { Flex, IconButton, Spacer, Box } from "@chakra-ui/react";
+import { Flex, IconButton } from "@chakra-ui/react";
 import { FiSettings, FiSearch } from "react-icons/fi";
 import { useRouter } from "next/dist/client/router";
 
-const NavBar = () => {
+const NavBar: FC = () => {
     const router = useRouter();
 
     return (
