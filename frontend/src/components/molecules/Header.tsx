@@ -1,4 +1,4 @@
-import { Box, Center } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
 
 interface Props {
