@@ -1,15 +1,15 @@
-import { useQuery } from "@apollo/client";
-import { Link, Skeleton, Stack } from "@chakra-ui/react";
-import { GetSongTitleQuery } from "@graphqlTypes/GetSongTitleQuery";
+import { Link, Stack } from "@chakra-ui/react";
+import { GetSongTitleQuery_songs } from "@graphqlTypes/GetSongTitleQuery";
 import React, { FC } from "react";
-import { SONG_TITLE_QUERY } from "src/api/songs";
 
-const SongList: FC = () => {
-  const { data, loading } = useQuery<GetSongTitleQuery>(SONG_TITLE_QUERY);
-  if (loading) return <Skeleton w="100%" h="100%" />;
+interface SongListProps {
+  songs: GetSongTitleQuery_songs[];
+}
+
+const SongList: FC<SongListProps> = ({ songs }) => {
   return (
     <Stack>
-      {data.songs.map((song) => (
+      {songs.map((song) => (
         <Link href={`song/${song.slug.current}`} key={song.title}>
           {song.title}
         </Link>
