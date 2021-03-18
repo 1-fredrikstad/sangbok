@@ -1,5 +1,6 @@
 import { Box, Center, Heading, Spacer, Stack, Text } from "@chakra-ui/react";
 import Header from "@components/molecules/Header";
+import SongDetails from "@components/molecules/SongDetails";
 import Layout from "@components/templates/Layout";
 import React from "react";
 
@@ -8,34 +9,27 @@ interface ISongView {
 }
 
 const SongView = ({}: ISongView) => {
-  const title = "derp";
+  const title = "Østfoldsangen";
+  // Remember to ask client to remove space after \n
   const verses = [
-    "1: Hos den kjære, gamle første tropp,\n er humøret stadig høyt på topp.\n Når humøret er tilstede,\n da går alt med liv og glede,\n i den kjære, gamle første tropp.",
-    "2: :/:  Vi ofte trasker rundt i vær og vind. :/:\n Men når ryggsekken den tynger,\n vi en liten vise synger.\n Dermed er vi jo straks lysere i sinn.",
-    "3: :/: Når lederne er strenge mang en gang. :/:\n Vi da tar en serenade\n og straks føler vi oss glade,\n selv om lederne er harde mang en gang.",
-    "4: :/: Å koke mat er ofte nokså stritt. :/:\n Med en liten sang så jager\n vi bort alle dagens plager,\n og straks smiler vi jo bredere og blidt.",
-    "5: :/: Vi lengter etter mamma og han far. :/:\n Vi en liten strofe nynner\n og vår lengsel straks forsvinner,\n og vi glemmer både mamma og han far.",
-    "Første tropp har jo alltid vært bekjent,\n for å synge både høyt og klart og rent.\n Ja, vi alltid har det målet,\n høyt mot him’lens sky og skråle,\n så det høres kan at Første tropp er her!",
+    "1: Hos den kjære, gamle første tropp,\ner humøret stadig høyt på topp.\nNår humøret er tilstede,\nda går alt med liv og glede,\ni den kjære, gamle første tropp.",
+    "2: :/:  Vi ofte trasker rundt i vær og vind. :/:\nMen når ryggsekken den tynger,\nvi en liten vise synger.\nDermed er vi jo straks lysere i sinn.",
+    "3: :/: Når lederne er strenge mang en gang. :/:\nVi da tar en serenade\nog straks føler vi oss glade,\nselv om lederne er harde mang en gang.",
+    "4: :/: Å koke mat er ofte nokså stritt. :/:\nMed en liten sang så jager\nvi bort alle dagens plager,\nog straks smiler vi jo bredere og blidt.",
+    "5: :/: Vi lengter etter mamma og han far. :/:\nVi en liten strofe nynner\nog vår lengsel straks forsvinner,\nog vi glemmer både mamma og han far.",
+    "Første tropp har jo alltid vært bekjent,\nfor å synge både høyt og klart og rent.\nJa, vi alltid har det målet,\nhøyt mot him’lens sky og skråle,\n så det høres kan at Første tropp er her!",
   ];
   return (
     <Layout>
       <Header color="#D6F2E6">
-        <Heading>{title}</Heading>
+        <Heading>
+          <SongDetails title={title} />
+        </Heading>
       </Header>
       <Box p="0 2.5rem">
         <Stack spacing={6}>
-          {verses.map((verseText, verseNumber) => (
-            <Box mb="-1rem">
-              {verseText
-                .split("\n")
-                .map((lineText, lineIndex) =>
-                  lineIndex === 0 ? (
-                    <Text fontSize="md">{lineText}</Text>
-                  ) : (
-                    <Text fontSize="md">{lineText}</Text>
-                  ),
-                )}
-            </Box>
+          {verses.map((verse) => (
+            <Text whiteSpace="pre-wrap">{verse}</Text>
           ))}
         </Stack>
       </Box>
