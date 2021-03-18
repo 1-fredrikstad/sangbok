@@ -39,6 +39,16 @@ const song = {
       name: "numbering",
       type: "number",
     },
+    {
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: {
+        source: "title",
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+      },
+    },
   ],
 };
 
