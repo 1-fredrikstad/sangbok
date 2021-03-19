@@ -16,8 +16,8 @@ export const SONG_TITLE_QUERY = gql`
 `;
 
 export const SONG_DETAIL_QUERY = gql`
-  query SongDetailQuery($songNumber: Float) {
-    details: allSong(where: { numbering: { eq: $songNumber } }) {
+  query SongDetailQuery($songId: ID!) {
+    details: Song(id: $songId) {
       title
       melody
       author

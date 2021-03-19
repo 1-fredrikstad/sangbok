@@ -1,5 +1,6 @@
-import { Link, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { GetSongTitleQuery_songs } from "@graphqlTypes/GetSongTitleQuery";
+import Link from "next/Link";
 import React, { FC } from "react";
 
 interface SongListProps {

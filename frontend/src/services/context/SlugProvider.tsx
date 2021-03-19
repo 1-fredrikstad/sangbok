@@ -1,41 +1,41 @@
 import React, { createContext, FC, useContext, useState } from "react";
 
-interface SlugPair {
-  slug: string;
-  id: string;
+type Slug = string;
+
+export interface SlugInfo {
+  prev: Slug | null;
+  next: Slug | null;
+  _id: string;
 }
 
+export interface SlugMap {
+  [slug: string]: SlugInfo;
+}
 interface ISlugContext {
-  slugMap: SlugPair[];
-  updateSlugMap: (pair: SlugPair) => void;
-  val: number;
-  incrementVal: () => void;
+  slugs: SlugMap;
+  updateSlugMap: (slug: Slug, info: SlugInfo) => void;
 }
 
-export const SlugContext = createContext<ISlugContext>({
-  slugMap: [],
+const initialValues: ISlugContext = {
+  slugs: {},
   updateSlugMap: () => {},
-  val: 0,
-  incrementVal: () => {},
-});
+};
+
+export const SlugContext = createContext<ISlugContext>(initialValues);
 
 export const SlugProvider: FC = ({ children }) => {
-  const [slugMap, setSlugMap] = useState<SlugPair[]>([]);
-  const [val, setVal] = useState(0);
+  const [slugMap, setSlugInfo] = useState<SlugMap>({});
 
   const values: ISlugContext = {
-    slugMap: slugMap,
-    updateSlugMap: (pair: SlugPair) => {
-      setSlugMap([...slugMap, pair]);
-    },
-    val: val,
-    incrementVal: () => {
-      setVal(val + 1);
-      console.log(val);
+    slugs: slugMap,
+
+    updateSlugMap: (slug: Slug, info: SlugInfo) => {
+      slugMap[slug] = info;
+      setSlugInfo(slugMap);
     },
   };
 
   return <SlugContext.Provider value={values}>{children}</SlugContext.Provider>;
 };
 
-export const useSlugContext = () => useContext(SlugContext);
+export const useSlugContext = (): ISlugContext => useContext(SlugContext);
