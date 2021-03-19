@@ -1,6 +1,6 @@
-import React from "react";
-import { NextPage } from "next";
 import Layout from "@components/templates/Layout";
+import { NextPage } from "next";
+import React from "react";
 
 const Home: NextPage = () => (
   <Layout>
@@ -42,5 +42,4 @@ const Home: NextPage = () => (
     </p>
   </Layout>
 );
-
 export default Home;
