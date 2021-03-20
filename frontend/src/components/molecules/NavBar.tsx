@@ -21,6 +21,7 @@ const NavBar: FC = () => {
       right="0"
       bottom="0"
       zIndex="1"
+      marginTop="2"
     >
       <IconButton
         variant="outline"

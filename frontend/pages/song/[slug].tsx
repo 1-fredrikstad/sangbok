@@ -19,24 +19,15 @@ const SongView: NextPage = () => {
   const { data, loading } = useQuery<SongDetailQuery>(SONG_DETAIL_QUERY, {
     variables: { songId: info._id },
   });
+  console.log(info);
 
   return (
     <Layout>
-      <Skeleton isLoaded={!loading}>
-        {data && <SongDetail song={data.details} />}
+      <Skeleton isLoaded={!loading} h="100%">
+        {data && (
+          <SongDetail song={data.details} next={info.next} prev={info.prev} />
+        )}
       </Skeleton>
-
-      {info.prev && (
-        <Link href={`/song/${info.prev}`}>
-          <Button>PREV</Button>
-        </Link>
-      )}
-
-      {info.next && (
-        <Link href={`/song/${info.next}`}>
-          <Button>NEXT</Button>
-        </Link>
-      )}
     </Layout>
   );
 };
