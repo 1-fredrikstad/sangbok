@@ -1,4 +1,4 @@
-import { Box, Center } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 import React from "react";
 
 interface Props {
@@ -6,9 +6,9 @@ interface Props {
   children: React.ReactNode;
 }
 const Header: React.FC<Props> = ({ color, children }) => (
-  <Box bg={color} w="100%" minH="100px">
+  <Center bg={color} w="100%" minH="100px">
     {children}
-  </Box>
+  </Center>
 );
 
 export default Header;
