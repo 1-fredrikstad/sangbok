@@ -7,7 +7,7 @@ import React, { FC } from "react";
 
 const SongView: FC = () => {
   const title = "Østfoldsangen";
-  const author = "Odd Nordstoga"
+  const author = "Pitbull"
   // Remember to ask client to remove space after \n
   const verses = [
     "1: Hos den kjære, gamle første tropp,\ner humøret stadig høyt på topp.\nNår humøret er tilstede,\nda går alt med liv og glede,\ni den kjære, gamle første tropp.",
