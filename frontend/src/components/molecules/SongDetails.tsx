@@ -12,7 +12,7 @@ const SongDetails: FC<SongDetailsProps> = ({ title, author }) => {
         {title}
       </Heading>
       <Text fontSize="sm" fontWeight="light">
-        Melodi: {author}
+        Forfatter: {author}
       </Text>
     </Box>
   );
