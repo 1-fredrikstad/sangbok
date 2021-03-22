@@ -1,4 +1,3 @@
-import { useSlugContext } from "@services/context/SlugProvider";
 import React, { FC } from "react";
 
 const Song: FC = () => {
