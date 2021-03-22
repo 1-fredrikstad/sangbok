@@ -20,7 +20,6 @@
         "@emotion/styled": "^11.0.0",
         "framer-motion": "^3.2.1",
         "graphql": "^15.4.0",
-        "mini-create-react-context": "^0.4.1",
         "next": "10.0.3",
         "next-compose-plugins": "^2.2.1",
         "next-i18next": "^8.1.0",
@@ -28,8 +27,7 @@
         "react": "17.0.1",
         "react-dom": "17.0.1",
         "react-icons": "^4.2.0",
-        "react-swipeable": "^6.1.0",
-        "react-swipeable-views": "^0.13.9"
+        "react-swipeable": "^6.1.0"
     },
     "devDependencies": {
         "@types/node": "^14.14.13",
