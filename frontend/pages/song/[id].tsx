@@ -1,14 +1,11 @@
-import { Box, Center, Heading, Spacer, Stack, Text } from "@chakra-ui/react";
+import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 import Header from "@components/molecules/Header";
 import SongDetails from "@components/molecules/SongDetails";
 import Layout from "@components/templates/Layout";
-import React from "react";
+import React, { FC } from "react";
 
-interface ISongView {
-  verses: string[];
-}
 
-const SongView = ({}: ISongView) => {
+const SongView: FC = () => {
   const title = "Østfoldsangen";
   const author = "Odd Nordstoga"
   // Remember to ask client to remove space after \n
