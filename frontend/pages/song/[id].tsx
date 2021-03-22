@@ -7,7 +7,8 @@ import React, { FC } from "react";
 
 const SongView: FC = () => {
   const title = "Østfoldsangen";
-  const author = "Pitbull"
+  const author = "Pitbull";
+  const melody = "Det går likar no";
   // Remember to ask client to remove space after \n
   const verses = [
     "1: Hos den kjære, gamle første tropp,\ner humøret stadig høyt på topp.\nNår humøret er tilstede,\nda går alt med liv og glede,\ni den kjære, gamle første tropp.",
@@ -21,7 +22,7 @@ const SongView: FC = () => {
     <Layout>
       <Header color="#D6F2E6">
         <Heading>
-          <SongDetails title={title} author={author} />
+          <SongDetails title={title} author={author} melody={melody}/>
         </Heading>
       </Header>
       <Box p="0 2.5rem">
