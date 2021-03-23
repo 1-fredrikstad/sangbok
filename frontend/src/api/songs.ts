@@ -1,30 +1,40 @@
-import { gql } from "@apollo/client";
+import groq from "groq";
 
-export const SONG_TITLE_QUERY = gql`
-  query GetSongTitleQuery {
-    songs: allSong(
-      where: { _: { is_draft: false } }
-      sort: { numbering: ASC }
-    ) {
-      _id
-      title
-      slug {
-        current
-      }
-    }
+export const SONG_LIST_QUERY = groq`
+  *[_type=='song'&& !(_id in path("drafts.**"))] | order(numbering asc)
+ {
+    title,
+    slug
   }
 `;
 
-export const SONG_DETAIL_QUERY = gql`
-  query SongDetailQuery($songId: ID!) {
-    details: Song(id: $songId) {
-      title
-      melody
-      author
-      category {
-        name
-      }
-      verses
-    }
+export const SONG_DETAIL_QUERY = groq`
+  *[_type=='song' && slug.current == $slug][0] {
+    author,
+    melody,
+    numbering,
+    slug,
+    title,
+    verses,
+    "category" : category -> name
   }
 `;
+
+type Slug = {
+  current: string;
+};
+
+export interface SongListEntry {
+  title: string;
+  slug: Slug;
+}
+
+export interface SongDetailType {
+  title: string;
+  author: string;
+  melody: string;
+  numbering: number;
+  slug: Slug;
+  verses: string[];
+  category: string;
+}

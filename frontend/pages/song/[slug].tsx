@@ -1,24 +1,19 @@
-import { useQuery } from "@apollo/client";
-import { Skeleton } from "@chakra-ui/skeleton";
 import SongDetail from "@components/organisms/SongDetail";
 import Layout from "@components/templates/Layout";
-import { SongDetailQuery } from "@graphqlTypes/SongDetailQuery";
 import { useSlugContext } from "@services/context/SlugProvider";
+import client from "@services/groq/client";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
 import { SwipeEventData, useSwipeable } from "react-swipeable";
-import { SONG_DETAIL_QUERY } from "src/api/songs";
+import { SongDetailType, SONG_DETAIL_QUERY } from "src/api/songs";
 
-const SongView: NextPage = () => {
-  const { query, push } = useRouter();
-  const { slug } = query;
-  const { slugs } = useSlugContext();
-  const info = slugs[slug as string];
+interface SongPageProps {
+  details: SongDetailType;
+}
 
-  const { data, loading } = useQuery<SongDetailQuery>(SONG_DETAIL_QUERY, {
-    variables: { songId: info._id },
-  });
+const SongPage: NextPage<SongPageProps> = ({ details }) => {
+  const { push } = useRouter();
 
   const swipeRoute = (route: string, _eventData: SwipeEventData) => {
     if (route != null) push(`/song/${route}`);
@@ -31,11 +26,17 @@ const SongView: NextPage = () => {
 
   return (
     <Layout>
-      <Skeleton isLoaded={!loading} h="100%">
-        {data && <SongDetail song={data.details} onSwipe={handlers} />}
-      </Skeleton>
+      <SongDetail song={details} onSwipe={handlers} />
     </Layout>
   );
 };
 
-export default SongView;
+SongPage.getInitialProps = async (ctx) => {
+  const { slug } = ctx.query;
+  const data = await client.fetch<SongDetailType>(SONG_DETAIL_QUERY, { slug });
+  return {
+    details: data,
+  };
+};
+
+export default SongPage;
