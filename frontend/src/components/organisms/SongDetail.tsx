@@ -11,7 +11,7 @@ interface SongDetailProps {
 }
 
 const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
-  const { author, title, verses } = song;
+  const { author, title, verses, melody } = song;
 
   // const tempVerses = [
   //   "1: Hos den kjære, gamle første tropp,\ner humøret stadig høyt på topp.\nNår humøret er tilstede,\nda går alt med liv og glede,\ni den kjære, gamle første tropp.",
@@ -26,11 +26,11 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
     <>
       <Header color="#D6F2E6">
         <Heading>
-          <HeaderDetails title={title} author={author} />
+          <HeaderDetails title={title} author={author} melody={melody} />
         </Heading>
       </Header>
 
-      <Box p="0 2.5rem">
+      <Box p="1rem 2.5rem">
         <Stack spacing={6} {...onSwipe} h="100%">
           {verses.map((verse, i) => (
             <Text key={`verse${i}`} whiteSpace="pre-wrap">
