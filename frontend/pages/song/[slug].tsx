@@ -1,6 +1,5 @@
 import SongDetail from "@components/organisms/SongDetail";
 import Layout from "@components/templates/Layout";
-import { useSlugContext } from "@services/context/SlugProvider";
 import client from "@services/groq/client";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
