@@ -5,6 +5,7 @@ import theme from "@definitions/chakra/theme";
 import { initializeApollo } from "@services/graphql";
 import { ApolloProvider } from "@apollo/client";
 import { appWithTranslation } from "next-i18next";
+import { SlugProvider } from "@services/context/SlugProvider";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const apolloClient = initializeApollo();
@@ -12,7 +13,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ChakraProvider theme={theme}>
       <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} />
+        <SlugProvider>
+          <Component {...pageProps} />
+        </SlugProvider>
       </ApolloProvider>
     </ChakraProvider>
   );

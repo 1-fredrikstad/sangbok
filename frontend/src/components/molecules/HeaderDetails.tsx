@@ -1,12 +1,12 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import React, { FC } from "react";
 
-interface SongDetailsProps {
+interface HeaderDetailsProps {
   title: string;
   author: string;
-  melody: string
+  melody: string;
 }
-const SongDetails: FC<SongDetailsProps> = ({ title, author, melody }) => {
+const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody }) => {
   return (
     <Box p="2.5rem 2.5rem 1.5rem">
       <Heading fontWeight="300" as="h1" size="xl">
@@ -22,4 +22,4 @@ const SongDetails: FC<SongDetailsProps> = ({ title, author, melody }) => {
   );
 };
 
-export default SongDetails;
+export default HeaderDetails;
