@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Box, Skeleton } from "@chakra-ui/react";
+import { Box, Center, Skeleton } from "@chakra-ui/react";
 import SearchInput from "@components/atoms/SearchInput";
 import Header from "@components/molecules/Header";
 import SongList from "@components/organisms/SongList";
@@ -28,7 +28,9 @@ const Search: NextPage = () => {
   return (
     <Layout>
       <Header color="#FFD687">
-        <SearchInput />
+        <Center pt="2rem">
+          <SearchInput />
+        </Center>
       </Header>
       {loading ? (
         <Skeleton w="100%" h="100%" />
