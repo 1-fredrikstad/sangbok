@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { Skeleton } from "@chakra-ui/skeleton";
 import SongDetail from "@components/organisms/SongDetail";
+import Layout from "@components/templates/Layout";
 import { SongDetailQuery } from "@graphqlTypes/SongDetailQuery";
 import { useSlugContext } from "@services/context/SlugProvider";
 import { NextPage } from "next";
@@ -29,9 +30,11 @@ const SongView: NextPage = () => {
   });
 
   return (
-    <Skeleton isLoaded={!loading} h="100%">
-      {data && <SongDetail song={data.details} onSwipe={handlers} />}
-    </Skeleton>
+    <Layout>
+      <Skeleton isLoaded={!loading} h="100%">
+        {data && <SongDetail song={data.details} onSwipe={handlers} />}
+      </Skeleton>
+    </Layout>
   );
 };
 

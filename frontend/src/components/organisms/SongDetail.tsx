@@ -1,7 +1,6 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
-import Layout from "@components/templates/Layout";
 import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
 import React, { FC } from "react";
 import { SwipeableHandlers } from "react-swipeable";
@@ -24,7 +23,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
   // ];
 
   return (
-    <Layout>
+    <>
       <Header color="#D6F2E6">
         <Heading>
           <HeaderDetails title={title} author={author} />
@@ -40,7 +39,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
           ))}
         </Stack>
       </Box>
-    </Layout>
+    </>
   );
 };
 
