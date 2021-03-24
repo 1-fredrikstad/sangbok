@@ -2,7 +2,7 @@ import groq from "groq";
 
 export const SONG_LIST_QUERY = groq`
   *[_type=='song'&& !(_id in path("drafts.**"))] | order(numbering asc)
- {
+  {
     title,
     slug
   }
@@ -16,12 +16,21 @@ export const SONG_DETAIL_QUERY = groq`
     slug,
     title,
     verses,
-    "category" : category -> name
+    "category" : category -> name,
+    'info': {
+      'prev': *[_type=='song' && numbering==^.numbering-1][0].slug.current,
+      'next': *[_type=='song' && numbering==^.numbering+1][0].slug.current
+    }
   }
 `;
 
 type Slug = {
   current: string;
+};
+
+type Info = {
+  prev: string | null;
+  next: string | null;
 };
 
 export interface SongListEntry {
@@ -37,4 +46,5 @@ export interface SongDetailType {
   slug: Slug;
   verses: string[];
   category: string;
+  info: Info;
 }

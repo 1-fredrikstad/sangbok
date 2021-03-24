@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
 }
 const Header: React.FC<Props> = ({ color, children }) => (
-  <Box bg={color} w="100%" minH="100px">
+  <Box bg={color} w="100%" paddingBottom="5">
     {children}
   </Box>
 );

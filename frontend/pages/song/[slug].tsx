@@ -1,3 +1,4 @@
+import { Skeleton } from "@chakra-ui/react";
 import SongDetail from "@components/organisms/SongDetail";
 import Layout from "@components/templates/Layout";
 import client from "@services/groq/client";
@@ -19,13 +20,15 @@ const SongPage: NextPage<SongPageProps> = ({ details }) => {
   };
 
   const handlers = useSwipeable({
-    onSwipedLeft: (eventData) => swipeRoute(info.next, eventData),
-    onSwipedRight: (eventData) => swipeRoute(info.prev, eventData),
+    onSwipedLeft: (eventData) => swipeRoute(details.info.next, eventData),
+    onSwipedRight: (eventData) => swipeRoute(details.info.prev, eventData),
   });
 
   return (
     <Layout>
-      <SongDetail song={details} onSwipe={handlers} />
+      <Skeleton isLoaded={!!details}>
+        <SongDetail song={details} onSwipe={handlers} />
+      </Skeleton>
     </Layout>
   );
 };
