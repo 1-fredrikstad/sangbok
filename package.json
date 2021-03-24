@@ -4,6 +4,7 @@
   "scripts": {
     "build": "lerna run build --parallel",
     "start": "lerna run start --parallel",
+    "install": "lerna run install --parallel",
     "dev": "lerna run dev --parallel",
     "format": "lerna run format",
     "lint": "lerna run lint",

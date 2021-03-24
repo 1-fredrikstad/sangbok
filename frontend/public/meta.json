@@ -12,11 +12,6 @@
             "url": "https://github.com/vercel/styled-jsx"
         },
         {
-            "name": "Apollo GraphQL",
-            "description": "Apollo Client is a comprehensive state management library for JavaScript that enables you to manage both local and remote data with GraphQL. Use it to fetch, cache, and modify application data, all while automatically updating your UI.",
-            "url": "https://www.apollographql.com/docs/react/"
-        },
-        {
             "name": "next-i18next",
             "description": "next-i18next is a plugin for Next.js projects that allows you to get translations up and running quickly and easily, while fully supporting SSR, multiple namespaces with codesplitting, etc.",
             "url": "https://github.com/isaachinman/next-i18next"
