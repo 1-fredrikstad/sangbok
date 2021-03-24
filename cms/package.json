@@ -31,6 +31,7 @@
     "@sanity/cli": "^2.5.0",
     "immer": "^8.0.1",
     "mem": "^8.0.0",
-    "yargs-parser": "^20.2.6"
+    "yargs-parser": "^20.2.6",
+    "is-svg": ">=4.2.2"
   }
 }
