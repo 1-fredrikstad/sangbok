@@ -1,12 +1,12 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
-import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
 import React, { FC } from "react";
 import { SwipeableHandlers } from "react-swipeable";
+import { SongDetailType } from "src/api/songs";
 
 interface SongDetailProps {
-  song: SongDetailQuery_details;
+  song: SongDetailType;
   onSwipe: SwipeableHandlers;
 }
 
