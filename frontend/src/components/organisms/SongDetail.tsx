@@ -2,17 +2,42 @@ import { Box, Heading, Stack, Text } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
 import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { SwipeableHandlers } from "react-swipeable";
 import SingleVerse from "@components/molecules/SingleVerse";
+import VerseChorusNumbering from "@components/molecules/VerseChorusNumbering";
+import VerseNumbering from "@components/molecules/VerseNumbering";
 
 interface SongDetailProps {
   song: SongDetailQuery_details;
   onSwipe: SwipeableHandlers;
 }
 
+enum SongTypes {
+  SongChorusNumbering = "SongChorusNumbering",
+  SongNumbering = "SongNumbering",
+  SongSingleVerse = "SongSingleVerse",
+}
+
+const getSongType = (song: SongDetailQuery_details) => {
+  if (song.verses.length === 1) {
+    return SongTypes.SongSingleVerse;
+  }
+  if (song.chorus != null) {
+    return SongTypes.SongChorusNumbering;
+  } else {
+    return SongTypes.SongNumbering;
+  }
+};
+
 const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
-  const { author, title, verses, melody, chorus, verseNumbering } = song;
+  const { author, title, melody } = song;
+
+  const [songType, setSongType] = useState<SongTypes>(SongTypes.SongNumbering);
+
+  useEffect(() => {
+    setSongType(getSongType(song));
+  }, [song]);
 
   return (
     <>
@@ -23,19 +48,14 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
       </Header>
 
       <Box p="1rem 2.5rem" {...onSwipe}>
-        {verses.length == 1 && <SingleVerse song={song} />}
-        {/* {chorus && <ChorusView song={song} />} */}
+        {songType === SongTypes.SongChorusNumbering && (
+          <VerseChorusNumbering song={song} />
+        )}
+        {songType === SongTypes.SongNumbering && <VerseNumbering song={song} />}
+        {songType === SongTypes.SongSingleVerse && <SingleVerse song={song} />}
       </Box>
     </>
   );
 };
 
 export default SongDetail;
-
-// <Stack spacing={6} h="100%">
-// {verses.map((verse, i) => (
-//   <Text key={`verse${i}`} whiteSpace="pre-wrap">
-//     {verse}
-//   </Text>
-// ))}
-// </Stack>
