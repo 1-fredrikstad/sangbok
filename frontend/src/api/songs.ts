@@ -21,7 +21,6 @@ export const SONG_DETAIL_QUERY = gql`
       title
       melody
       author
-      verseNumbering
       chorus
       category {
         name
