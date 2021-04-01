@@ -35,6 +35,21 @@ const song = {
       ],
     },
     {
+      title: "Nummerering",
+      description: "Ønsker du nummerering på vers?",
+      name: "verseNumbering",
+      type: "boolean",
+      options: {
+        layout: "checkbox",
+      },
+    },
+    {
+      title: "Refreng",
+      name: "chorus",
+      type: "text",
+    },
+
+    {
       title: "Nummering",
       name: "numbering",
       type: "number",
