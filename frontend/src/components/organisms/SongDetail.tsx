@@ -33,7 +33,7 @@ const getSongType = (song: SongDetailQuery_details) => {
 const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
   const { author, title, melody } = song;
 
-  const [songType, setSongType] = useState<SongTypes>(SongTypes.SongNumbering);
+  const [songType, setSongType] = useState<SongTypes>();
 
   useEffect(() => {
     setSongType(getSongType(song));
