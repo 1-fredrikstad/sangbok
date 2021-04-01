@@ -1,4 +1,4 @@
-import { Box, Heading, Stack, Text } from "@chakra-ui/layout";
+import { Box, Heading } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
 import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
