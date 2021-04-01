@@ -11,13 +11,11 @@ const VerseChorusNumbering: FC<VerseChorusNumberingProps> = ({
 }) => (
   <Stack spacing={6} h="100%">
     {verses.map((verse, i) => (
-      <>
-        <Text key={`verse${i}`} whiteSpace="pre-wrap">
-          {`${i + 1}. ${verse}`}
-        </Text>
+      <React.Fragment key={`verse${i}`}>
+        <Text whiteSpace="pre-wrap">{`${i + 1}. ${verse}`}</Text>
 
         {i === 0 && <Text>{`Ref: ${chorus}`}</Text>}
-      </>
+      </React.Fragment>
     ))}
   </Stack>
 );
