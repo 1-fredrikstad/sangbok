@@ -35,6 +35,12 @@ const song = {
       ],
     },
     {
+      title: "Refreng",
+      name: "chorus",
+      type: "text",
+    },
+
+    {
       title: "Nummering",
       name: "numbering",
       type: "number",

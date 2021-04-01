@@ -1,26 +1,43 @@
-import { Box, Heading, Stack, Text } from "@chakra-ui/layout";
+import { Box, Heading } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
 import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { SwipeableHandlers } from "react-swipeable";
+import SingleVerse from "@components/molecules/SingleVerse";
+import VerseChorusNumbering from "@components/molecules/VerseChorusNumbering";
+import VerseNumbering from "@components/molecules/VerseNumbering";
 
 interface SongDetailProps {
   song: SongDetailQuery_details;
   onSwipe: SwipeableHandlers;
 }
 
-const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
-  const { author, title, verses, melody } = song;
+enum SongTypes {
+  SongChorusNumbering = "SongChorusNumbering",
+  SongNumbering = "SongNumbering",
+  SongSingleVerse = "SongSingleVerse",
+}
 
-  // const tempVerses = [
-  //   "1: Hos den kjære, gamle første tropp,\ner humøret stadig høyt på topp.\nNår humøret er tilstede,\nda går alt med liv og glede,\ni den kjære, gamle første tropp.",
-  //   "2: :/:  Vi ofte trasker rundt i vær og vind. :/:\nMen når ryggsekken den tynger,\nvi en liten vise synger.\nDermed er vi jo straks lysere i sinn.",
-  //   "3: :/: Når lederne er strenge mang en gang. :/:\nVi da tar en serenade\nog straks føler vi oss glade,\nselv om lederne er harde mang en gang.",
-  //   "4: :/: Å koke mat er ofte nokså stritt. :/:\nMed en liten sang så jager\nvi bort alle dagens plager,\nog straks smiler vi jo bredere og blidt.",
-  //   "5: :/: Vi lengter etter mamma og han far. :/:\nVi en liten strofe nynner\nog vår lengsel straks forsvinner,\nog vi glemmer både mamma og han far.",
-  //   "Første tropp har jo alltid vært bekjent,\nfor å synge både høyt og klart og rent.\nJa, vi alltid har det målet,\nhøyt mot him’lens sky og skråle,\n så det høres kan at Første tropp er her!",
-  // ];
+const getSongType = (song: SongDetailQuery_details) => {
+  if (song.verses.length === 1) {
+    return SongTypes.SongSingleVerse;
+  }
+  if (song.chorus != null) {
+    return SongTypes.SongChorusNumbering;
+  } else {
+    return SongTypes.SongNumbering;
+  }
+};
+
+const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
+  const { author, title, melody } = song;
+
+  const [songType, setSongType] = useState<SongTypes>();
+
+  useEffect(() => {
+    setSongType(getSongType(song));
+  }, [song]);
 
   return (
     <>
@@ -30,14 +47,12 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
         </Heading>
       </Header>
 
-      <Box p="1rem 2.5rem">
-        <Stack spacing={6} {...onSwipe} h="100%">
-          {verses.map((verse, i) => (
-            <Text key={`verse${i}`} whiteSpace="pre-wrap">
-              {verse}
-            </Text>
-          ))}
-        </Stack>
+      <Box p="1rem 2.5rem" {...onSwipe}>
+        {songType === SongTypes.SongChorusNumbering && (
+          <VerseChorusNumbering song={song} />
+        )}
+        {songType === SongTypes.SongNumbering && <VerseNumbering song={song} />}
+        {songType === SongTypes.SongSingleVerse && <SingleVerse song={song} />}
       </Box>
     </>
   );

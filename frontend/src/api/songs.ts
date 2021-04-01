@@ -21,6 +21,7 @@ export const SONG_DETAIL_QUERY = gql`
       title
       melody
       author
+      chorus
       category {
         name
       }
