@@ -1,9 +1,10 @@
 import { Box, Heading } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
+import SingleVerse from "@components/molecules/SingleVerse";
 import VerseChorusNumbering from "@components/molecules/VerseChorusNumbering";
 import VerseNumbering from "@components/molecules/VerseNumbering";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { SwipeableHandlers } from "react-swipeable";
 import { SongDetailType } from "src/api/songs";
 

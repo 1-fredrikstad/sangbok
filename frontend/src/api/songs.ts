@@ -14,6 +14,7 @@ export const SONG_DETAIL_QUERY = groq`
     melody,
     numbering,
     slug,
+    chorus,
     title,
     verses,
     "category" : category -> name,
@@ -47,4 +48,5 @@ export interface SongDetailType {
   verses: string[];
   category: string;
   info: Info;
+  chorus: string;
 }

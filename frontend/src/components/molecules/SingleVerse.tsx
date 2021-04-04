@@ -1,15 +1,15 @@
 import { Box, Text } from "@chakra-ui/layout";
-import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
 import React, { FC } from "react";
+import { SongDetailType } from "src/api/songs";
 
 interface SingleVerseProps {
-  song: SongDetailQuery_details;
+  song: SongDetailType;
 }
 
-const SongDetail: FC<SingleVerseProps> = ({ song: { verses } }) => (
+const SingleVerse: FC<SingleVerseProps> = ({ song: { verses } }) => (
   <Box h="100%">
     <Text whiteSpace="pre-wrap">{verses[0]}</Text>
   </Box>
 );
 
-export default SongDetail;
+export default SingleVerse;
