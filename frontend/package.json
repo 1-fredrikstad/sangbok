@@ -50,11 +50,5 @@
         "*.{js,jsx,ts,tsx}": [
             "npm run lint -- --quiet --fix"
         ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
     }
-  }
 }
