@@ -1,15 +1,14 @@
 import { Box, Heading } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
-import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
-import React, { FC, useEffect, useState } from "react";
-import { SwipeableHandlers } from "react-swipeable";
-import SingleVerse from "@components/molecules/SingleVerse";
 import VerseChorusNumbering from "@components/molecules/VerseChorusNumbering";
 import VerseNumbering from "@components/molecules/VerseNumbering";
+import React, { FC } from "react";
+import { SwipeableHandlers } from "react-swipeable";
+import { SongDetailType } from "src/api/songs";
 
 interface SongDetailProps {
-  song: SongDetailQuery_details;
+  song: SongDetailType;
   onSwipe: SwipeableHandlers;
 }
 
@@ -19,7 +18,7 @@ enum SongTypes {
   SongSingleVerse = "SongSingleVerse",
 }
 
-const getSongType = (song: SongDetailQuery_details) => {
+const getSongType = (song: SongDetailType) => {
   if (song.verses.length === 1) {
     return SongTypes.SongSingleVerse;
   }
