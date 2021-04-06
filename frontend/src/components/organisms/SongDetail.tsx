@@ -35,8 +35,6 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
 
   const [songType, setSongType] = useState<SongTypes>();
 
-  console.log("Spotify", spotifyuri);
-
   useEffect(() => {
     setSongType(getSongType(song));
   }, [song]);
