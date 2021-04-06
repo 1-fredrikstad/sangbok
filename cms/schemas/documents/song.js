@@ -46,6 +46,11 @@ const song = {
       type: "number",
     },
     {
+      title: "Spotify URI",
+      name: "spotifyuri",
+      type: "string",
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",
