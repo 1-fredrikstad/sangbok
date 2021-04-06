@@ -1,10 +1,10 @@
 import { Stack } from "@chakra-ui/react";
-import { GetSongTitleQuery_songs } from "@graphqlTypes/GetSongTitleQuery";
 import Link from "next/link";
 import React, { FC } from "react";
+import { SongListEntry } from "src/api/songs";
 
 interface SongListProps {
-  songs: GetSongTitleQuery_songs[];
+  songs: SongListEntry[];
 }
 
 const SongList: FC<SongListProps> = ({ songs }) => {

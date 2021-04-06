@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 const Layout: FC = ({ children }) => {
   return (
-    <Stack as="main" minHeight="100vh">
+    <Stack as="main" h="100vh">
       {children}
       <NavBar />
     </Stack>

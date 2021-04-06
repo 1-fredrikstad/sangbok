@@ -1,9 +1,9 @@
 import { Stack, Text } from "@chakra-ui/react";
-import { SongDetailQuery_details } from "@graphqlTypes/SongDetailQuery";
 import React, { FC } from "react";
+import { SongDetailType } from "src/api/songs";
 
 interface VerseChorusNumberingProps {
-  song: SongDetailQuery_details;
+  song: SongDetailType;
 }
 
 const VerseChorusNumbering: FC<VerseChorusNumberingProps> = ({
