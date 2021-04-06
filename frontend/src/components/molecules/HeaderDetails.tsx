@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Button, Heading, IconButton, Link, Text } from "@chakra-ui/react";
+import { Box, Heading, Link, Text } from "@chakra-ui/react";
 import { FaSpotify } from "react-icons/fa";
 interface HeaderDetailsProps {
   title: string;
@@ -13,8 +13,6 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
   melody,
   spotifyuri,
 }) => {
-  console.log(spotifyuri);
-
   return (
     <Box p="2.5rem 2.5rem 1.5rem">
       <Heading fontWeight="300" as="h1" size="xl">
