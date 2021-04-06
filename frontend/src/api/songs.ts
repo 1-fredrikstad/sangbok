@@ -17,6 +17,7 @@ export const SONG_DETAIL_QUERY = groq`
     chorus,
     title,
     verses,
+    spotifyuri,
     "category" : category -> name,
     'info': {
       'prev': *[_type=='song' && numbering==^.numbering-1][0].slug.current,
@@ -49,4 +50,5 @@ export interface SongDetailType {
   category: string;
   info: Info;
   chorus: string;
+  spotifyuri: string;
 }
