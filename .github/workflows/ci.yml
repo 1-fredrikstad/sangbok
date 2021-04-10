@@ -4,17 +4,63 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  ci:
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./frontend
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@master
 
-      # Yarn
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
         with:
-          cmd: install --ignore-engines # Install dependencies
+          node-version: ${{ matrix.node }}
 
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Cache node_modules
+        uses: actions/cache@v2
         with:
-          cmd: lint # Lint dependencies
+          working-directory: ./frontend
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run dev
+          wait-on: "http://localhost:3000"
+          command: npm run test
+          working-directory: ./frontend
+
+      - name: Upload screenshots as artifacts
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          working-directory: ./frontend
+
+      - name: Upload videos as artifacts
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: cypress-videos
+          path: ./frontend/cypress/videos
