@@ -9,7 +9,7 @@ interface VerseChorusNumberingProps {
 const VerseChorusNumbering: FC<VerseChorusNumberingProps> = ({
   song: { verses, chorus },
 }) => (
-  <Stack spacing={6} h="100%">
+  <Stack spacing={6}>
     {verses.map((verse, i) => (
       <React.Fragment key={`verse${i}`}>
         <Text whiteSpace="pre-wrap">{`${i + 1}. ${verse}`}</Text>
