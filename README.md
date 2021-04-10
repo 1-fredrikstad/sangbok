@@ -1,3 +1,10 @@
+<p align="center"><img src="assets/Camping-cuate.svg" alt="Sangbok Logo"  /></p>
+<p align=""><a href="https://storyset.com/people" style="color: gray; font-size: 10px">Illustrasjon av Freepik Storyset</a></p>
+<h1 align="center">
+Sangbok
+
+</h1>
+
 Sangbok
 
 Sangbok er en webapp for speidere som ønsker å finne fram til speidersangene rundt leirbålet. Dette er en applikasjon som inneholder blant annet Fredrikstad Speidergruppe sin kjente speiderbok, `Sanger under Liljen`.
