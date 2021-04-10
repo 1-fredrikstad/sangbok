@@ -23,8 +23,7 @@ jobs:
           npm run lint
         env:
           CI: true
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        run: npm run cypress:open
 #
