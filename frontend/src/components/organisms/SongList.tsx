@@ -8,7 +8,6 @@ interface SongListProps {
 }
 
 const SongList: FC<SongListProps> = ({ songs }) => {
-
   return (
     <Stack>
       {songs.map((song) => (

@@ -13,10 +13,13 @@ interface SearchProps {
 }
 
 const Search: NextPage<SearchProps> = ({ songs }) => {
-  const [searchValue, setSearchValue] = useState("")
-  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => setSearchValue((event.target as HTMLInputElement).value)
+  const [searchValue, setSearchValue] = useState("");
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
+    setSearchValue((event.target as HTMLInputElement).value);
 
-  const filteredSongs = songs.filter((song: SongDetailType) => song.title.toLowerCase().includes(searchValue.toLowerCase()))
+  const filteredSongs = songs.filter((song: SongDetailType) =>
+    song.title.toLowerCase().includes(searchValue.toLowerCase()),
+  );
 
   return (
     <Layout>
