@@ -1,5 +1,6 @@
 import ThemeToggler from "@components/atoms/ThemeToggler";
 import NavBar from "@components/molecules/NavBar";
+import Layout from "@components/templates/Layout";
 import { useTranslation } from "next-i18next";
 import React, { FC } from "react";
 
@@ -10,7 +11,7 @@ const SettingsView: FC = () => {
     i18n.changeLanguage(lng);
   };
   return (
-    <div>
+    <Layout>
       <div>{t("settingsHeader")}</div>
       <ThemeToggler />
       <h3>Change lanuage</h3>
@@ -20,8 +21,7 @@ const SettingsView: FC = () => {
       <button type="button" onClick={() => changeLanguage("no")}>
         no
       </button>
-      <NavBar />
-    </div>
+    </Layout>
   );
 };
 

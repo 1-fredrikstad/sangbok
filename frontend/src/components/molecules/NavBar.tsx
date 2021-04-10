@@ -10,18 +10,19 @@ const NavBar: FC = () => {
   return (
     <Flex
       bg="gray.300"
-      alignSelf="flex-end"
+      flex="1"
+      // alignSelf="flex-end"
       alignItems="center"
       justifyContent="space-around"
-      maxHeight="16vh"
+      // maxHeight="16vh"
       height="3.5rem"
       width="100%"
-      position="fixed"
-      left="0"
-      right="0"
-      bottom="0"
+      // position="fixed"
+      // left="0"
+      // right="0"
+      // bottom="0"
       zIndex="1"
-      marginTop="2"
+      // marginTop="2"
     >
       <IconButton
         variant="outline"

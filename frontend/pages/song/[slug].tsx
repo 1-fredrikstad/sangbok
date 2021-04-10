@@ -24,11 +24,15 @@ const SongPage: NextPage<SongPageProps> = ({ details }) => {
     onSwipedRight: (eventData) => swipeRoute(details.info.prev, eventData),
   });
 
+  if (!details) {
+    return (
+      <Skeleton startColor="pink.500" endColor="orange.500" height="20px" />
+    );
+  }
+
   return (
     <Layout>
-      <Skeleton isLoaded={!!details}>
-        <SongDetail song={details} onSwipe={handlers} />
-      </Skeleton>
+      <SongDetail song={details} onSwipe={handlers} />
     </Layout>
   );
 };

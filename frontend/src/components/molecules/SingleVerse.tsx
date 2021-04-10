@@ -7,7 +7,7 @@ interface SingleVerseProps {
 }
 
 const SingleVerse: FC<SingleVerseProps> = ({ song: { verses } }) => (
-  <Box h="100%">
+  <Box>
     <Text whiteSpace="pre-wrap">{verses[0]}</Text>
   </Box>
 );

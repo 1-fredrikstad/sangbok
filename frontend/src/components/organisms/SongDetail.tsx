@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/layout";
+import { Box, Flex, Heading } from "@chakra-ui/layout";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
 import SingleVerse from "@components/molecules/SingleVerse";
@@ -31,7 +31,7 @@ const getSongType = (song: SongDetailType) => {
 };
 
 const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
-  const { author, title, melody, spotifyuri } = song;
+  const { author, title, melody, category, spotifyuri } = song;
 
   const [songType, setSongType] = useState<SongTypes>();
 
@@ -40,26 +40,29 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
   }, [song]);
 
   return (
-    <>
+    // Fills the entire children component.
+    <Flex direction="column" flex="1">
       <Header color="#D6F2E6">
         <Heading>
           <HeaderDetails
             title={title}
             author={author}
             melody={melody}
+            category={category}
             spotifyuri={spotifyuri}
           />
         </Heading>
       </Header>
 
-      <Box p="1rem 2.5rem" {...onSwipe}>
+      {/* Flex 1 takes up the remaining space left by Header. */}
+      <Box p="1rem 2.5rem" {...onSwipe} flex="1">
         {songType === SongTypes.SongChorusNumbering && (
           <VerseChorusNumbering song={song} />
         )}
         {songType === SongTypes.SongNumbering && <VerseNumbering song={song} />}
         {songType === SongTypes.SongSingleVerse && <SingleVerse song={song} />}
       </Box>
-    </>
+    </Flex>
   );
 };
 
