@@ -24,6 +24,5 @@ jobs:
         env:
           CI: true
       - name: Cypress run
-        #uses: cypress-io/github-action@v2
-        run: npm run cypress:open
+        uses: cypress-io/github-action@v2
 #
