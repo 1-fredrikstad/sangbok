@@ -13,7 +13,7 @@ jobs:
       # Yarn
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: install # Install dependencies
+          cmd: install --ignore-engines # Install dependencies
 
       - uses: borales/actions-yarn@v2.0.0
         with:
