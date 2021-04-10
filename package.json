@@ -13,7 +13,5 @@
   "devDependencies": {
     "lerna": "^3.22.1"
   },
-  "dependencies": {
-    "eslint-plugin-cypress": "^2.11.2"
-  }
+  "dependencies": {}
 }
