@@ -1,7 +1,8 @@
 [build]
-  base = "frontend/"
-  publish = "out"
+  base = "/frontend"
+  publish = "/out"
   command = "next build"
+  functions = "/netlify"
 
 [build.environment]
   NEXT_SERVERLESS = "true"
@@ -12,3 +13,8 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-inline-functions-env"
+  [plugins.inputs]
+    buildEvent = "onBuild"

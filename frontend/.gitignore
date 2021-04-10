@@ -12,3 +12,5 @@ cypress/screenshots
 
 # Local Netlify folder
 .netlify
+out
+netlify
