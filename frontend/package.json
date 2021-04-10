@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
-    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'",
-    "cypress:open": "cypress open"
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.6",
@@ -34,7 +33,6 @@
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "babel-eslint": "^10.1.0",
-    "cypress": "^7.0.1",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-config-react-app": "^6.0.0",

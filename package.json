@@ -8,9 +8,11 @@
     "dev": "lerna run dev --parallel",
     "format": "lerna run format",
     "lint": "lerna run lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
   },
   "devDependencies": {
+    "cypress": "^7.0.1",
     "lerna": "^3.22.1"
   },
   "dependencies": {}
