@@ -1,3 +1,6 @@
 */node_modules
 node_modules
 lerna-debug.log
+
+**/public/sw.js
+**/public/workbox-*.js
