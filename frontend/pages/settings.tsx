@@ -34,7 +34,6 @@ const SettingsView: FC = () => {
           <Button onClick={() => changeLanguage("no")}>Engelsk</Button>
         )}
       </Box>
-      <NavBar />
     </Layout>
   );
 };
