@@ -8,7 +8,7 @@
   NEXT_SERVERLESS = "true"
   SANITY_PROJECT_ID="9up46puq"
   SANITY_DATASET="production"
-  BUILD_LANGUAGES = "en-US,no-NO"
+  BUILD_LANGUAGES = "en-US"
   BUILD_CMS = "sanity"
 
 [[plugins]]
