@@ -5,22 +5,28 @@ import SongList from "@components/organisms/SongList";
 import Layout from "@components/templates/Layout";
 import client from "@services/groq/client";
 import { NextPage } from "next";
-import React from "react";
-import { SongListEntry, SONG_LIST_QUERY } from "src/api/songs";
+import React, { useState } from "react";
+import { ChangeEvent } from "react";
+import { SongDetailType, SongListEntry, SONG_LIST_QUERY } from "src/api/songs";
 interface SearchProps {
   songs: SongListEntry[];
 }
 
 const Search: NextPage<SearchProps> = ({ songs }) => {
+  const [searchValue, setSearchValue] = useState("")
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => setSearchValue((event.target as HTMLInputElement).value)
+
+  const filteredSongs = songs.filter((song: SongDetailType) => song.title.toLowerCase().includes(searchValue.toLowerCase()))
+
   return (
     <Layout>
       <Header color="#FFD687">
         <Center pt="2rem">
-          <SearchInput />
+          <SearchInput value={searchValue} handleChange={handleSearchChange} />
         </Center>
       </Header>
       <Box padding="5">
-        <SongList songs={songs} />
+        <SongList songs={filteredSongs} />
       </Box>
     </Layout>
   );
