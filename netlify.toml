@@ -2,7 +2,6 @@
   base = "frontend/"
   publish = "out"
   command = "next build"
-  functions = "frontend/netlify"
 
 [build.environment]
   NEXT_SERVERLESS = "true"
