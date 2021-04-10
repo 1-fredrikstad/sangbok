@@ -12,14 +12,22 @@ jobs:
         node-version: [14.x]
     steps:
       - uses: actions/checkout@v1
+      
+      # Node
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and lint
+            - uses: actions/checkout@v2
+
+      # Yarn
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+
+      - name: Lint
         working-directory: ./frontend
         run: |
-          npm install
-          npm run lint
+          yarn lint
         env:
           CI: true
