@@ -5,13 +5,13 @@ import { ChangeEventHandler } from "react";
 
 interface Props {
   value: string;
-  handleChange: ChangeEventHandler<HTMLInputElement>
+  handleChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-const SearchInput: FC<Props> = ({value, handleChange}) => (
+const SearchInput: FC<Props> = ({ value, handleChange }) => (
   <InputGroup width="20rem">
     <InputLeftElement pointerEvents="none" children={<SearchIcon />} />
-    <Input bg="white" onChange={handleChange} value={value}/>
+    <Input bg="white" onChange={handleChange} value={value} />
   </InputGroup>
 );
 
