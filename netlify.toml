@@ -1,0 +1,20 @@
+[build]
+  base = "/frontend"
+  publish = "/out"
+  command = "yarn frontend:build"
+  functions = "/netlify"
+
+[build.environment]
+  NEXT_SERVERLESS = "true"
+  SANITY_PROJECT_ID="9up46puq"
+  SANITY_DATASET="production"
+  BUILD_LANGUAGES = "en-US,no-NO"
+  BUILD_CMS = "sanity"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-inline-functions-env"
+  [plugins.inputs]
+    buildEvent = "onBuild"
