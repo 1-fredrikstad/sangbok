@@ -1,8 +1,8 @@
 [build]
-  base = "/"
+  base = "frontend/"
   publish = "frontend/out"
   command = "yarn frontend:build"
-  functions = "/netlify"
+  functions = "frontend/netlify"
 
 [build.environment]
   NEXT_SERVERLESS = "true"
