@@ -5,14 +5,13 @@ const ThemeToggler: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <FormControl display="flex" alignItems="center">
-      <FormLabel htmlFor="dark-mode" mb="0">
-        Mørkemodus
-      </FormLabel>
+    <FormControl alignItems="center">
+      <FormLabel htmlFor="dark-mode">Mørkemodus:</FormLabel>
       <Switch
         onChange={toggleColorMode}
         isChecked={colorMode === "dark"}
         id="dark-mode"
+        colorScheme="black"
       />
     </FormControl>
   );
