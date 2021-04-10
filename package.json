@@ -11,7 +11,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "cypress": "^7.0.1",
     "lerna": "^3.22.1"
   },
   "dependencies": {}
