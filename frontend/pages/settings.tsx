@@ -1,5 +1,4 @@
 import ThemeToggler from "@components/atoms/ThemeToggler";
-import NavBar from "@components/molecules/NavBar";
 import Layout from "@components/templates/Layout";
 import { useTranslation } from "next-i18next";
 import React, { FC } from "react";
