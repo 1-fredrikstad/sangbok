@@ -7,7 +7,7 @@ interface VerseNumberingProps {
 }
 
 const VerseNumbering: FC<VerseNumberingProps> = ({ song: { verses } }) => (
-  <Stack spacing={6} h="100%">
+  <Stack spacing={6}>
     {verses.map((verse, i) => (
       <Text key={`verse${i}`} whiteSpace="pre-wrap">
         {`${i + 1}. ${verse}`}
