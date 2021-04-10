@@ -27,27 +27,28 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Cache node_modules
+      - name: Cache Node.js dependencies and Cypress
+        id: node-cache
         uses: actions/cache@v2
         with:
-          working-directory: ./frontend
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          path: |
+            node_modules
+            ~/.cache/Cypress
+          key: my-cache-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies
-        run: npm install
+        if: steps.node-cache.outputs.cache-hit != 'true'
+        run: yarn
 
       - name: Run lint
-        run: npm run lint
+        run: yarn lint
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: npm run dev
+          start: yarn dev
           wait-on: "http://localhost:3000"
-          command: npm run test
+          command: yarn test
           working-directory: ./frontend
 
       - name: Upload screenshots as artifacts
