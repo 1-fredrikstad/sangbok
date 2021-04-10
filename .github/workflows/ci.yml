@@ -23,6 +23,8 @@ jobs:
           npm run lint
         env:
           CI: true
-      - name: Cypress run
+      - name: cypress run
         uses: cypress-io/github-action@v2
-#
+        with:
+          build: npm run build
+          start: npm start
