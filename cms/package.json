@@ -25,7 +25,8 @@
     "@sanity/vision": "^2.2.6",
     "prop-types": "^15.7",
     "react": "^17.0",
-    "react-dom": "^17.0"
+    "react-dom": "^17.0",
+    "sanity-plugin-order-documents": "^0.0.14"
   },
   "devDependencies": {
     "@sanity/cli": "^2.5.0",
