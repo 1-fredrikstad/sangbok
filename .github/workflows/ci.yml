@@ -51,17 +51,17 @@ jobs:
           command: yarn test
           working-directory: ./frontend
 
-      - name: Upload screenshots as artifacts
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-          working-directory: ./frontend
+      # - name: Upload screenshots as artifacts
+      #   uses: actions/upload-artifact@v1
+      #   if: failure()
+      #   with:
+      #     name: cypress-screenshots
+      #     path: cypress/screenshots
+      #     working-directory: ./frontend
 
-      - name: Upload videos as artifacts
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: cypress-videos
-          path: ./frontend/cypress/videos
+      # - name: Upload videos as artifacts
+      #   uses: actions/upload-artifact@v1
+      #   if: always()
+      #   with:
+      #     name: cypress-videos
+      #     path: ./frontend/cypress/videos
