@@ -10,9 +10,6 @@ on:
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        working-directory: ./frontend
     strategy:
       matrix:
         os: [ubuntu-latest]
