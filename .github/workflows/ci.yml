@@ -2,32 +2,19 @@ name: Sangbok CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
-      - uses: actions/checkout@v1
-
-      # Node
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-          cmd: node -v
+      - uses: actions/checkout@v2
 
       # Yarn
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: install # will run `yarn install` command
+          cmd: install # Install dependencies
 
-      - name: Lint
-        working-directory: ./frontend
-        run: |
-          yarn lint
-        env:
-          CI: true
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: lint # Lint dependencies
