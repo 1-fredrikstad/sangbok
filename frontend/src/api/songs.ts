@@ -1,7 +1,7 @@
 import groq from "groq";
 
 export const SONG_LIST_QUERY = groq`
-  *[_type=='song'&& !(_id in path("drafts.**"))] | order(numbering asc)
+  *[_type=='song'&& !(_id in path("drafts.**"))] | order(order asc)
   {
     title,
     slug
@@ -12,7 +12,7 @@ export const SONG_DETAIL_QUERY = groq`
   *[_type=='song' && slug.current == $slug][0] {
     author,
     melody,
-    numbering,
+    order,
     slug,
     chorus,
     title,
@@ -20,8 +20,8 @@ export const SONG_DETAIL_QUERY = groq`
     spotifyuri,
     "category" : category -> name,
     'info': {
-      'prev': *[_type=='song' && numbering==^.numbering-1][0].slug.current,
-      'next': *[_type=='song' && numbering==^.numbering+1][0].slug.current
+      'prev': *[_type=='song' && order==^.order-1][0].slug.current,
+      'next': *[_type=='song' && order==^.order+1][0].slug.current
     }
   }
 `;
@@ -44,7 +44,7 @@ export interface SongDetailType {
   title: string;
   author: string;
   melody: string;
-  numbering: number;
+  order: number;
   slug: Slug;
   verses: string[];
   category: string;
