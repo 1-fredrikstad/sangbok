@@ -39,18 +39,18 @@ const song = {
       name: "chorus",
       type: "text",
     },
-
-    {
-      title: "Nummering",
-      name: "numbering",
-      type: "number",
-    },
     {
       title: "Spotify URI",
       name: "spotifyuri",
       type: "string",
       description:
         "Lenke for å åpne en sang direkte i installert Spotify klient (https://community.spotify.com/t5/Spotify-Answers/What-s-a-Spotify-URI/ta-p/919201)",
+    },
+    {
+    name: "order",
+    title: "Order",
+    type: "number",
+    hidden: true,
     },
     {
       name: "slug",
