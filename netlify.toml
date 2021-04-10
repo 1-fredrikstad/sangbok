@@ -1,6 +1,6 @@
 [build]
   base = "frontend/"
-  publish = "frontend/out"
+  publish = "out"
   command = "next build"
   functions = "frontend/netlify"
 
