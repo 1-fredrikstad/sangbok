@@ -23,7 +23,7 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
 
   return (
     <Layout>
-      <Header color="#FFD687">
+      <Header>
         <Center pt="2rem">
           <SearchInput value={searchValue} handleChange={handleSearchChange} />
         </Center>
