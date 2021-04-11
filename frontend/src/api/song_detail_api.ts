@@ -20,7 +20,7 @@ export const SONG_DETAIL_QUERY = groq`
   }
 `;
 
-export const useSongDetailQuery = async (
+export const fetchSongDetailQuery = async (
   slug: string,
 ): Promise<SongDetailType> => {
   const data = await client.fetch<SongDetailType>(SONG_DETAIL_QUERY, { slug });

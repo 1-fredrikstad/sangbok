@@ -10,7 +10,7 @@ const SONG_LIST_QUERY = groq`
   }
 `;
 
-export const useSongListQuery = async (): Promise<SongListEntry[]> => {
+export const fetchSongListQuery = async (): Promise<SongListEntry[]> => {
   const data = await client.fetch<SongListEntry[]>(SONG_LIST_QUERY);
   return data;
 };
