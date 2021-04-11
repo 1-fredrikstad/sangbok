@@ -36,16 +36,6 @@ const SettingsView: FC = () => {
       <Box p="1.5rem 2.5rem 0rem">
         <ThemeToggler />
         <Divider size="L" mt="1rem" mb="1rem" />
-        <Text>{t("Bytt språk:")}</Text>
-        {i18n.language === "en" ? (
-          <Button colorScheme="blue" onClick={() => changeLanguage("en")}>
-            Norwegian
-          </Button>
-        ) : (
-          <Button colorScheme="sandBrown" onClick={() => changeLanguage("no")}>
-            Engelsk
-          </Button>
-        )}
       </Box>
       <Center height="100%">
         <Image
