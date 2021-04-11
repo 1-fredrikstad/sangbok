@@ -10,6 +10,7 @@ export type Info = {
 export interface SongListEntry {
   title: string;
   slug: Slug;
+  melody?: string;
 }
 
 export interface SongDetailType {
