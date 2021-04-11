@@ -1,12 +1,19 @@
+import client from "@services/groq/client";
 import groq from "groq";
+import { SongDetailType, SongListEntry } from "../types";
 
-export const SONG_LIST_QUERY = groq`
+const SONG_LIST_QUERY = groq`
   *[_type=='song'&& !(_id in path("drafts.**"))] | order(order asc)
   {
     title,
     slug
   }
 `;
+
+export const fetchSongList = async (): Promise<SongListEntry[]> => {
+  const data = await client.fetch<SongListEntry[]>(SONG_LIST_QUERY);
+  return data;
+};
 
 export const SONG_DETAIL_QUERY = groq`
   *[_type=='song' && slug.current == $slug][0] {
@@ -26,29 +33,9 @@ export const SONG_DETAIL_QUERY = groq`
   }
 `;
 
-type Slug = {
-  current: string;
+export const fetchSongDetail = async (
+  slug: string,
+): Promise<SongDetailType> => {
+  const data = await client.fetch<SongDetailType>(SONG_DETAIL_QUERY, { slug });
+  return data;
 };
-
-type Info = {
-  prev: string | null;
-  next: string | null;
-};
-
-export interface SongListEntry {
-  title: string;
-  slug: Slug;
-}
-
-export interface SongDetailType {
-  title: string;
-  author: string;
-  melody: string;
-  order: number;
-  slug: Slug;
-  verses: string[];
-  category: string;
-  info: Info;
-  chorus: string;
-  spotifyuri: string;
-}

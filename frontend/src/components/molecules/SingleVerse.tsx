@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/layout";
 import React, { FC } from "react";
-import { SongDetailType } from "src/api/songs";
+import { SongDetailType } from "src/types";
 
 interface SingleVerseProps {
   song: SongDetailType;

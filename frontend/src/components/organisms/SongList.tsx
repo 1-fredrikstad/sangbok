@@ -1,7 +1,7 @@
 import { Button, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { FC } from "react";
-import { SongListEntry } from "src/api/songs";
+import { SongListEntry } from "src/types";
 
 interface SongListProps {
   songs: SongListEntry[];
