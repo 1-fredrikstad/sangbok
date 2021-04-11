@@ -9,7 +9,6 @@ const NavBar: FC = () => {
 
   return (
     <Flex
-      bg="white"
       flex="1"
       alignItems="center"
       justifyContent="space-around"
