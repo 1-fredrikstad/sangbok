@@ -7,7 +7,9 @@ import client from "@services/groq/client";
 import { NextPage } from "next";
 import React, { useState } from "react";
 import { ChangeEvent } from "react";
-import { SongDetailType, SongListEntry, SONG_LIST_QUERY } from "src/api/songs";
+import { useSongListQuery } from "src/api/song_list_api";
+import { SongListEntry, SongDetailType } from "src/types";
+
 interface SearchProps {
   songs: SongListEntry[];
 }
@@ -36,7 +38,7 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
 };
 
 Search.getInitialProps = async (_ctx) => {
-  const data = await client.fetch<SongListEntry[]>(SONG_LIST_QUERY);
+  const data = await useSongListQuery();
   return {
     songs: data,
   };
