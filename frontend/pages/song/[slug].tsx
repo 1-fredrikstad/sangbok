@@ -1,4 +1,5 @@
 import { Skeleton } from "@chakra-ui/react";
+import NavigationArrows from "@components/atoms/navigationArrows";
 import SongDetail from "@components/organisms/SongDetail";
 import Layout from "@components/templates/Layout";
 import client from "@services/groq/client";
@@ -33,6 +34,7 @@ const SongPage: NextPage<SongPageProps> = ({ details }) => {
   return (
     <Layout>
       <SongDetail song={details} onSwipe={handlers} />
+      <NavigationArrows song={details} />
     </Layout>
   );
 };
