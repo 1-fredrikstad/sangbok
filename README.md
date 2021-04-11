@@ -13,11 +13,11 @@ Sangbok
       <img src="https://img.shields.io/github/issues/1-fredrikstad/sangbok" /></a>
 </p>
 
-Sangbok er en webapp for speidere som ønsker å finne fram til speidersangene rundt leirbålet. Dette er en applikasjon som inneholder blant annet Fredrikstad Speidergruppe sin kjente speiderbok, `Sanger under Liljen`.
+En webapp for speidere som ønsker å finne fram til speidersangene rundt leirbålet. Dette er en applikasjon som inneholder blant annet Fredrikstad Speidergruppe sin kjente speiderbok, `Sanger under Liljen`.
 
-## ⚙️ Lokal konfigurering og oppsett av prosjekt
+## Utvikling og oppsett
 
-Teknologistacken vår består av [**Sanity.io**](https://www.sanity.io/) for å lagre og håndtere sangene, og [**React**](https://reactjs.org/).
+Teknologistacken vår består av [**Sanity.io**](https://www.sanity.io/) og [**React**](https://reactjs.org/). Sanity håndterer lagring og uthenting av sanger, - React viser innholdet frem.
 
 For å kunne kjøre en utviklingsinstans av webapplikasjonen så trenger man: [Node.js](https://nodejs.org/en/download/) og [`yarn`](https://classic.yarnpkg.com/en/docs/install).
 
@@ -26,6 +26,8 @@ Vi anbefaler VSCode som en flott editor for å bidra. Den er lett å bruke, grat
 ---
 
 > Antar at man påforhånd har installert Node.js og Yarn, i tillegg til at man har klonet repoet.
+
+> Under utvikling anbefales det å åpne `frontend` og `cms` i egne VSCode-instanser for et best mulig utviklermiljø.
 
 ### Installer prosjektets pakker
 
