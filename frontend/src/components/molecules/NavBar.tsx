@@ -22,7 +22,7 @@ const NavBar: FC = () => {
         variant="outline"
         border="none"
         size="lg"
-        onClick={() => router.push("/search")}
+        onClick={() => router.push("/")}
         icon={<FiSearch />}
         aria-label="Go to search view"
       />
