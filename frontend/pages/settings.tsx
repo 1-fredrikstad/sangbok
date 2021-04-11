@@ -21,7 +21,7 @@ const SettingsView: FC = () => {
   };
   return (
     <Layout>
-      <Header color="#D6F2E6">
+      <Header>
         <Heading
           fontWeight="300"
           as="h1"
@@ -36,9 +36,13 @@ const SettingsView: FC = () => {
         <Divider size="L" mt="1rem" mb="1rem" />
         <Text>{t("Bytt språk:")}</Text>
         {i18n.language === "en" ? (
-          <Button onClick={() => changeLanguage("en")}>Norwegian</Button>
+          <Button colorScheme="blue" onClick={() => changeLanguage("en")}>
+            Norwegian
+          </Button>
         ) : (
-          <Button onClick={() => changeLanguage("no")}>Engelsk</Button>
+          <Button colorScheme="sandBrown" onClick={() => changeLanguage("no")}>
+            Engelsk
+          </Button>
         )}
       </Box>
       <Center height="100%">
