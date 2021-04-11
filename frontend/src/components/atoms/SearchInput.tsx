@@ -11,7 +11,12 @@ interface Props {
 const SearchInput: FC<Props> = ({ value, handleChange }) => (
   <InputGroup width="20rem">
     <InputLeftElement pointerEvents="none" children={<SearchIcon />} />
-    <Input bg="white" onChange={handleChange} value={value} />
+    <Input
+      placeholder="Søk etter sang"
+      bg="white"
+      onChange={handleChange}
+      value={value}
+    />
   </InputGroup>
 );
 
