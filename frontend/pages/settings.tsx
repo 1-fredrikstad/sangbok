@@ -1,4 +1,13 @@
-import { Heading, Box, Text, Button, Divider } from "@chakra-ui/react";
+import {
+  Heading,
+  Box,
+  Text,
+  Button,
+  Divide,
+  Image,
+  Divider,
+  Center,
+} from "@chakra-ui/react";
 import ThemeToggler from "@components/atoms/ThemeToggler";
 import Header from "@components/molecules/Header";
 import NavBar from "@components/molecules/NavBar";
@@ -34,6 +43,9 @@ const SettingsView: FC = () => {
           <Button onClick={() => changeLanguage("no")}>Engelsk</Button>
         )}
       </Box>
+      <Center height="100%">
+        <Image src="/images/camping.svg" width="auto" height="20rem" />
+      </Center>
     </Layout>
   );
 };
