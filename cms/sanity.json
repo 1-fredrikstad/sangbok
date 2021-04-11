@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "sangbok"
+    "name": "sangbok",
+    "basePath": "/"
   },
   "api": {
     "projectId": "9up46puq",

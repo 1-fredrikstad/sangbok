@@ -1,0 +1,9 @@
+[build]
+  base = "cms"
+  publish = "/dist"
+  command = "sanity build"
+  
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
