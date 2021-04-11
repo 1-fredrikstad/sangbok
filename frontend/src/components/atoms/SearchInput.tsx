@@ -10,7 +10,11 @@ interface Props {
 
 const SearchInput: FC<Props> = ({ value, handleChange }) => (
   <InputGroup width="20rem">
-    <InputLeftElement pointerEvents="none" children={<SearchIcon />} />
+    <InputLeftElement
+      color="black"
+      pointerEvents="none"
+      children={<SearchIcon />}
+    />
     <Input
       placeholder="Søk etter sang"
       bg="white"
