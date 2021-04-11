@@ -6,7 +6,7 @@ import Layout from "@components/templates/Layout";
 import { NextPage } from "next";
 import React, { useState } from "react";
 import { ChangeEvent } from "react";
-import { fetchSongListQuery } from "src/api/song_list_api";
+import { fetchSongList } from "src/api/songs";
 import { SongListEntry, SongDetailType } from "src/types";
 
 interface SearchProps {
@@ -37,7 +37,7 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
 };
 
 Search.getInitialProps = async (_ctx) => {
-  const data = await fetchSongListQuery();
+  const data = await fetchSongList();
   return {
     songs: data,
   };

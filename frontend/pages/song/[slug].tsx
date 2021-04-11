@@ -5,7 +5,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
 import { SwipeEventData, useSwipeable } from "react-swipeable";
-import { fetchSongDetailQuery } from "src/api/song_detail_api";
+import { fetchSongDetail } from "src/api/songs";
 import { SongDetailType } from "src/types";
 
 interface SongPageProps {
@@ -39,7 +39,7 @@ const SongPage: NextPage<SongPageProps> = ({ details }) => {
 
 SongPage.getInitialProps = async (ctx) => {
   const { slug } = ctx.query;
-  const data = await fetchSongDetailQuery(slug as string);
+  const data = await fetchSongDetail(slug as string);
   return {
     details: data,
   };
