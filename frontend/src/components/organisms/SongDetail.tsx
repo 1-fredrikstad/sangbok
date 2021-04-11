@@ -42,7 +42,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
   return (
     // Fills the entire children component.
     <Flex direction="column" flex="1">
-      <Header color="#D6F2E6">
+      <Header>
         <Heading>
           <HeaderDetails
             title={title}
