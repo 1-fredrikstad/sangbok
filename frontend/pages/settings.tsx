@@ -37,7 +37,7 @@ const SettingsView: FC = () => {
         <ThemeToggler />
         <Divider size="L" mt="1rem" mb="1rem" />
         <Text>{t("Bytt språk:")}</Text>
-        {i18n.language == "en" ? (
+        {i18n.language === "en" ? (
           <Button onClick={() => changeLanguage("en")}>Norwegian</Button>
         ) : (
           <Button onClick={() => changeLanguage("no")}>Engelsk</Button>
