@@ -1,11 +1,17 @@
 <p align="center"><img src="assets/Camping-cuate.svg" alt="Sangbok Logo"  /></p>
-<p align=""><a href="https://storyset.com/people" style="color: gray; font-size: 10px">Illustrasjon av Freepik Storyset</a></p>
+<p align=""><a href="https://storyset.com/people" style="color: gray; font-size: 10px;text-decoration: none">Illustrasjon av Freepik Storyset</a></p>
 <h1 align="center">
 Sangbok
-
 </h1>
 
-Sangbok
+<p align="center">
+  <a href="https://github.com/1-fredrikstad/sangbok/actions/workflows/ci.yml">
+      <img src="https://github.com/1-fredrikstad/sangbok/actions/workflows/ci.yml/badge.svg" alt="CI status"/></a>
+  <a href="https://github.com/1-fredrikstad/sangbok/blob/main/LICENSE" alt="Release version">
+      <img src="https://img.shields.io/github/license/1-fredrikstad/sangbok" /></a>
+  <a href="https://github.com/1-fredrikstad/sangbok/issues" alt="Release version">
+      <img src="https://img.shields.io/github/issues/1-fredrikstad/sangbok" /></a>
+</p>
 
 Sangbok er en webapp for speidere som ønsker å finne fram til speidersangene rundt leirbålet. Dette er en applikasjon som inneholder blant annet Fredrikstad Speidergruppe sin kjente speiderbok, `Sanger under Liljen`.
 
