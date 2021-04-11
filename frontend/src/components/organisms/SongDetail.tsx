@@ -6,7 +6,7 @@ import VerseChorusNumbering from "@components/molecules/VerseChorusNumbering";
 import VerseNumbering from "@components/molecules/VerseNumbering";
 import React, { FC, useEffect, useState } from "react";
 import { SwipeableHandlers } from "react-swipeable";
-import { SongDetailType } from "src/api/songs";
+import { SongDetailType } from "src/types";
 
 interface SongDetailProps {
   song: SongDetailType;

@@ -3,11 +3,12 @@ import SearchInput from "@components/atoms/SearchInput";
 import Header from "@components/molecules/Header";
 import SongList from "@components/organisms/SongList";
 import Layout from "@components/templates/Layout";
-import client from "@services/groq/client";
 import { NextPage } from "next";
 import React, { useState } from "react";
 import { ChangeEvent } from "react";
-import { SongDetailType, SongListEntry, SONG_LIST_QUERY } from "src/api/songs";
+import { fetchSongList } from "src/api/songs";
+import { SongListEntry, SongDetailType } from "src/types";
+
 interface SearchProps {
   songs: SongListEntry[];
 }
@@ -36,7 +37,7 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
 };
 
 Search.getInitialProps = async (_ctx) => {
-  const data = await client.fetch<SongListEntry[]>(SONG_LIST_QUERY);
+  const data = await fetchSongList();
   return {
     songs: data,
   };
