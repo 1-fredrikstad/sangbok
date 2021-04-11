@@ -6,6 +6,7 @@ import {
   Image,
   Divider,
   Center,
+  useColorMode,
 } from "@chakra-ui/react";
 import ThemeToggler from "@components/atoms/ThemeToggler";
 import Header from "@components/molecules/Header";
@@ -15,6 +16,7 @@ import React, { FC } from "react";
 
 const SettingsView: FC = () => {
   const { t, i18n } = useTranslation();
+  const { colorMode } = useColorMode();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -46,7 +48,15 @@ const SettingsView: FC = () => {
         )}
       </Box>
       <Center height="100%">
-        <Image src="/images/camping.svg" width="auto" height="20rem" />
+        <Image
+          src={
+            colorMode === "light"
+              ? "/images/camping.svg"
+              : "/images/camping_dark.svg"
+          }
+          width="auto"
+          height="20rem"
+        />
       </Center>
     </Layout>
   );
