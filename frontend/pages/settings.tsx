@@ -1,8 +1,6 @@
 import {
   Heading,
   Box,
-  Text,
-  Button,
   Image,
   Divider,
   Center,
@@ -11,16 +9,11 @@ import {
 import ThemeToggler from "@components/atoms/ThemeToggler";
 import Header from "@components/molecules/Header";
 import Layout from "@components/templates/Layout";
-import { useTranslation } from "next-i18next";
 import React, { FC } from "react";
 
 const SettingsView: FC = () => {
-  const { t, i18n } = useTranslation();
   const { colorMode } = useColorMode();
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
   return (
     <Layout>
       <Header>
@@ -30,7 +23,7 @@ const SettingsView: FC = () => {
           size="xl"
           margin="1.5rem 2.5rem 0.5rem"
         >
-          {t("Settings")}
+          Instillinger
         </Heading>
       </Header>
       <Box p="1.5rem 2.5rem 0rem">
