@@ -18,7 +18,12 @@ const NavBar: FC = () => {
       zIndex="1"
       bg={colorMode === "light" ? "besh.50" : "gray.800"}
     >
-      <Flex flex="1" alignItems="center" justifyContent="space-around">
+      <Flex
+        flex="1"
+        alignItems="center"
+        justifyContent="space-around"
+        zIndex="2"
+      >
         <IconButton
           variant="outline"
           border="none"
