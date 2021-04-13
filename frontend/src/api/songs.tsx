@@ -7,7 +7,9 @@ const SONG_LIST_QUERY = groq`
   {
     title,
     slug,
-    melody
+    melody,
+    order,
+    spotifyuri
   }
 `;
 

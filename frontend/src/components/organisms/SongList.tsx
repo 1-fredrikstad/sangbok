@@ -57,7 +57,12 @@ const SongList: FC<SongListProps> = ({ songs }) => {
             </Flex>
           </Stack>
           {/* TODO: Fiks størrelse på spotify ikonet og finn ut når den ikke vises*/}
-          <Icon as={FaSpotify} />
+          {song.spotifyuri && (
+            <FaSpotify
+              size="21px"
+              color={colorMode === "light" ? "#1DB954" : "white"}
+            />
+          )}
         </Card>
       ))}
     </Stack>

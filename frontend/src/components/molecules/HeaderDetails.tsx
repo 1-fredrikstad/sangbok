@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Heading, Link, Stack, Text } from "@chakra-ui/react";
+import { Button, Heading, Link, Stack, Text } from "@chakra-ui/react";
 import { FaSpotify } from "react-icons/fa";
 interface HeaderDetailsProps {
   title: string;
@@ -15,6 +15,7 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
   category,
   spotifyuri,
 }) => {
+  console.log(spotifyuri);
   return (
     <Stack p="1.5rem 2.5rem 0rem" spacing={2}>
       <Heading fontWeight="300" as="h1" size="xl">
@@ -36,9 +37,9 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
         </Text>
       )}
       {spotifyuri && (
-        <Link href={spotifyuri}>
-          <FaSpotify />
-        </Link>
+        <Button href={spotifyuri} w="30%" h="40px">
+          <FaSpotify size="21px" />
+        </Button>
       )}
     </Stack>
   );
