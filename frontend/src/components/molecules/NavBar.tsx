@@ -16,6 +16,7 @@ const NavBar: FC = () => {
       width="100%"
       zIndex="1"
       borderTop="1px solid grey"
+      overflow="hidden"
     >
       <IconButton
         variant="outline"
