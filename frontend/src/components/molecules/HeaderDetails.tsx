@@ -1,5 +1,13 @@
 import React, { FC } from "react";
-import { Button, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Icon,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import { FaSpotify } from "react-icons/fa";
 interface HeaderDetailsProps {
   title: string;
@@ -38,8 +46,11 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
         </Text>
       )}
       {spotifyuri && (
-        <Button href={spotifyuri} w="30%" h="40px">
-          <FaSpotify size="21px" />
+        <Button href={spotifyuri} w="10%" h="40px">
+          Åpne i
+          <Box ml={2}>
+            <FaSpotify size="21px" />
+          </Box>
         </Button>
       )}
     </Stack>
