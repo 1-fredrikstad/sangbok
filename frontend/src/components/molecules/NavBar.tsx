@@ -9,26 +9,19 @@ const NavBar: FC = () => {
 
   return (
     <Flex
-      bg="gray.300"
       flex="1"
-      // alignSelf="flex-end"
       alignItems="center"
       justifyContent="space-around"
-      // maxHeight="16vh"
       height="3.5rem"
       width="100%"
-      // position="fixed"
-      // left="0"
-      // right="0"
-      // bottom="0"
       zIndex="1"
-      // marginTop="2"
+      borderTop="1px solid grey"
     >
       <IconButton
         variant="outline"
         border="none"
         size="lg"
-        onClick={() => router.push("/search")}
+        onClick={() => router.push("/")}
         icon={<FiSearch />}
         aria-label="Go to search view"
       />

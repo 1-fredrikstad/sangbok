@@ -2,12 +2,12 @@ import { Skeleton } from "@chakra-ui/react";
 import NavigationArrows from "@components/atoms/navigationArrows";
 import SongDetail from "@components/organisms/SongDetail";
 import Layout from "@components/templates/Layout";
-import client from "@services/groq/client";
 import { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
 import { SwipeEventData, useSwipeable } from "react-swipeable";
-import { SongDetailType, SONG_DETAIL_QUERY } from "src/api/songs";
+import { fetchSongDetail } from "src/api/songs";
+import { SongDetailType } from "src/types";
 
 interface SongPageProps {
   details: SongDetailType;
@@ -41,7 +41,7 @@ const SongPage: NextPage<SongPageProps> = ({ details }) => {
 
 SongPage.getInitialProps = async (ctx) => {
   const { slug } = ctx.query;
-  const data = await client.fetch<SongDetailType>(SONG_DETAIL_QUERY, { slug });
+  const data = await fetchSongDetail(slug as string);
   return {
     details: data,
   };

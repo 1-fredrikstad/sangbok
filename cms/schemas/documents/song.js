@@ -61,6 +61,8 @@ const song = {
         slugify: (input) =>
           input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
       },
+      validation: Rule => [Rule.required().error('Har du husket generate? Er navnet på sangen unikt?'),
+    ]
     },
   ],
 };
