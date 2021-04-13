@@ -1,13 +1,10 @@
 import {
-  Box,
   Button,
   Flex,
   Icon,
   Stack,
   Text,
   useColorMode,
-  useColorModeValue,
-  VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React, { FC } from "react";

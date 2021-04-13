@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Box, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import { Heading, Link, Stack, Text } from "@chakra-ui/react";
 import { FaSpotify } from "react-icons/fa";
 interface HeaderDetailsProps {
   title: string;
