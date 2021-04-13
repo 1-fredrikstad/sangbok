@@ -2,16 +2,14 @@
   base = "/frontend"
   publish = "/out"
   command = "next build"
-  functions = "/frotend/netlify"
+  functions = "/netlify"
 
 [build.environment]
   NEXT_SERVERLESS = "true"
   SANITY_PROJECT_ID="9up46puq"
   SANITY_DATASET="production"
-  BUILD_LANGUAGES = "en-US,it-IT"
+  BUILD_LANGUAGES = "en-US"
   BUILD_CMS = "sanity"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-
