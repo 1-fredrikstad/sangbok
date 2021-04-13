@@ -1,5 +1,5 @@
 import { Box, Flex, Heading } from "@chakra-ui/layout";
-import NavigationArrows from "@components/atoms/NavigationArrows";
+import NavigationArrows from "@components/atoms/navigationArrows";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
 import SingleVerse from "@components/molecules/SingleVerse";
