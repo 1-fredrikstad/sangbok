@@ -17,13 +17,9 @@ const NavBar: FC = () => {
       height="3.5rem"
       zIndex="1"
       bg={colorMode === "light" ? "besh.50" : "gray.800"}
+      overflow="hidden"
     >
-      <Flex
-        flex="1"
-        alignItems="center"
-        justifyContent="space-around"
-        zIndex="2"
-      >
+      <Flex flex="1" alignItems="center" justifyContent="space-around">
         <IconButton
           variant="outline"
           border="none"

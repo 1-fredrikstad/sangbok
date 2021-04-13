@@ -27,7 +27,7 @@ const SongList: FC<SongListProps> = ({ songs }) => {
   const { colorMode } = useColorMode();
 
   return (
-    <Stack spacing={6}>
+    <Stack spacing={6} marginBottom="12">
       {songs.map((song) => (
         <Card>
           <Stack key={song.slug.current} maxWidth="95%">
