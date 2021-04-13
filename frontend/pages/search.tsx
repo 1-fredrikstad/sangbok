@@ -45,9 +45,8 @@ Search.getInitialProps = async (_ctx) => {
   const data: SongListEntry[] = await client.fetch<SongListEntry[]>(
     SONG_LIST_QUERY,
   );
-  const promises = data.map(async (element) => {
-    console.log("HALLO");
-    const song: SongDetailType = await client.fetch<SongDetailType>(
+  const promises = data.map((element) => {
+    const song: Promise<SongDetailType> = client.fetch<SongDetailType>(
       SONG_DETAIL_QUERY,
       {
         slug: element.slug.current,
