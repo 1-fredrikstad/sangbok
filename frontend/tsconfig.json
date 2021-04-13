@@ -24,8 +24,7 @@
       "@styles/*": ["src/styles/*"],
       "@styles": ["src/styles"],
       "@services/*": ["src/services/*"],
-      "@services": ["src/services"],
-      "@i18n": ["./i18n"]
+      "@services": ["src/services"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
