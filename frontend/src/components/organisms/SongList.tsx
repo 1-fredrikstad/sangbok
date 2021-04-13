@@ -35,11 +35,17 @@ const SongList: FC<SongListProps> = ({ songs }) => {
                 <Text isTruncated>{song.title}</Text>
               </Button>
             </Link>
-            {/* <Flex alignItems="center" color="green.600">
-              <Icon as={FaItunesNote} marginRight="2" />
-              {song.melody || "Ingen melodi"}
-            </Flex> */}
+            <Flex alignItems="center" color="green.600">
+              {song.melody && (
+                <>
+                  <Icon as={FaItunesNote} marginRight="2" />
+                  {song.melody}
+                </>
+              )}
+            </Flex>
           </Stack>
+          {// TODO: Fiks størrelse på spotify ikonet og finn ut når den ikke vises}
+          <Icon as={FaSpotify} />
         </Card>
       ))}
     </Stack>
