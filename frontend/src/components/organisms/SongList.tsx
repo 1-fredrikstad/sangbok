@@ -30,7 +30,7 @@ const SongList: FC<SongListProps> = ({ songs }) => {
     <Stack spacing={6}>
       {songs.map((song) => (
         <Card>
-          <Stack maxWidth="95%">
+          <Stack key={song.slug.current} maxWidth="95%">
             <Link href={`song/${song.slug.current}`} key={song.title}>
               <Button
                 variant="link"
