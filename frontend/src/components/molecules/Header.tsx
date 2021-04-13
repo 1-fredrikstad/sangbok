@@ -8,7 +8,7 @@ const Header: React.FC<Props> = ({ children }) => {
   const { colorMode } = useColorMode();
   return (
     <Box
-      bg={colorMode === "light" ? "#FFD966" : "green.600"}
+      bg={colorMode === "light" ? "#FFD966" : "green.700"}
       w="100%"
       paddingBottom="5"
     >

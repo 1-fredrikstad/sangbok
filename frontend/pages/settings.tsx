@@ -23,7 +23,7 @@ const SettingsView: FC = () => {
           size="xl"
           margin="1.5rem 2.5rem 0.5rem"
         >
-          Instillinger
+          Innstillinger
         </Heading>
       </Header>
       <Box p="1.5rem 2.5rem 0rem">
