@@ -31,7 +31,7 @@ const getSongType = (song: SongDetailType) => {
 };
 
 const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
-  const { author, title, melody, category, spotifyuri } = song;
+  const { author, title, melody, category, spotifyuri, order } = song;
 
   const [songType, setSongType] = useState<SongTypes>();
 
@@ -50,6 +50,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
             melody={melody}
             category={category}
             spotifyuri={spotifyuri}
+            order={order}
           />
         </Heading>
       </Header>

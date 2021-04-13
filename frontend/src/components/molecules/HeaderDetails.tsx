@@ -7,6 +7,7 @@ interface HeaderDetailsProps {
   melody: string;
   category: string;
   spotifyuri: string;
+  order: number;
 }
 const HeaderDetails: FC<HeaderDetailsProps> = ({
   title,
@@ -14,12 +15,12 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
   melody,
   category,
   spotifyuri,
+  order,
 }) => {
-  console.log(spotifyuri);
   return (
     <Stack p="1.5rem 2.5rem 0rem" spacing={2}>
       <Heading fontWeight="300" as="h1" size="xl">
-        {title}
+        {order + 1}. {title}
       </Heading>
       {author && (
         <Text fontSize="sm" fontWeight="light">

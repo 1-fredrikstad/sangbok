@@ -41,7 +41,9 @@ const SongList: FC<SongListProps> = ({ songs }) => {
                 justifyContent="flex-start"
                 colorScheme="black"
               >
-                <Text isTruncated>{song.title}</Text>
+                <Text isTruncated>
+                  {song.order + 1}. {song.title}
+                </Text>
               </Button>
             </Link>
             <Flex
@@ -60,7 +62,7 @@ const SongList: FC<SongListProps> = ({ songs }) => {
           {song.spotifyuri && (
             <FaSpotify
               size="21px"
-              color={colorMode === "light" ? "#1DB954" : "white"}
+              color={colorMode === "light" ? "#191414" : "white"}
             />
           )}
         </Card>
