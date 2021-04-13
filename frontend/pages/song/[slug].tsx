@@ -1,5 +1,4 @@
 import { Skeleton } from "@chakra-ui/react";
-import NavigationArrows from "@components/atoms/NavigationArrows";
 import SongDetail from "@components/organisms/SongDetail";
 import Layout from "@components/templates/Layout";
 import { NextPage } from "next";
