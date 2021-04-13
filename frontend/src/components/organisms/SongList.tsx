@@ -44,7 +44,7 @@ const SongList: FC<SongListProps> = ({ songs }) => {
               )}
             </Flex>
           </Stack>
-          {// TODO: Fiks størrelse på spotify ikonet og finn ut når den ikke vises}
+          {/* TODO: Fiks størrelse på spotify ikonet og finn ut når den ikke vises*/}
           <Icon as={FaSpotify} />
         </Card>
       ))}
