@@ -101,7 +101,7 @@ export default extendTheme({
       900: "#645428",
     },
     besh: {
-      50: "#F9F3E8",
+      50: "#fcf9f4",
       100: "#F7EFE1",
       200: "#F5EBD9",
       300: "#F3E6D1",

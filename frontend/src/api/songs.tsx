@@ -6,7 +6,10 @@ const SONG_LIST_QUERY = groq`
   *[_type=='song'&& !(_id in path("drafts.**"))] | order(order asc)
   {
     title,
-    slug
+    slug,
+    melody,
+    order,
+    spotifyuri
   }
 `;
 

@@ -31,7 +31,7 @@ const getSongType = (song: SongDetailType) => {
 };
 
 const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
-  const { author, title, melody, category, spotifyuri } = song;
+  const { author, title, melody, category, spotifyuri, order } = song;
 
   const [songType, setSongType] = useState<SongTypes>();
 
@@ -42,7 +42,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
   return (
     // Fills the entire children component.
     <Flex direction="column" flex="1">
-      <Header color="#D6F2E6">
+      <Header>
         <Heading>
           <HeaderDetails
             title={title}
@@ -50,6 +50,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
             melody={melody}
             category={category}
             spotifyuri={spotifyuri}
+            order={order}
           />
         </Heading>
       </Header>
