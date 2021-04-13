@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { ChangeEventHandler } from "react";
+import { FaGreaterThanEqual } from "react-icons/fa";
 
 interface Props {
   value: string;
@@ -14,6 +15,8 @@ interface Props {
 }
 
 const SearchInput: FC<Props> = ({ value, handleChange }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <InputGroup width="20rem">
       <InputLeftElement
@@ -23,7 +26,9 @@ const SearchInput: FC<Props> = ({ value, handleChange }) => {
       />
       <Input
         placeholder="Søk etter sang"
-        bg="white"
+        textColor={colorMode === "light" ? "green.700" : "gray.800"}
+        _placeholder={{ color: "green.900" }}
+        bg={colorMode === "light" ? "white" : "green.200"}
         onChange={handleChange}
         value={value}
       />
