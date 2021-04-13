@@ -1,4 +1,5 @@
 import { Box, Flex, Heading } from "@chakra-ui/layout";
+import NavigationArrows from "@components/atoms/NavigationArrows";
 import Header from "@components/molecules/Header";
 import HeaderDetails from "@components/molecules/HeaderDetails";
 import SingleVerse from "@components/molecules/SingleVerse";
@@ -55,6 +56,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
         </Heading>
       </Header>
 
+      <NavigationArrows song={song} />
       {/* Flex 1 takes up the remaining space left by Header. */}
       <Box p="1rem 2.5rem" {...onSwipe} flex="1">
         {songType === SongTypes.SongChorusNumbering && (
