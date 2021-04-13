@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Button, Flex, useColorMode } from "@chakra-ui/react";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import { SongDetailType } from "src/api/songs";
+import { SongDetailType } from "src/types";
 import { useRouter } from "next/dist/client/router";
 
 interface Props {

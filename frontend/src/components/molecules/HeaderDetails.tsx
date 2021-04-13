@@ -46,12 +46,14 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
         </Text>
       )}
       {spotifyuri && (
-        <Button href={spotifyuri} w="10%" h="40px">
-          Åpne i
-          <Box ml={2}>
-            <FaSpotify size="21px" />
-          </Box>
-        </Button>
+        <Link href={spotifyuri}>
+          <Button w="7rem" h="40px">
+            Åpne i
+            <Box ml={2}>
+              <FaSpotify size="21px" />
+            </Box>
+          </Button>
+        </Link>
       )}
     </Stack>
   );
