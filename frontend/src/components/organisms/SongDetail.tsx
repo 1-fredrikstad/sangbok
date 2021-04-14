@@ -32,8 +32,6 @@ const getSongType = (song: SongDetailType) => {
 };
 
 const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
-  const { author, title, melody, category, audioUrl, spotifyuri, order } = song;
-
   const [songType, setSongType] = useState<SongTypes>();
 
   useEffect(() => {
@@ -45,19 +43,12 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
     <Flex direction="column" flex="1">
       <Header>
         <Heading>
-          <HeaderDetails
-            title={title}
-            author={author}
-            melody={melody}
-            category={category}
-            audioUrl={audioUrl}
-            spotifyuri={spotifyuri}
-            order={order}
-          />
+          <HeaderDetails {...song} />
         </Heading>
       </Header>
 
       <NavigationArrows song={song} />
+
       {/* Flex 1 takes up the remaining space left by Header. */}
       <Box p="1rem 2.5rem" {...onSwipe} flex="1">
         {songType === SongTypes.SongChorusNumbering && <VerseChorusNumbering song={song} />}
