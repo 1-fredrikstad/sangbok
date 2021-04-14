@@ -20,7 +20,9 @@ const SongList: FC<SongListProps> = ({ songs }) => {
             shadow="sm"
             justifyContent="space-between"
             padding="1"
+            textDecoration="no"
             _active={{ textDecoration: 'none' }}
+            _hover={{ textDecoration: 'none' }}
           >
             <Stack key={song.slug.current} maxWidth="95%">
               <Text isTruncated>
