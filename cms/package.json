@@ -10,7 +10,8 @@
     "start": "sanity start",
     "dev": "sanity start",
     "build": "sanity build",
-    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'",
+    "format-check": "prettier --check '**/*.{js,jsx,ts,tsx}'"
   },
   "keywords": [
     "sanity"

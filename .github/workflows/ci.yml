@@ -43,6 +43,9 @@ jobs:
       - name: Run lint
         run: yarn lint
 
+      - name: Run format check
+        run: yarn format-check
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
