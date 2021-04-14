@@ -11,16 +11,18 @@ const NavBar: FC = () => {
   return (
     <Flex
       as="nav"
-      alignItems="center"
-      justifyContent="space-around"
+      height="60px"
       bottom="0"
-      bg={colorMode === 'light' ? 'besh.50' : 'gray.800'}
-      position="fixed"
-      height="70px"
       width="100%"
       zIndex="1337"
-      borderTop="1px solid grey"
+      position="fixed"
+      alignItems="center"
+      justifyContent="space-around"
+      bg={colorMode === 'light' ? 'besh.50' : 'gray.800'}
+      borderTop="1px solid"
+      borderTopColor={colorMode === 'light' ? 'gray.200' : 'besh.600'}
       overflow="hidden"
+      padding="env(safe-area-inset-bottom) 0"
     >
       <IconButton
         variant="outline"

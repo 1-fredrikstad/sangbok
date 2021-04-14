@@ -1,13 +1,13 @@
-import { Box, Flex, Heading } from "@chakra-ui/layout";
-import NavigationArrows from "@components/atoms/NavigationArrows";
-import Header from "@components/molecules/Header";
-import HeaderDetails from "@components/molecules/HeaderDetails";
-import SingleVerse from "@components/molecules/SingleVerse";
-import VerseChorusNumbering from "@components/molecules/VerseChorusNumbering";
-import VerseNumbering from "@components/molecules/VerseNumbering";
-import React, { FC, useEffect, useState } from "react";
-import { SwipeableHandlers } from "react-swipeable";
-import { SongDetailType } from "src/types";
+import { Box, Flex, Heading } from '@chakra-ui/layout';
+import NavigationArrows from '@components/atoms/NavigationArrows';
+import Header from '@components/molecules/Header';
+import HeaderDetails from '@components/molecules/HeaderDetails';
+import SingleVerse from '@components/molecules/SingleVerse';
+import VerseChorusNumbering from '@components/molecules/VerseChorusNumbering';
+import VerseNumbering from '@components/molecules/VerseNumbering';
+import React, { FC, useEffect, useState } from 'react';
+import { SwipeableHandlers } from 'react-swipeable';
+import { SongDetailType } from 'src/types';
 
 interface SongDetailProps {
   song: SongDetailType;
@@ -15,9 +15,9 @@ interface SongDetailProps {
 }
 
 enum SongTypes {
-  SongChorusNumbering = "SongChorusNumbering",
-  SongNumbering = "SongNumbering",
-  SongSingleVerse = "SongSingleVerse",
+  SongChorusNumbering = 'SongChorusNumbering',
+  SongNumbering = 'SongNumbering',
+  SongSingleVerse = 'SongSingleVerse',
 }
 
 const getSongType = (song: SongDetailType) => {
@@ -59,9 +59,7 @@ const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
       <NavigationArrows song={song} />
       {/* Flex 1 takes up the remaining space left by Header. */}
       <Box p="1rem 2.5rem" {...onSwipe} flex="1">
-        {songType === SongTypes.SongChorusNumbering && (
-          <VerseChorusNumbering song={song} />
-        )}
+        {songType === SongTypes.SongChorusNumbering && <VerseChorusNumbering song={song} />}
         {songType === SongTypes.SongNumbering && <VerseNumbering song={song} />}
         {songType === SongTypes.SongSingleVerse && <SingleVerse song={song} />}
       </Box>
