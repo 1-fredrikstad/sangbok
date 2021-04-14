@@ -13,7 +13,7 @@ const Layout: FC = ({ children }) => {
       bg={colorMode === 'light' ? 'besh.50' : 'gray.800'}
       marginBottom="60px"
     >
-      <Flex direction="column" overflow="scroll">
+      <Flex direction="column" overflow="scroll" flex="1">
         {children}
       </Flex>
       <NavBar />
