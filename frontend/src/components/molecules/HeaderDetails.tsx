@@ -32,7 +32,6 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody, category
           Kategori: {category}
         </Text>
       )}
-      {audioUrl && <audio src={audioUrl} controls></audio>}
       {spotifyuri && (
         <Link href={spotifyuri}>
           <Button w="7rem" h="40px">
@@ -43,6 +42,7 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody, category
           </Button>
         </Link>
       )}
+      {audioUrl && <audio src={audioUrl} controls />}
     </Stack>
   );
 };

@@ -17,6 +17,7 @@
     "start": "concurrently --kill-others-on-fail \"yarn frontend\"  \"yarn cms\"",
     "dev": "concurrently --kill-others-on-fail \"yarn frontend:dev\"  \"yarn cms:dev\"",
     "format": "yarn workspaces run format",
+    "format-check": "yarn workspaces run format-check",
     "lint": "yarn workspace frontend lint"
   },
   "dependencies": {
