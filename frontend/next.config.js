@@ -4,7 +4,7 @@
     },
 } */
 module.exports = {
-  target: "serverless",
+  target: 'serverless',
 };
 
 //module.exports = withPlugins([], config);

@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { Stack, Text } from "@chakra-ui/react";
-import { SongDetailType } from "src/types";
+import React, { FC } from 'react';
+import { Stack, Text } from '@chakra-ui/react';
+import { SongDetailType } from 'src/types';
 
 interface VerseNumberingProps {
   song: SongDetailType;

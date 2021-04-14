@@ -1,4 +1,4 @@
-import { Button, Flex, Icon, Link, Stack, Text, useColorMode } from '@chakra-ui/react';
+import { Flex, Icon, Link, Stack, Text, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React, { FC } from 'react';
 import { FaItunesNote, FaSpotify } from 'react-icons/fa';

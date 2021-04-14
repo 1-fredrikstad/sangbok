@@ -1,12 +1,12 @@
-import { Skeleton } from "@chakra-ui/react";
-import SongDetail from "@components/organisms/SongDetail";
-import Layout from "@components/templates/Layout";
-import { NextPage } from "next";
-import { useRouter } from "next/dist/client/router";
-import React from "react";
-import { SwipeEventData, useSwipeable } from "react-swipeable";
-import { fetchSongDetail } from "src/api/songs";
-import { SongDetailType } from "src/types";
+import { Skeleton } from '@chakra-ui/react';
+import SongDetail from '@components/organisms/SongDetail';
+import Layout from '@components/templates/Layout';
+import { NextPage } from 'next';
+import { useRouter } from 'next/dist/client/router';
+import React from 'react';
+import { SwipeEventData, useSwipeable } from 'react-swipeable';
+import { fetchSongDetail } from 'src/api/songs';
+import { SongDetailType } from 'src/types';
 
 interface SongPageProps {
   details: SongDetailType;
@@ -25,9 +25,7 @@ const SongPage: NextPage<SongPageProps> = ({ details }) => {
   });
 
   if (!details) {
-    return (
-      <Skeleton startColor="pink.500" endColor="orange.500" height="20px" />
-    );
+    return <Skeleton startColor="pink.500" endColor="orange.500" height="20px" />;
   }
 
   return (

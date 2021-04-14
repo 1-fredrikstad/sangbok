@@ -1,15 +1,8 @@
-import {
-  Heading,
-  Box,
-  Image,
-  Divider,
-  Center,
-  useColorMode,
-} from "@chakra-ui/react";
-import ThemeToggler from "@components/atoms/ThemeToggler";
-import Header from "@components/molecules/Header";
-import Layout from "@components/templates/Layout";
-import React, { FC } from "react";
+import { Heading, Box, Image, Divider, Center, useColorMode } from '@chakra-ui/react';
+import ThemeToggler from '@components/atoms/ThemeToggler';
+import Header from '@components/molecules/Header';
+import Layout from '@components/templates/Layout';
+import React, { FC } from 'react';
 
 const SettingsView: FC = () => {
   const { colorMode } = useColorMode();
@@ -17,12 +10,7 @@ const SettingsView: FC = () => {
   return (
     <Layout>
       <Header>
-        <Heading
-          fontWeight="300"
-          as="h1"
-          size="xl"
-          margin="1.5rem 2.5rem 0.5rem"
-        >
+        <Heading fontWeight="300" as="h1" size="xl" margin="1.5rem 2.5rem 0.5rem">
           Innstillinger
         </Heading>
       </Header>
@@ -32,11 +20,7 @@ const SettingsView: FC = () => {
       </Box>
       <Center height="100%">
         <Image
-          src={
-            colorMode === "light"
-              ? "/images/camping.svg"
-              : "/images/camping_dark.svg"
-          }
+          src={colorMode === 'light' ? '/images/camping.svg' : '/images/camping_dark.svg'}
           width="auto"
           height="20rem"
         />
