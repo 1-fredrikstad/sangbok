@@ -19,7 +19,7 @@ const NavigationArrows: FC<Props> = ({ song }) => {
       <IconButton
         aria-label="Previous song"
         icon={<ArrowBackIcon />}
-        color={colorMode === 'light' ? 'gray.50' : 'teal.200'}
+        color={colorMode === 'light' ? 'gray.600' : 'teal.200'}
         onClick={() => {
           if (prev != null) push(`/song/${prev}`);
         }}
@@ -28,7 +28,7 @@ const NavigationArrows: FC<Props> = ({ song }) => {
       <IconButton
         aria-label="Next song"
         icon={<ArrowForwardIcon />}
-        color={colorMode === 'light' ? 'gray.50' : 'teal.200'}
+        color={colorMode === 'light' ? 'gray.600' : 'teal.200'}
         onClick={() => {
           if (next != null) push(`/song/${next}`);
         }}
