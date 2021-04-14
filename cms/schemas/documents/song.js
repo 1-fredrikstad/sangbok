@@ -53,6 +53,14 @@ const song = {
       hidden: true,
     },
     {
+      title: "Lydklipp",
+      name: "audio",
+      type: "file",
+      description:
+        "Lydfil for å spille egen innspilling av sangen.",
+      accept: "audio/*"
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",

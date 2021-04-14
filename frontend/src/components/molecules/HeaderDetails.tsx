@@ -6,10 +6,12 @@ interface HeaderDetailsProps {
   author: string;
   melody: string;
   category: string;
+  audioUrl: string;
   spotifyuri: string;
   order: number;
 }
-const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody, category, spotifyuri, order }) => {
+
+const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody, category, audioUrl, spotifyuri, order }) => {
   return (
     <Stack p="1.5rem 2.5rem 0rem" spacing={2}>
       <Heading fontWeight="300" as="h1" size="xl">
@@ -30,6 +32,7 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody, category
           Kategori: {category}
         </Text>
       )}
+      {audioUrl && <audio src={audioUrl} controls></audio>}
       {spotifyuri && (
         <Link href={spotifyuri}>
           <Button w="7rem" h="40px">
