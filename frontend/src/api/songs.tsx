@@ -27,6 +27,7 @@ export const SONG_DETAIL_QUERY = groq`
     chorus,
     title,
     verses,
+    "audioUrl" : audio.asset -> url,
     spotifyuri,
     "category" : category -> name,
     'info': {

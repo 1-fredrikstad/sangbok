@@ -14,6 +14,7 @@ interface HeaderDetailsProps {
   author: string;
   melody: string;
   category: string;
+  audioUrl: string;
   spotifyuri: string;
   order: number;
 }
@@ -22,6 +23,7 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
   author,
   melody,
   category,
+  audioUrl,
   spotifyuri,
   order,
 }) => {
@@ -45,6 +47,7 @@ const HeaderDetails: FC<HeaderDetailsProps> = ({
           Kategori: {category}
         </Text>
       )}
+      {audioUrl && <audio src={audioUrl} controls></audio>}
       {spotifyuri && (
         <Link href={spotifyuri}>
           <Button w="7rem" h="40px">
