@@ -1,25 +1,25 @@
-import { Box, Center } from "@chakra-ui/react";
-import SearchInput from "@components/atoms/SearchInput";
-import Header from "@components/molecules/Header";
-import SongList from "@components/organisms/SongList";
-import Layout from "@components/templates/Layout";
-import { NextPage } from "next";
-import React, { useState } from "react";
-import { ChangeEvent } from "react";
-import { fetchSongList } from "src/api/songs";
-import { SongListEntry, SongDetailType } from "src/types";
+import { Box, Center } from '@chakra-ui/react';
+import SearchInput from '@components/atoms/SearchInput';
+import Header from '@components/molecules/Header';
+import SongList from '@components/organisms/SongList';
+import Layout from '@components/templates/Layout';
+import { NextPage } from 'next';
+import React, { useState } from 'react';
+import { ChangeEvent } from 'react';
+import { fetchSongList } from 'src/api/songs';
+import { SongListEntry, SongDetailType } from 'src/types';
 
 interface SearchProps {
   songs: SongListEntry[];
 }
 
 const Search: NextPage<SearchProps> = ({ songs }) => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
     setSearchValue((event.target as HTMLInputElement).value);
 
   const filteredSongs = songs.filter((song: SongDetailType) =>
-    song.title.toLowerCase().includes(searchValue.toLowerCase()),
+    song.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   return (

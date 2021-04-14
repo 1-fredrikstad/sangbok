@@ -1,8 +1,8 @@
-import React, { FC } from "react";
-import { Button, Flex, useColorMode } from "@chakra-ui/react";
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import { SongDetailType } from "src/types";
-import { useRouter } from "next/dist/client/router";
+import React, { FC } from 'react';
+import { Button, Flex, useColorMode } from '@chakra-ui/react';
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { SongDetailType } from 'src/types';
+import { useRouter } from 'next/dist/client/router';
 
 interface Props {
   song: SongDetailType;
@@ -20,18 +20,18 @@ const NavigationArrows: FC<Props> = ({ song }) => {
       justifyContent="space-between"
       width="100%"
       zIndex="1"
-      style={{ position: "absolute", bottom: "4.5rem" }}
+      style={{ position: 'absolute', bottom: '4.5rem' }}
       height="3rem"
     >
       <Button
         leftIcon={<ArrowBackIcon />}
-        color={colorMode === "light" ? "gray.50" : "teal.200"}
+        color={colorMode === 'light' ? 'gray.50' : 'teal.200'}
         variant="link"
         width="50px"
         height="50px"
         borderRadius="50%"
-        backgroundColor={colorMode === "light" ? "#FFD966" : "green.700"}
-        ml={"1.5rem"}
+        backgroundColor={colorMode === 'light' ? '#FFD966' : 'green.700'}
+        ml={'1.5rem'}
         onClick={() => {
           if (prev != null) push(`/song/${prev}`);
         }}
@@ -39,12 +39,12 @@ const NavigationArrows: FC<Props> = ({ song }) => {
       ></Button>
       <Button
         rightIcon={<ArrowForwardIcon />}
-        color={colorMode === "light" ? "gray.50" : "teal.200"}
+        color={colorMode === 'light' ? 'gray.50' : 'teal.200'}
         variant="link"
-        mr={"1.5rem"}
+        mr={'1.5rem'}
         width="50px"
         height="50px"
-        backgroundColor={colorMode === "light" ? "#FFD966" : "green.700"}
+        backgroundColor={colorMode === 'light' ? '#FFD966' : 'green.700'}
         borderRadius="50%"
         onClick={() => {
           if (next != null) push(`/song/${next}`);

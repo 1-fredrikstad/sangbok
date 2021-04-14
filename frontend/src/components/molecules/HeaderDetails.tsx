@@ -1,14 +1,6 @@
-import React, { FC } from "react";
-import {
-  Box,
-  Button,
-  Heading,
-  Icon,
-  Link,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import { FaSpotify } from "react-icons/fa";
+import { Box, Button, Heading, Link, Stack, Text } from '@chakra-ui/react';
+import React, { FC } from 'react';
+import { FaSpotify } from 'react-icons/fa';
 interface HeaderDetailsProps {
   title: string;
   author: string;
@@ -18,15 +10,8 @@ interface HeaderDetailsProps {
   spotifyuri: string;
   order: number;
 }
-const HeaderDetails: FC<HeaderDetailsProps> = ({
-  title,
-  author,
-  melody,
-  category,
-  audioUrl,
-  spotifyuri,
-  order,
-}) => {
+
+const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody, category, audioUrl, spotifyuri, order }) => {
   return (
     <Stack p="1.5rem 2.5rem 0rem" spacing={2}>
       <Heading fontWeight="300" as="h1" size="xl">

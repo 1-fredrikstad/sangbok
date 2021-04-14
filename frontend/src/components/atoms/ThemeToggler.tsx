@@ -1,5 +1,5 @@
-import { FormControl, FormLabel, Switch, useColorMode } from "@chakra-ui/react";
-import React, { FC } from "react";
+import { FormControl, FormLabel, Switch, useColorMode } from '@chakra-ui/react';
+import React, { FC } from 'react';
 
 const ThemeToggler: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -7,12 +7,7 @@ const ThemeToggler: FC = () => {
   return (
     <FormControl alignItems="center">
       <FormLabel htmlFor="dark-mode">Mørkemodus:</FormLabel>
-      <Switch
-        onChange={toggleColorMode}
-        isChecked={colorMode === "dark"}
-        id="dark-mode"
-        colorScheme="black"
-      />
+      <Switch onChange={toggleColorMode} isChecked={colorMode === 'dark'} id="dark-mode" colorScheme="black" />
     </FormControl>
   );
 };
