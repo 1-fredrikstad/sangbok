@@ -56,9 +56,8 @@ const song = {
       title: "Lydklipp",
       name: "audio",
       type: "file",
-      description:
-        "Lydfil for å spille egen innspilling av sangen.",
-      accept: "audio/*"
+      description: "Lydfil for å spille egen innspilling av sangen.",
+      accept: "audio/*",
     },
     {
       name: "slug",
