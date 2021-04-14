@@ -25,5 +25,6 @@ export interface SongDetailType {
   category: string;
   info: Info;
   chorus: string;
+  audioUrl: string;
   spotifyuri: string;
 }
