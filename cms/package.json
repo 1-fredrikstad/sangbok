@@ -1,5 +1,5 @@
 {
-  "name": "sangbok",
+  "name": "cms",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -9,7 +9,9 @@
   "scripts": {
     "start": "sanity start",
     "dev": "sanity start",
-    "build": "sanity build"
+    "build": "sanity build",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'",
+    "format-check": "prettier --check '**/*.{js,jsx,ts,tsx}'"
   },
   "keywords": [
     "sanity"
@@ -24,7 +26,8 @@
     "@sanity/vision": "^2.2.6",
     "prop-types": "^15.7",
     "react": "^17.0",
-    "react-dom": "^17.0"
+    "react-dom": "^17.0",
+    "sanity-plugin-order-documents": "^0.0.14"
   },
   "devDependencies": {
     "@sanity/cli": "^2.5.0",

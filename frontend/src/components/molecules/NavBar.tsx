@@ -1,41 +1,43 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { Flex, IconButton } from "@chakra-ui/react";
-import { FiSettings, FiSearch } from "react-icons/fi";
-import { useRouter } from "next/dist/client/router";
+import { Flex, IconButton, useColorMode } from '@chakra-ui/react';
+import { FiSettings, FiSearch } from 'react-icons/fi';
+import { useRouter } from 'next/dist/client/router';
 
 const NavBar: FC = () => {
   const router = useRouter();
+  const { colorMode } = useColorMode();
 
   return (
     <Flex
-      bg="gray.300"
-      alignSelf="flex-end"
+      as="nav"
+      height="60px"
+      bottom="0"
+      width="100%"
+      zIndex="1337"
+      position="fixed"
       alignItems="center"
       justifyContent="space-around"
-      maxHeight="16vh"
-      height="3.5rem"
-      width="100%"
-      position="fixed"
-      left="0"
-      right="0"
-      bottom="0"
-      zIndex="1"
-      marginTop="2"
+      bg={colorMode === 'light' ? 'besh.50' : 'gray.800'}
+      borderTop="1px solid"
+      borderTopColor={colorMode === 'light' ? 'gray.200' : 'besh.600'}
+      overflow="hidden"
+      padding="env(safe-area-inset-bottom) 0"
     >
       <IconButton
         variant="outline"
         border="none"
         size="lg"
-        onClick={() => router.push("/search")}
+        onClick={() => router.push('/')}
         icon={<FiSearch />}
         aria-label="Go to search view"
       />
+
       <IconButton
         variant="outline"
         border="none"
         size="lg"
-        onClick={() => router.push("/settings")}
+        onClick={() => router.push('/settings')}
         icon={<FiSettings />}
         aria-label="Go to settings view"
       />

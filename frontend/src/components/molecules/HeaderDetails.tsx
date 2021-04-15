@@ -1,35 +1,49 @@
-import React, { FC } from "react";
-import { Box, Heading, Link, Text } from "@chakra-ui/react";
-import { FaSpotify } from "react-icons/fa";
+import { Box, Button, Heading, Link, Stack, Text } from '@chakra-ui/react';
+import React, { FC } from 'react';
+import { FaSpotify } from 'react-icons/fa';
 interface HeaderDetailsProps {
   title: string;
   author: string;
   melody: string;
+  category: string;
+  audioUrl: string;
   spotifyuri: string;
+  order: number;
 }
-const HeaderDetails: FC<HeaderDetailsProps> = ({
-  title,
-  author,
-  melody,
-  spotifyuri,
-}) => {
+
+const HeaderDetails: FC<HeaderDetailsProps> = ({ title, author, melody, category, audioUrl, spotifyuri, order }) => {
   return (
-    <Box p="2.5rem 2.5rem 1.5rem">
+    <Stack p="1.5rem 2.5rem 0rem" spacing={2}>
       <Heading fontWeight="300" as="h1" size="xl">
-        {title}
+        {order + 1}. {title}
       </Heading>
-      <Text fontSize="sm" fontWeight="light">
-        Forfatter: {author}
-      </Text>
-      <Text fontSize="sm" fontWeight="light">
-        Melodi: {melody}
-      </Text>
-      {spotifyuri ? (
+      {author && (
+        <Text fontSize="sm" fontWeight="light">
+          Forfatter: {author}
+        </Text>
+      )}
+      {melody && (
+        <Text fontSize="sm" fontWeight="light">
+          Melodi: {melody}
+        </Text>
+      )}
+      {category && (
+        <Text fontSize="sm" fontWeight="light">
+          Kategori: {category}
+        </Text>
+      )}
+      {spotifyuri && (
         <Link href={spotifyuri}>
-          <FaSpotify />
+          <Button w="7rem" h="40px">
+            Åpne i
+            <Box ml={2}>
+              <FaSpotify size="21px" />
+            </Box>
+          </Button>
         </Link>
-      ) : null}
-    </Box>
+      )}
+      {audioUrl && <audio src={audioUrl} controls />}
+    </Stack>
   );
 };
 

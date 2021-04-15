@@ -1,6 +1,7 @@
 */node_modules
 node_modules
 lerna-debug.log
+.netlify
 
 **/public/sw.js
 **/public/workbox-*.js

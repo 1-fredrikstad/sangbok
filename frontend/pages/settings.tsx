@@ -1,27 +1,31 @@
-import ThemeToggler from "@components/atoms/ThemeToggler";
-import NavBar from "@components/molecules/NavBar";
-import { useTranslation } from "next-i18next";
-import React, { FC } from "react";
+import { Heading, Box, Image, Divider, Center, useColorMode } from '@chakra-ui/react';
+import ThemeToggler from '@components/atoms/ThemeToggler';
+import Header from '@components/molecules/Header';
+import Layout from '@components/templates/Layout';
+import React, { FC } from 'react';
 
 const SettingsView: FC = () => {
-  const { t, i18n } = useTranslation();
+  const { colorMode } = useColorMode();
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
   return (
-    <div>
-      <div>{t("settingsHeader")}</div>
-      <ThemeToggler />
-      <h3>Change lanuage</h3>
-      <button type="button" onClick={() => changeLanguage("en")}>
-        en
-      </button>
-      <button type="button" onClick={() => changeLanguage("no")}>
-        no
-      </button>
-      <NavBar />
-    </div>
+    <Layout>
+      <Header>
+        <Heading fontWeight="300" as="h1" size="xl" margin="1.5rem 2.5rem 0.5rem">
+          Innstillinger
+        </Heading>
+      </Header>
+      <Box p="1.5rem 2.5rem 0rem">
+        <ThemeToggler />
+        <Divider size="L" mt="1rem" mb="1rem" />
+      </Box>
+      <Center height="100%">
+        <Image
+          src={colorMode === 'light' ? '/images/camping.svg' : '/images/camping_dark.svg'}
+          width="auto"
+          height="20rem"
+        />
+      </Center>
+    </Layout>
   );
 };
 

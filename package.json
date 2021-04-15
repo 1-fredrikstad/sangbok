@@ -1,16 +1,26 @@
 {
   "name": "sangbook",
   "private": true,
+  "workspaces": [
+    "frontend",
+    "cms"
+  ],
   "scripts": {
-    "build": "lerna run build --parallel",
-    "start": "lerna run start --parallel",
-    "install": "lerna run install --parallel",
-    "dev": "lerna run dev --parallel",
-    "format": "lerna run format",
-    "lint": "lerna run lint",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "frontend": "yarn workspace frontend start",
+    "frontend:build": "yarn workspace frontend build",
+    "frontend:dev": "yarn workspace frontend dev",
+    "frontend:test": "yarn workspace frontend test",
+    "cms": "yarn workspace cms start",
+    "cms:build": "yarn workspace cms build",
+    "cms:dev": "yarn workspace cms dev",
+    "build": "yarn workspaces run build",
+    "start": "concurrently --kill-others-on-fail \"yarn frontend\"  \"yarn cms\"",
+    "dev": "concurrently --kill-others-on-fail \"yarn frontend:dev\"  \"yarn cms:dev\"",
+    "format": "yarn workspaces run format",
+    "format-check": "yarn workspaces run format-check",
+    "lint": "yarn workspace frontend lint"
   },
-  "devDependencies": {
-    "lerna": "^3.22.1"
+  "dependencies": {
+    "concurrently": "^6.0.1"
   }
 }

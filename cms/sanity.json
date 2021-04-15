@@ -1,18 +1,20 @@
 {
   "root": true,
   "project": {
-    "name": "sangbok"
+    "name": "sangbok",
+    "basePath": "/"
   },
   "api": {
     "projectId": "9up46puq",
-    "dataset": "production"
+    "dataset": "private"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "order-documents"
   ],
   "env": {
     "development": {
