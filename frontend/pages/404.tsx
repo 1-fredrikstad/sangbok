@@ -1,9 +1,10 @@
 import Layout from "@components/templates/Layout";
 import React from "react";
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import Image from "next/image";
+import { NextPage } from "next";
 
-const NotFound404 = () => {
+const NotFound404: NextPage = () => {
   return (
     <Layout>
       <Heading as="h4" padding="10">
