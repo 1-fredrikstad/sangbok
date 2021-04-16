@@ -1,6 +1,6 @@
-import client from "@services/groq/client";
-import groq from "groq";
-import { SongDetailType, SongListEntry } from "../types";
+import client from '@services/groq/client';
+import groq from 'groq';
+import { SongDetailType, SongListEntry } from '../types';
 
 const SONG_LIST_QUERY = groq`
   *[_type=='song'&& !(_id in path("drafts.**"))] | order(order asc)
@@ -27,6 +27,7 @@ export const SONG_DETAIL_QUERY = groq`
     chorus,
     title,
     verses,
+    "audioUrl" : audio.asset -> url,
     spotifyuri,
     "category" : category -> name,
     'info': {
@@ -36,9 +37,7 @@ export const SONG_DETAIL_QUERY = groq`
   }
 `;
 
-export const fetchSongDetail = async (
-  slug: string,
-): Promise<SongDetailType> => {
+export const fetchSongDetail = async (slug: string): Promise<SongDetailType> => {
   const data = await client.fetch<SongDetailType>(SONG_DETAIL_QUERY, { slug });
   return data;
 };

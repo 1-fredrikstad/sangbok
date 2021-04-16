@@ -47,10 +47,17 @@ const song = {
         "Lenke for å åpne en sang direkte i installert Spotify klient (https://community.spotify.com/t5/Spotify-Answers/What-s-a-Spotify-URI/ta-p/919201)",
     },
     {
-    name: "order",
-    title: "Order",
-    type: "number",
-    hidden: true,
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
+    {
+      title: "Lydklipp",
+      name: "audio",
+      type: "file",
+      description: "Lydfil for å spille egen innspilling av sangen.",
+      accept: "audio/*",
     },
     {
       name: "slug",
@@ -61,8 +68,11 @@ const song = {
         slugify: (input) =>
           input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
       },
-      validation: Rule => [Rule.required().error('Har du husket generate? Er navnet på sangen unikt?'),
-    ]
+      validation: (Rule) => [
+        Rule.required().error(
+          "Har du husket generate? Er navnet på sangen unikt?"
+        ),
+      ],
     },
   ],
 };

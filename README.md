@@ -89,3 +89,25 @@ TBA.
 ```zsh
 yarn frontend:test
 ```
+
+## Utvikling
+
+Prosjektet benytter seg av `yarn workspaces`. Installasjon av pakker gjøres på følgende vis:
+
+#### For `frontend`:
+
+```zsh
+yarn workspace frontend add <pakkenavn>
+```
+
+#### For `cms`:
+
+```zsh
+yarn workspace cms add <pakkenavn>
+```
+
+#### Globalt for appen (kke anbefalt med mindre pakken brukes av alle modulene):
+
+```zsh
+yarn add <pakkenavn> -W
+```
