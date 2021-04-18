@@ -38,10 +38,10 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
 
 Search.getInitialProps = async (_ctx) => {
   const data = await fetchSongList();
-  
+
   // Cache songs
-  await Promise.all(data.map(song => fetchSongDetail(song.slug.current)))
-  
+  await Promise.all(data.map((song) => fetchSongDetail(song.slug.current)));
+
   return {
     songs: data,
   };
