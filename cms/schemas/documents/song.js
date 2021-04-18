@@ -66,7 +66,14 @@ const song = {
       options: {
         source: "title",
         slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+          input
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace("å", "aa")
+            .replace("æ", "ae")
+            .replace("ø", "oe")
+            .replace("[^a-z0-9-]", "")
+            .slice(0, 200),
       },
       validation: (Rule) => [
         Rule.required().error(
