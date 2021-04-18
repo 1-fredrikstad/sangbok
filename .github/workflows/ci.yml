@@ -42,8 +42,7 @@ jobs:
 
       - name: Run lint
         run: yarn lint
-        with:
-          working-directory: ./frontend
+        working-directory: ./frontend
 
       - name: Run format check
         run: yarn format-check
