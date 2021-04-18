@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'",
-    "format-check": "prettier --check '**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write 'src/*.{js,jsx,ts,tsx}'",
+    "format-check": "prettier --check 'src/js,jsx,ts,tsx}'",
     "cypress:open": "cypress open",
     "test": "cypress run "
   },
