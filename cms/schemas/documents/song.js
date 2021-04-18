@@ -72,6 +72,7 @@ const song = {
             .replace("å", "aa")
             .replace("æ", "ae")
             .replace("ø", "oe")
+            .replace("[^a-z0-9-]", "")
             .slice(0, 200),
       },
       validation: (Rule) => [
