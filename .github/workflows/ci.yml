@@ -27,14 +27,14 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Cache Node.js dependencies and Cypress
-        id: node-cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            ~/.cache/Cypress
-          key: my-cache-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+      # - name: Cache Node.js dependencies and Cypress
+      #   id: node-cache
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #       frontend/node_modules
+      #       ~/.cache/Cypress
+      #     key: my-cache-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies
         if: steps.node-cache.outputs.cache-hit != 'true'
@@ -42,6 +42,7 @@ jobs:
 
       - name: Run lint
         run: yarn lint
+        working-directory: ./frontend
 
       - name: Run format check
         run: yarn format-check
