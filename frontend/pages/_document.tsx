@@ -18,9 +18,9 @@ class CustomDocument extends Document {
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
 
-          <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/icons/180x180.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/icons/32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/icons/16x16.png" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
