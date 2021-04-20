@@ -19,6 +19,8 @@
     "@emotion/styled": "^11.0.0",
     "@sanity/client": "^2.2.6",
     "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.22",
     "enzyme-adapter-react-16": "^1.15.6",
     "framer-motion": "^3.2.1",
     "groq": "^2.2.6",
