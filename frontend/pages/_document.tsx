@@ -8,7 +8,7 @@ class CustomDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="no">
         <Head>
           <meta name="application-name" content="Speidersang" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
