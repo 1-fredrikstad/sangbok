@@ -1,4 +1,4 @@
-import { Box, Center } from '@chakra-ui/react';
+import { Box, Center, Flex, Stack, useColorMode } from '@chakra-ui/react';
 import SearchInput from '@components/atoms/SearchInput';
 import Header from '@components/molecules/Header';
 import SongList from '@components/organisms/SongList';
@@ -22,11 +22,23 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
     song.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  const { colorMode } = useColorMode();
+
   return (
     <Layout>
       <Header>
         <Center pt="2rem">
-          <SearchInput value={searchValue} handleChange={handleSearchChange} />
+          <Stack>
+            <Flex alignItems="center" justifyContent="space-between">
+              <img
+                src={colorMode === 'light' ? 'images/logo.gif' : 'images/logo-white.gif'}
+                alt="1. Fredrikstad speidergruppes logo"
+                width="100px"
+              />
+              <h1 style={{ fontSize: '1.5em' }}>Sanger under liljen</h1>
+            </Flex>
+            <SearchInput value={searchValue} handleChange={handleSearchChange} />
+          </Stack>
         </Center>
       </Header>
       <Box padding="5">
