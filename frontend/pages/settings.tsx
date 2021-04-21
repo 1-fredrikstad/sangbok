@@ -18,10 +18,10 @@ const SettingsView: FC = () => {
         <ThemeToggler />
         <Divider size="L" mt="1rem" mb="1rem" />
       </Box>
-      <Flex justifyContent="space-between">
+      <Flex justifyContent="space-evenly">
         <div>
           <img
-            src={colorMode === 'light' ? 'images/logo.gif' : 'images/logo-white.gif'}
+            src={colorMode === 'light' ? 'images/logo-small.png' : 'images/logo-white-small.png'}
             alt="1. Fredrikstad speidergruppes logo"
             width="100px"
             height="120px"
