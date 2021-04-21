@@ -10,7 +10,6 @@ class CustomDocument extends Document {
     return (
       <Html lang="no">
         <Head>
-          <title>Fredrikstad sangbok</title>
           <meta name="application-name" content="Speidersang" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />
