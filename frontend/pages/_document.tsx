@@ -8,8 +8,9 @@ class CustomDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="no">
         <Head>
+          <title>Fredrikstad sangbok</title>
           <meta name="application-name" content="Speidersang" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -17,6 +18,7 @@ class CustomDocument extends Document {
           <meta name="description" content="1. Fredrikstad speidergruppes digitale sangbok" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="viewport" maximum-scale={5} />
 
           <link rel="apple-touch-icon" sizes="180x180" href="/icons/180x180.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/icons/32x32.png" />
