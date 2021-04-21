@@ -31,7 +31,7 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
           <Stack>
             <Flex alignItems="center" justifyContent="space-between">
               <img
-                src={colorMode === 'light' ? 'images/logo.gif' : 'images/logo-white.gif'}
+                src={colorMode === 'light' ? 'images/logo-small.png' : 'images/logo-white-small.png'}
                 alt="1. Fredrikstad speidergruppes logo"
                 width="100px"
               />
