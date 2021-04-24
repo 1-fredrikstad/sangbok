@@ -1,7 +1,8 @@
-import { Flex, Icon, Link, Stack, Text, useColorMode } from '@chakra-ui/react';
+import { Flex, HStack, Icon, Link, Stack, Text, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React, { FC } from 'react';
 import { FaItunesNote, FaSpotify } from 'react-icons/fa';
+import { ImFileMusic } from 'react-icons/im';
 import { SongListEntry } from 'src/types';
 
 interface SongListProps {
@@ -37,8 +38,10 @@ const SongList: FC<SongListProps> = ({ songs }) => {
                 )}
               </Flex>
             </Stack>
-            {/* TODO: Fiks størrelse på spotify ikonet og finn ut når den ikke vises*/}
-            {song.spotifyuri && <FaSpotify size="21px" color={colorMode === 'light' ? '#191414' : 'white'} />}
+            <HStack>
+              {song.audioUrl && <ImFileMusic size="21px" color={colorMode === 'light' ? '#191414' : 'white'} />}
+              {song.spotifyuri && <FaSpotify size="21px" color={colorMode === 'light' ? '#191414' : 'white'} />}
+            </HStack>
           </Link>
         </NextLink>
       ))}
