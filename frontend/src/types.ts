@@ -13,6 +13,7 @@ export interface SongListEntry {
   melody?: string;
   order: number;
   spotifyuri?: string;
+  audioUrl?: string;
 }
 
 export interface SongDetailType {
