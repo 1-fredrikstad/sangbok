@@ -6,7 +6,7 @@
 // https://on.cypress.io/writing-first-test
 
 describe('Activate darkmode', () => {
-  it('Navigate to settings and activate darkmode', function () {
+  it('Navigate to settings and activate darkmode', () => {
     cy.visit('http://localhost:3000/');
     /* ==== Generated with Cypress Studio ==== */
     cy.get('[aria-label="Go to settings view"] > svg').click();
