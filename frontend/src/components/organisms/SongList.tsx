@@ -1,6 +1,6 @@
 import { Flex, HStack, Icon, Link, Stack, Text, useColorMode } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import React, { FC } from 'react';
+import React from 'react';
 import { FaItunesNote, FaSpotify } from 'react-icons/fa';
 import { ImFileMusic } from 'react-icons/im';
 import { SongListEntry } from 'src/types';
@@ -9,7 +9,7 @@ interface SongListProps {
   songs: SongListEntry[];
 }
 
-const SongList: FC<SongListProps> = ({ songs }) => {
+const SongList: React.FC<SongListProps> = ({ songs }) => {
   const { colorMode } = useColorMode();
 
   return (

@@ -1,14 +1,14 @@
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Flex, IconButton, useColorMode } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
-import React, { FC } from 'react';
+import React from 'react';
 import { SongDetailType } from 'src/types';
 
 interface Props {
   song: SongDetailType;
 }
 
-const NavigationArrows: FC<Props> = ({ song }) => {
+const NavigationArrows: React.FC<Props> = ({ song }) => {
   const { push } = useRouter();
   const { colorMode } = useColorMode();
   const { prev, next } = song.info;

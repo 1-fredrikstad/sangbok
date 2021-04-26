@@ -1,9 +1,9 @@
 import { Flex, useColorMode } from '@chakra-ui/react';
 import NavBar from '@components/molecules/NavBar';
-import React, { FC } from 'react';
+import React from 'react';
 
 // 60px is navbar height
-const Layout: FC = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   const { colorMode } = useColorMode();
   return (
     <Flex

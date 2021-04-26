@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import { Flex, IconButton, useColorMode } from '@chakra-ui/react';
 import { FiSettings, FiSearch } from 'react-icons/fi';
 import { useRouter } from 'next/dist/client/router';
 
-const NavBar: FC = () => {
+const NavBar: React.FC = () => {
   const router = useRouter();
   const { colorMode } = useColorMode();
 
