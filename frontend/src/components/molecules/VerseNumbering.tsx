@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Stack, Text } from '@chakra-ui/react';
 import { SongDetailType } from 'src/types';
 
-interface VerseNumberingProps {
+interface Props {
   song: SongDetailType;
 }
 
-const VerseNumbering: FC<VerseNumberingProps> = ({ song: { verses } }) => (
+const VerseNumbering: React.FC<Props> = ({ song: { verses } }) => (
   <Stack spacing={6}>
     {verses.map((verse, i) => (
       <Text key={`verse${i}`} whiteSpace="pre-wrap">

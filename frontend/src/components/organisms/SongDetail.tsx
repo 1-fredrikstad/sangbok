@@ -5,11 +5,11 @@ import HeaderDetails from '@components/molecules/HeaderDetails';
 import SingleVerse from '@components/molecules/SingleVerse';
 import VerseChorusNumbering from '@components/molecules/VerseChorusNumbering';
 import VerseNumbering from '@components/molecules/VerseNumbering';
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SwipeableHandlers } from 'react-swipeable';
 import { SongDetailType } from 'src/types';
 
-interface SongDetailProps {
+interface Props {
   song: SongDetailType;
   onSwipe: SwipeableHandlers;
 }
@@ -31,7 +31,7 @@ const getSongType = (song: SongDetailType) => {
   }
 };
 
-const SongDetail: FC<SongDetailProps> = ({ song, onSwipe }) => {
+const SongDetail: React.FC<Props> = ({ song, onSwipe }) => {
   const [songType, setSongType] = useState<SongTypes>();
 
   useEffect(() => {
