@@ -18,6 +18,10 @@ Sangbok
 
 En webapp for fremvisning av speidersanger. Appen lar deg spille av sanger, både fra Spotify og egenopplastede. Videre er innholdet tilgjengelig offline, og den tilhørende darkmoden gjør teksten godt leselig i nattens mulm og mørke.
 
+## Wiki
+
+Brukermanualer, utdypende informasjon mm. finnes på prosjektets [wiki](https://github.com/1-fredrikstad/sangbok/wiki).
+
 ## Prosjektstruktur
 
 Applikasjonen er bygget med [**Sanity.io**](https://www.sanity.io/) og [**Next.js**](https://nextjs.org/). Sanity håndterer opprettelse, lagring og uthenting av sanger, Next.js viser frem innholdet.
@@ -30,6 +34,6 @@ For å kunne kjøre en utviklingsinstans av webapplikasjonen så trenger man: [N
 
 Vi anbefaler [VSCode](https://code.visualstudio.com/) for utviklingsprosessen. Den er lett å bruke, gratis og fungere flott out of the box.
 
-I `frontend/` og `cms/`-mappene ligger det egne README-filer som viser oversikt over tilgjengelige funksjoner, scripts og annen relevant informasjon.
+For å kjøre prosjektet, følg `README.md` som ligger i `frontend/` og `cms/`-mappene. Disse filene inneholder informasjon om oppsett, tilgjengelige funksjoner og scripts.
 
-Under utvikling anbefales det å åpne `frontend` og `cms` i egne VSCode-instanser for et best mulig utviklermiljø.
+Under utvikling anbefales det å åpne `frontend/` og `cms/` i egne VSCode-instanser for et best mulig utviklermiljø.
