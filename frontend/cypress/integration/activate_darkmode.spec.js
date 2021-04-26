@@ -7,7 +7,7 @@
 
 describe('Activate darkmode', () => {
   it('Navigate to settings and activate darkmode', function () {
-    cy.visit('localhost:3000/');
+    cy.visit('http://localhost:3000/');
     /* ==== Generated with Cypress Studio ==== */
     cy.get('[aria-label="Go to settings view"] > svg').click();
     cy.get('.chakra-switch__thumb').click();
