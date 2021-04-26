@@ -2,9 +2,9 @@ import { Heading, Box, Image, Divider, Center, useColorMode, Flex, Link } from '
 import ThemeToggler from '@components/atoms/ThemeToggler';
 import Header from '@components/molecules/Header';
 import Layout from '@components/templates/Layout';
-import React, { FC } from 'react';
+import React from 'react';
 
-const SettingsView: FC = () => {
+const SettingsView: React.FC = () => {
   const { colorMode } = useColorMode();
 
   return (

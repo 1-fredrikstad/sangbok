@@ -8,11 +8,11 @@ import { SwipeEventData, useSwipeable } from 'react-swipeable';
 import { fetchSongDetail } from 'src/api/songs';
 import { SongDetailType } from 'src/types';
 
-interface SongPageProps {
+interface Props {
   details: SongDetailType;
 }
 
-const SongPage: NextPage<SongPageProps> = ({ details }) => {
+const SongPage: NextPage<Props> = ({ details }) => {
   const { push } = useRouter();
 
   const swipeRoute = (route: string, _eventData: SwipeEventData) => {

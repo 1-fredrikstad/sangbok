@@ -9,11 +9,11 @@ import { ChangeEvent } from 'react';
 import { fetchSongDetail, fetchSongList } from 'src/api/songs';
 import { SongListEntry, SongDetailType } from 'src/types';
 
-interface SearchProps {
+interface Props {
   songs: SongListEntry[];
 }
 
-const Search: NextPage<SearchProps> = ({ songs }) => {
+const Search: NextPage<Props> = ({ songs }) => {
   const [searchValue, setSearchValue] = useState('');
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
     setSearchValue((event.target as HTMLInputElement).value);

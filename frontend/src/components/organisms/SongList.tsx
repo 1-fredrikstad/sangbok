@@ -5,11 +5,11 @@ import { FaItunesNote, FaSpotify } from 'react-icons/fa';
 import { ImFileMusic } from 'react-icons/im';
 import { SongListEntry } from 'src/types';
 
-interface SongListProps {
+interface Props {
   songs: SongListEntry[];
 }
 
-const SongList: React.FC<SongListProps> = ({ songs }) => {
+const SongList: React.FC<Props> = ({ songs }) => {
   const { colorMode } = useColorMode();
 
   return (

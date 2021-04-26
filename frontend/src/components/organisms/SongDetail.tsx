@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react';
 import { SwipeableHandlers } from 'react-swipeable';
 import { SongDetailType } from 'src/types';
 
-interface SongDetailProps {
+interface Props {
   song: SongDetailType;
   onSwipe: SwipeableHandlers;
 }
@@ -31,7 +31,7 @@ const getSongType = (song: SongDetailType) => {
   }
 };
 
-const SongDetail: React.FC<SongDetailProps> = ({ song, onSwipe }) => {
+const SongDetail: React.FC<Props> = ({ song, onSwipe }) => {
   const [songType, setSongType] = useState<SongTypes>();
 
   useEffect(() => {
