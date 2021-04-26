@@ -11,8 +11,7 @@ interface Props {
 const NavigationArrows: FC<Props> = ({ song }) => {
   const { push } = useRouter();
   const { colorMode } = useColorMode();
-  const prev = song.info.prev;
-  const next = song.info.next;
+  const { prev, next } = song.info;
 
   return (
     <Flex position="absolute" bottom="0" width="100%" justifyContent="space-between" zIndex="1">
@@ -23,7 +22,7 @@ const NavigationArrows: FC<Props> = ({ song }) => {
         onClick={() => {
           if (prev != null) push(`/song/${prev}`);
         }}
-        disabled={song.info.prev != null ? false : true}
+        disabled={prev != null ? false : true}
       />
       <IconButton
         aria-label="Next song"
@@ -32,7 +31,7 @@ const NavigationArrows: FC<Props> = ({ song }) => {
         onClick={() => {
           if (next != null) push(`/song/${next}`);
         }}
-        disabled={song.info.next != null ? false : true}
+        disabled={next != null ? false : true}
       />
     </Flex>
   );
