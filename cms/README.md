@@ -2,7 +2,7 @@
 
 > Antar at man påforhånd har installert Node.js og Yarn, i tillegg til at man har klonet repoet.
 
-### Installer appens pakker
+### Installer nødvendige pakker
 
 ```zsh
 yarn
@@ -12,37 +12,47 @@ yarn
 
 > NB!: Alle kommandoer kjøres fra roten i `cms/`.
 
-#### Bygg appen
+#### Bygg CMS
 
 ```zsh
 yarn build
 ```
 
-#### Start appen i _developer-mode_
+#### Start CMS i _developer-mode_
 
 ```zsh
-yarn dev
+yarn dev # Besøk så http://localhost:3333 i nettleseren din
 ```
 
-#### Kjør appen i _production mode_
+#### Kjør CMS i _production mode_
 
 ```zsh
-yarn build # Start med å bygge appen
-yarn start # Start så appen
+yarn build # Start med å bygge CMSen
+yarn start # Start så CMS
 ```
 
 ---
 
 ## Utvikling
 
-Installasjon av pakker gjøres på følgende vis:
-
-#### For `frontend`:
+### Installasjon av pakker gjøres på følgende vis:
 
 ```zsh
 yarn add <pakkenavn>
 ```
 
+For å sjekke at koden følger riktige konvensjoner, formatteringer og standarder, er følgende script tilgjengelige:
+
+### ESLint - Avdekk problemer med koden
+```zsh
+yarn lint
+```
+
+### Prettier - Sjekk og formatter koden
+```zsh
+yarn format-check # Sjekk formattering
+yarn format # Auto-formatter
+```
 
 ## Sanity Content Studio
 - [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)

@@ -2,7 +2,7 @@
 
 > Antar at man påforhånd har installert Node.js og Yarn, i tillegg til at man har klonet repoet.
 
-### Installer appens pakker
+### Installer nødvendige pakker
 
 ```zsh
 yarn
@@ -21,7 +21,7 @@ yarn build
 #### Start appen i _developer-mode_
 
 ```zsh
-yarn dev
+yarn dev # Besøk så http://localhost:3000 i nettleseren din
 ```
 
 #### Kjør appen i _production mode_
@@ -49,9 +49,7 @@ yarn test
 
 ## Utvikling
 
-Installasjon av pakker gjøres på følgende vis:
-
-#### For `frontend`:
+#### Installasjon av pakker gjøres på følgende vis:
 
 ```zsh
 yarn add <pakkenavn>
