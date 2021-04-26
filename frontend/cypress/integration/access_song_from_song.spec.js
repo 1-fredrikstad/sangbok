@@ -8,7 +8,6 @@
 describe('Access song from song', () => {
   it('Select first song from list', () => {
     cy.visit('http://localhost:3000/');
-
     /* ==== Generated with Cypress Studio ==== */
     cy.get('.chakra-input').clear();
     cy.get('.chakra-input').type('hauk');
