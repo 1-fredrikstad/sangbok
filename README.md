@@ -26,7 +26,7 @@ Brukermanualer, utdypende informasjon mm. finnes på prosjektets [wiki](https://
 
 Applikasjonen er bygget med [**Sanity.io**](https://www.sanity.io/) og [**Next.js**](https://nextjs.org/). Sanity håndterer opprettelse, lagring og uthenting av sanger, Next.js viser frem innholdet.
 
-Mappen [`frontend`](https://github.com/1-fredrikstad/sangbok/tree/main/frontend) inneholder all kode relevant for applikasjonens utseende og funksjonalitet. Mappen [`cms`](https://github.com/1-fredrikstad/sangbok/tree/main/cms) inneholder all kode relevant for dataen som vises frem og dens struktur. Både `frontend` og `cms` er to frittstående prosjekter, - de kan med andre ord kjøres uavhengig av hverandre. Det er dog verdt å nevne at `frontend`-appen belager seg på data fra `cms`, så dersom `cms` ikke kjører i bakgrunnen vil dataen mangle.
+Mappen [`frontend/`](https://github.com/1-fredrikstad/sangbok/tree/main/frontend) inneholder all kode relevant for applikasjonens utseende og funksjonalitet. Mappen [`cms/`](https://github.com/1-fredrikstad/sangbok/tree/main/cms) inneholder all kode relevant for dataen som vises frem og dens struktur. Både `frontend/` og `cms/` er to frittstående prosjekter, - de kan med andre ord kjøres uavhengig av hverandre. Det er dog verdt å nevne at `frontend`-appen belager seg på data fra `cms`, så dersom `cms` ikke kjører i bakgrunnen vil dataen mangle.
 
 ## Utvikling og oppsett
 
