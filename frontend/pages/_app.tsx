@@ -18,6 +18,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <Component {...pageProps} />
     </ChakraProvider>
   );
-}
+};
 
 export default MyApp;

@@ -14,7 +14,7 @@ interface Props {
 
 const SongPage: NextPage<Props> = ({ details }) => {
   const { push } = useRouter();
-  const {next, prev} = details.info
+  const { next, prev } = details.info;
 
   const swipeRoute = (route: string, _eventData: SwipeEventData) => {
     if (route != null) push(`/song/${route}`);

@@ -7,7 +7,7 @@ import { NextPage } from 'next';
 import React, { useState } from 'react';
 import { ChangeEvent } from 'react';
 import { fetchSongDetail, fetchSongList } from 'src/api/songs';
-import { SongListEntry  } from 'src/types';
+import { SongListEntry } from 'src/types';
 
 interface Props {
   songs: SongListEntry[];
