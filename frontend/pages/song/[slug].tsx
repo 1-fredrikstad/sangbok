@@ -14,14 +14,15 @@ interface Props {
 
 const SongPage: NextPage<Props> = ({ details }) => {
   const { push } = useRouter();
+  const {next, prev} = details.info
 
   const swipeRoute = (route: string, _eventData: SwipeEventData) => {
     if (route != null) push(`/song/${route}`);
   };
 
   const handlers = useSwipeable({
-    onSwipedLeft: (eventData) => swipeRoute(details.info.next, eventData),
-    onSwipedRight: (eventData) => swipeRoute(details.info.prev, eventData),
+    onSwipedLeft: (eventData) => next && swipeRoute(next, eventData),
+    onSwipedRight: (eventData) => prev && swipeRoute(prev, eventData),
   });
 
   if (!details) {

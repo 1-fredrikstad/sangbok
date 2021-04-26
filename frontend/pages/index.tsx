@@ -7,7 +7,7 @@ import { NextPage } from 'next';
 import React, { useState } from 'react';
 import { ChangeEvent } from 'react';
 import { fetchSongDetail, fetchSongList } from 'src/api/songs';
-import { SongListEntry, SongDetailType } from 'src/types';
+import { SongListEntry  } from 'src/types';
 
 interface Props {
   songs: SongListEntry[];
@@ -18,7 +18,7 @@ const Search: NextPage<Props> = ({ songs }) => {
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
     setSearchValue((event.target as HTMLInputElement).value);
 
-  const filteredSongs = songs.filter((song: SongDetailType) =>
+  const filteredSongs = songs.filter((song: SongListEntry) =>
     song.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
