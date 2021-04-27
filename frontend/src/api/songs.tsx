@@ -9,7 +9,8 @@ const SONG_LIST_QUERY = groq`
     slug,
     melody,
     order,
-    spotifyuri
+    spotifyuri,
+    'audioUrl': audio.asset -> url
   }
 `;
 

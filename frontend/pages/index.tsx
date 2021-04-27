@@ -9,14 +9,14 @@ import { ChangeEvent } from 'react';
 import { fetchSongDetail, fetchSongList } from '../src/api/songs';
 import { SongListEntry, SongDetailType } from '../src/types';
 
-interface SearchProps {
+interface Props {
   songs: SongListEntry[];
 }
 
 export const filterSongs = (songs: SongListEntry[], searchString: String) =>
-  songs.filter((song: SongDetailType) => song.title.toLowerCase().includes(searchString.toLowerCase()));
+  songs.filter((song: SongListEntry) => song.title.toLowerCase().includes(searchString.toLowerCase()));
 
-const Search: NextPage<SearchProps> = ({ songs }) => {
+const Search: NextPage<Props> = ({ songs }) => {
   const [searchString, setSearchString] = useState('');
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
     setSearchString((event.target as HTMLInputElement).value);

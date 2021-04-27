@@ -3,3 +3,4 @@ __generated__
 .next
 storybook-static
 cypress
+public/

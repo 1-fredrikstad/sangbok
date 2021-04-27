@@ -43,8 +43,7 @@ const song = {
       title: "Spotify URI",
       name: "spotifyuri",
       type: "string",
-      description:
-        "Lenke for å åpne en sang direkte i installert Spotify klient (https://community.spotify.com/t5/Spotify-Answers/What-s-a-Spotify-URI/ta-p/919201)",
+      description: "Eksempel: spotify:track:0VQ9TFBBZpBsh7k8CfBoIO",
     },
     {
       name: "order",

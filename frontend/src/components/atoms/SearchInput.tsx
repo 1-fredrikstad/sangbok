@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Input, InputGroup, InputLeftElement, useColorMode } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { ChangeEventHandler } from 'react';
@@ -8,7 +8,7 @@ interface Props {
   handleChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-const SearchInput: FC<Props> = ({ value, handleChange }) => {
+const SearchInput: React.FC<Props> = ({ value, handleChange }) => {
   const { colorMode } = useColorMode();
 
   return (
