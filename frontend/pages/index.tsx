@@ -13,17 +13,15 @@ interface SearchProps {
   songs: SongListEntry[];
 }
 
-export const filterSongs = (songs: SongListEntry[], searchString: String) => (
-  songs.filter((song: SongDetailType) =>
-    song.title.toLowerCase().includes(searchString.toLowerCase())
-))
+export const filterSongs = (songs: SongListEntry[], searchString: String) =>
+  songs.filter((song: SongDetailType) => song.title.toLowerCase().includes(searchString.toLowerCase()));
 
 const Search: NextPage<SearchProps> = ({ songs }) => {
   const [searchString, setSearchString] = useState('');
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
     setSearchString((event.target as HTMLInputElement).value);
 
-  const filteredSongs = filterSongs(songs, searchString)
+  const filteredSongs = filterSongs(songs, searchString);
 
   const { colorMode } = useColorMode();
 
