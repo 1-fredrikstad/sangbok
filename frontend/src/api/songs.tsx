@@ -1,4 +1,4 @@
-import client from '@services/groq/client';
+import client from '../services/groq/client';
 import groq from 'groq';
 import { SongDetailType, SongListEntry } from '../types';
 

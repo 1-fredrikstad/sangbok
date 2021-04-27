@@ -40,7 +40,7 @@ const Search: NextPage<SearchProps> = ({ songs }) => {
               />
               <h1 style={{ fontSize: '1.5em' }}>Sanger under liljen</h1>
             </Flex>
-            <SearchInput value={searchValue} handleChange={handleSearchChange} />
+            <SearchInput value={searchString} handleChange={handleSearchChange} />
           </Stack>
         </Center>
       </Header>
