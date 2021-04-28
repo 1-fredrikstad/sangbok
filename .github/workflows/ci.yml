@@ -47,12 +47,15 @@ jobs:
       - name: Run format check
         run: yarn format-check
 
+      -name: Run unit tests
+        run: yarn unit:test
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           start: yarn dev
           wait-on: "http://localhost:3000"
-          command: yarn test
+          command: yarn end:test
           working-directory: ./frontend
 
       # - name: Upload screenshots as artifacts
