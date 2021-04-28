@@ -27,14 +27,14 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      # - name: Cache Node.js dependencies and Cypress
-      #   id: node-cache
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       frontend/node_modules
-      #       ~/.cache/Cypress
-      #     key: my-cache-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+      - name: Cache Node.js dependencies and Cypress
+        id: node-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            frontend/node_modules
+            ~/.cache/Cypress
+          key: my-cache-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies
         if: steps.node-cache.outputs.cache-hit != 'true'
@@ -42,30 +42,17 @@ jobs:
 
       - name: Run lint
         run: yarn lint
-        working-directory: ./frontend
 
       - name: Run format check
         run: yarn format-check
 
+      - name: Build Next app
+        run: yarn build
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: yarn dev
+          start: yarn start
           wait-on: "http://localhost:3000"
           command: yarn test
           working-directory: ./frontend
-
-      # - name: Upload screenshots as artifacts
-      #   uses: actions/upload-artifact@v1
-      #   if: failure()
-      #   with:
-      #     name: cypress-screenshots
-      #     path: cypress/screenshots
-      #     working-directory: ./frontend
-
-      # - name: Upload videos as artifacts
-      #   uses: actions/upload-artifact@v1
-      #   if: always()
-      #   with:
-      #     name: cypress-videos
-      #     path: ./frontend/cypress/videos
