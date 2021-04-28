@@ -7,13 +7,13 @@ import { NextPage } from 'next';
 import React, { useState } from 'react';
 import { ChangeEvent } from 'react';
 import { fetchSongDetail, fetchSongList } from '../src/api/songs';
-import { SongListEntry, SongDetailType } from '../src/types';
+import { SongListEntry } from '../src/types';
 
 interface Props {
   songs: SongListEntry[];
 }
 
-export const filterSongs = (songs: SongListEntry[], searchString: String) =>
+export const filterSongs = (songs: SongListEntry[], searchString: string): SongListEntry[] =>
   songs.filter((song: SongListEntry) => song.title.toLowerCase().includes(searchString.toLowerCase()));
 
 const Search: NextPage<Props> = ({ songs }) => {
