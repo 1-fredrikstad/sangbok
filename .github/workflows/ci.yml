@@ -54,5 +54,5 @@ jobs:
         with:
           start: yarn start
           wait-on: "http://localhost:3000"
-          command: yarn test
+          command: yarn end:test
           working-directory: ./frontend

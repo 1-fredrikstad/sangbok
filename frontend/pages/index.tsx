@@ -1,26 +1,27 @@
 import { Box, Center, Flex, Stack, useColorMode } from '@chakra-ui/react';
-import SearchInput from '@components/atoms/SearchInput';
-import Header from '@components/molecules/Header';
-import SongList from '@components/organisms/SongList';
-import Layout from '@components/templates/Layout';
+import SearchInput from '../src/components/atoms/SearchInput';
+import Header from '../src/components/molecules/Header';
+import SongList from '../src/components/organisms/SongList';
+import Layout from '../src/components/templates/Layout';
 import { NextPage } from 'next';
 import React, { useState } from 'react';
 import { ChangeEvent } from 'react';
-import { fetchSongDetail, fetchSongList } from 'src/api/songs';
-import { SongListEntry } from 'src/types';
+import { fetchSongDetail, fetchSongList } from '../src/api/songs';
+import { SongListEntry } from '../src/types';
 
 interface Props {
   songs: SongListEntry[];
 }
 
-const Search: NextPage<Props> = ({ songs }) => {
-  const [searchValue, setSearchValue] = useState('');
-  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
-    setSearchValue((event.target as HTMLInputElement).value);
+export const filterSongs = (songs: SongListEntry[], searchString: string): SongListEntry[] =>
+  songs.filter((song: SongListEntry) => song.title.toLowerCase().includes(searchString.toLowerCase()));
 
-  const filteredSongs = songs.filter((song: SongListEntry) =>
-    song.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
+const Search: NextPage<Props> = ({ songs }) => {
+  const [searchString, setSearchString] = useState('');
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) =>
+    setSearchString((event.target as HTMLInputElement).value);
+
+  const filteredSongs = filterSongs(songs, searchString);
 
   const { colorMode } = useColorMode();
 
@@ -37,7 +38,7 @@ const Search: NextPage<Props> = ({ songs }) => {
               />
               <h1 style={{ fontSize: '1.5em' }}>Sanger under liljen</h1>
             </Flex>
-            <SearchInput value={searchValue} handleChange={handleSearchChange} />
+            <SearchInput value={searchString} handleChange={handleSearchChange} />
           </Stack>
         </Center>
       </Header>
