@@ -10,8 +10,8 @@
     "format": "prettier --write '**/*.{js,jsx,ts,tsx}'",
     "format-check": "prettier --check '**/**.{js,jsx,ts,tsx}'",
     "cypress:open": "cypress open",
-    "end:test": "cypress run",
-    "unit:test": "jest"
+    "test:e2e": "cypress run",
+    "test:unit": "jest"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.6",
