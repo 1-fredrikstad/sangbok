@@ -37,14 +37,16 @@ yarn start # Start så appen
 
 #### Enhetstester
 
-TBA.
+```zsh
+yarn test:unit
+```
 
 #### End-to-end testing med Cypress
 
 > NB! Cypress-testene kan kun kjøres dersom prosjektet kjøres lokalt ved siden av.
 
 ```zsh
-yarn test
+yarn test:e2e
 ```
 
 ## Utvikling

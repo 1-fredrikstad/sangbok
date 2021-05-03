@@ -53,5 +53,11 @@ jobs:
         with:
           start: yarn start
           wait-on: "http://localhost:3000"
-          command: yarn end:test
+          command: yarn test:e2e
+          working-directory: ./frontend
+
+      - name: Unit test
+        uses: cypress-io/github-action@v2
+        with:
+          command: yarn test:unit
           working-directory: ./frontend
