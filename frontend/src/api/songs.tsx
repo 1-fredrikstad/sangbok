@@ -34,6 +34,10 @@ export const SONG_DETAIL_QUERY = groq`
     'info': {
       'prev': *[_type=='song' && order==^.order-1][0].slug.current,
       'next': *[_type=='song' && order==^.order+1][0].slug.current
+    },
+    songImage {
+      alt,
+      'url': asset -> url
     }
   }
 `;
