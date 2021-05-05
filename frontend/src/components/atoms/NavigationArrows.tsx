@@ -1,5 +1,5 @@
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { Flex, IconButton, useColorMode } from '@chakra-ui/react';
+import { Flex, Icon, IconButton, useColorMode } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import { SongDetailType } from 'src/types';
@@ -12,26 +12,32 @@ const NavigationArrows: React.FC<Props> = ({ song }) => {
   const { push } = useRouter();
   const { colorMode } = useColorMode();
   const { prev, next } = song.info;
+  const buttonStyle = {
+    background: 'transparent',
+    _active: { boxShadow: 'none' },
+    _focus: { boxShadow: 'none' },
+    disabled: prev != null ? false : true,
+    color: colorMode === 'light' ? 'gray.600' : 'teal.200',
+    _hover: { cursor: 'pointer' },
+  };
 
   return (
-    <Flex position="absolute" bottom="0" width="100%" justifyContent="space-between" zIndex="1">
-      <IconButton
+    <Flex position="sticky" top="50%" width="100%" justifyContent="space-between" zIndex="1">
+      <ArrowBackIcon
+        sx={buttonStyle}
+        paddingLeft="4px"
         aria-label="Previous song"
-        icon={<ArrowBackIcon />}
-        color={colorMode === 'light' ? 'gray.600' : 'teal.200'}
         onClick={() => {
           if (prev != null) push(`/song/${prev}`);
         }}
-        disabled={prev != null ? false : true}
       />
-      <IconButton
+      <ArrowForwardIcon
+        sx={buttonStyle}
+        paddingRight="4px"
         aria-label="Next song"
-        icon={<ArrowForwardIcon />}
-        color={colorMode === 'light' ? 'gray.600' : 'teal.200'}
         onClick={() => {
           if (next != null) push(`/song/${next}`);
         }}
-        disabled={next != null ? false : true}
       />
     </Flex>
   );

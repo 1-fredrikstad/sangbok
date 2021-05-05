@@ -16,12 +16,12 @@ describe('Access next song', () => {
     cy.get('[aria-label="Next song"]').click();
     cy.get('[aria-label="Next song"]').click();
     cy.get('[aria-label="Next song"]').click();
-    cy.get('[aria-label="Previous song"] > .chakra-icon').click();
-    cy.get('[aria-label="Previous song"] > .chakra-icon').click();
-    cy.get('[aria-label="Previous song"] > .chakra-icon').click();
-    cy.get('[aria-label="Previous song"] > .chakra-icon').click();
-    cy.get('[aria-label="Previous song"] > .chakra-icon').click();
-    cy.get('[aria-label="Previous song"] > .chakra-icon').click();
+    cy.get('[aria-label="Previous song"]').click();
+    cy.get('[aria-label="Previous song"]').click();
+    cy.get('[aria-label="Previous song"]').click();
+    cy.get('[aria-label="Previous song"]').click();
+    cy.get('[aria-label="Previous song"]').click();
+    cy.get('[aria-label="Previous song"]').click();
     /* ==== End Cypress Studio ==== */
   });
 });

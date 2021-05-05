@@ -50,7 +50,7 @@ const SongDetail: React.FC<Props> = ({ song, onSwipe }) => {
       <NavigationArrows song={song} />
 
       {/* Flex 1 takes up the remaining space left by Header. */}
-      <Box p="1rem 2.5rem" {...onSwipe} flex="1">
+      <Box p="1rem 1.5rem" {...onSwipe} flex="1">
         {songType === SongTypes.SongChorusNumbering && <VerseChorusNumbering song={song} />}
         {songType === SongTypes.SongNumbering && <VerseNumbering song={song} />}
         {songType === SongTypes.SongSingleVerse && <SingleVerse song={song} />}
