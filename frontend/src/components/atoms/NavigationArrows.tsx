@@ -1,5 +1,5 @@
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { Flex, Icon, IconButton, useColorMode } from '@chakra-ui/react';
+import { Flex, useColorMode } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import { SongDetailType } from 'src/types';
@@ -19,10 +19,20 @@ const NavigationArrows: React.FC<Props> = ({ song }) => {
     disabled: prev != null ? false : true,
     color: colorMode === 'light' ? 'gray.600' : 'teal.200',
     _hover: { cursor: 'pointer' },
+    width: '24px',
+    height: '100%',
   };
 
   return (
-    <Flex position="sticky" top="50%" width="100%" justifyContent="space-between" zIndex="1">
+    <Flex
+      position="sticky"
+      top="50%"
+      width="100%"
+      height="48px"
+      justifyContent="space-between"
+      zIndex="1"
+      alignItems="center"
+    >
       <ArrowBackIcon
         sx={buttonStyle}
         paddingLeft="4px"
