@@ -1,5 +1,5 @@
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
-import { Flex, Icon, IconButton, useColorMode } from '@chakra-ui/react';
+import { Flex, useColorMode } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import { SongDetailType } from 'src/types';
