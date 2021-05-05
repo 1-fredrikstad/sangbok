@@ -40,7 +40,7 @@ const SongDetail: React.FC<Props> = ({ song, onSwipe }) => {
 
   return (
     // Fills the entire children component.
-    <Flex direction="column" flex="1">
+    <Flex direction="column" flex="1" {...onSwipe}>
       <Header>
         <Heading>
           <HeaderDetails {...song} />
@@ -50,14 +50,13 @@ const SongDetail: React.FC<Props> = ({ song, onSwipe }) => {
       <NavigationArrows song={song} />
 
       {/* Flex 1 takes up the remaining space left by Header. */}
-      <Box p="1rem 1.5rem" {...onSwipe} flex="1">
+      <Box p="1rem 1.5rem" flex="1">
         {songType === SongTypes.SongChorusNumbering && <VerseChorusNumbering song={song} />}
         {songType === SongTypes.SongNumbering && <VerseNumbering song={song} />}
         {songType === SongTypes.SongSingleVerse && <SingleVerse song={song} />}
       </Box>
       {song.songImage && (
         <Image
-          {...onSwipe}
           src={song.songImage.url}
           alt={song.songImage.alt}
           maxW="300px"
