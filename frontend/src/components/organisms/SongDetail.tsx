@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from '@chakra-ui/layout';
+import { Box, Flex, Heading, Image } from '@chakra-ui/react';
 import NavigationArrows from '@components/atoms/NavigationArrows';
 import Header from '@components/molecules/Header';
 import HeaderDetails from '@components/molecules/HeaderDetails';
@@ -55,6 +55,18 @@ const SongDetail: React.FC<Props> = ({ song, onSwipe }) => {
         {songType === SongTypes.SongNumbering && <VerseNumbering song={song} />}
         {songType === SongTypes.SongSingleVerse && <SingleVerse song={song} />}
       </Box>
+      {song.songImage && (
+        <Image
+          {...onSwipe}
+          src={song.songImage.url}
+          alt={song.songImage.alt}
+          maxW="300px"
+          maxH="300px"
+          alignSelf="center"
+          p="0 1.5rem"
+          paddingBottom="2rem"
+        />
+      )}
     </Flex>
   );
 };

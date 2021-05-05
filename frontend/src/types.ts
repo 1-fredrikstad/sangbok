@@ -7,6 +7,11 @@ export type Info = {
   next: string | null;
 };
 
+type SongImage = {
+  alt: string;
+  url: string;
+};
+
 export interface SongListEntry {
   title: string;
   slug: Slug;
@@ -28,4 +33,5 @@ export interface SongDetailType {
   chorus: string;
   audioUrl: string;
   spotifyuri: string;
+  songImage?: SongImage;
 }

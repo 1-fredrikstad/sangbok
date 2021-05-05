@@ -7,6 +7,7 @@ const song = {
       title: "Tittel",
       name: "title",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Melodi",
@@ -33,6 +34,7 @@ const song = {
           type: "text",
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Refreng",
@@ -57,6 +59,11 @@ const song = {
       type: "file",
       description: "Lydfil for å spille egen innspilling av sangen.",
       accept: "audio/*",
+    },
+    {
+      title: "Bilde/Gif",
+      type: "songImage",
+      name: "songImage",
     },
     {
       name: "slug",
