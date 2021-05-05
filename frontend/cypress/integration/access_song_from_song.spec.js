@@ -12,7 +12,7 @@ describe('Access song from song', () => {
     cy.get('.chakra-input').clear();
     cy.get('.chakra-input').type('hauk');
     cy.get('.chakra-text').click();
-    cy.get('[aria-label="Next song"] > .chakra-icon').click();
+    cy.get('[aria-label="Next song"]').click();
     /* ==== End Cypress Studio ==== */
   });
 });
