@@ -4,6 +4,11 @@ const song = {
   name: "song",
   fields: [
     {
+      name: "number",
+      title: "Number",
+      type: "number",
+    },
+    {
       title: "Tittel",
       name: "title",
       type: "string",

@@ -18,6 +18,18 @@ const SettingsView: React.FC = () => {
         <ThemeToggler />
         <Divider size="L" mt="1rem" mb="1rem" />
       </Box>
+
+      <Box p="1.5rem 2.5rem 0rem">
+        <Link
+          target="_blank"
+          href="https://open.spotify.com/playlist/0cpIoDR9eCONLNwomdXMK4?si=ccb846db99fa4150&nd=1"
+          style={{ textDecoration: 'underline' }}
+        >
+          Sanger under liljen spilleliste på Spotify.
+        </Link>
+        <Divider size="L" mt="1rem" mb="1rem" />
+      </Box>
+
       <Flex justifyContent="space-evenly">
         <div>
           <img
@@ -31,7 +43,6 @@ const SettingsView: React.FC = () => {
           Appen er laget for 1. Fredrikstad speidergruppe som et bachelorprosjekt av studenter ved NTNU. For mer info om
           prosjektet se
           <Link href="https://github.com/1-fredrikstad/sangbok/" style={{ textDecoration: 'underline' }}>
-            {' '}
             GitHub.
           </Link>
         </p>

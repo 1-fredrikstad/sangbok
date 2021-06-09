@@ -10,13 +10,15 @@ interface Props {
   audioUrl: string;
   spotifyuri: string;
   order: number;
+  number?: number;
 }
 
-const HeaderDetails: React.FC<Props> = ({ title, author, melody, category, audioUrl, spotifyuri, order }) => {
+const HeaderDetails: React.FC<Props> = ({ title, author, melody, category, audioUrl, spotifyuri, number }) => {
   return (
     <Stack p="1.5rem 2.5rem 0rem" spacing={2}>
       <Heading fontWeight="300" as="h1" size="xl">
-        {order + 1}. {title}
+        {number ? number + '. ' : ''}
+        {title}
       </Heading>
       {author && (
         <Text fontSize="sm" fontWeight="light">
