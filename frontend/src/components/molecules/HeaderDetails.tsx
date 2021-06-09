@@ -17,7 +17,8 @@ const HeaderDetails: React.FC<Props> = ({ title, author, melody, category, audio
   return (
     <Stack p="1.5rem 2.5rem 0rem" spacing={2}>
       <Heading fontWeight="300" as="h1" size="xl">
-        {number ? number + ". " : ""}{title}
+        {number ? number + '. ' : ''}
+        {title}
       </Heading>
       {author && (
         <Text fontSize="sm" fontWeight="light">

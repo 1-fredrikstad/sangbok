@@ -20,13 +20,15 @@ const SettingsView: React.FC = () => {
       </Box>
 
       <Box p="1.5rem 2.5rem 0rem">
-        <Link target="_blank" href="https://open.spotify.com/playlist/0cpIoDR9eCONLNwomdXMK4?si=ccb846db99fa4150&nd=1" style={{ textDecoration: 'underline' }}>
+        <Link
+          target="_blank"
+          href="https://open.spotify.com/playlist/0cpIoDR9eCONLNwomdXMK4?si=ccb846db99fa4150&nd=1"
+          style={{ textDecoration: 'underline' }}
+        >
           Sanger under liljen spilleliste på Spotify.
-          </Link>
+        </Link>
         <Divider size="L" mt="1rem" mb="1rem" />
       </Box>
-
-
 
       <Flex justifyContent="space-evenly">
         <div>
