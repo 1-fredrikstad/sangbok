@@ -19,6 +19,7 @@ export interface SongListEntry {
   order: number;
   spotifyuri?: string;
   audioUrl?: string;
+  number?: number;
 }
 
 export interface SongDetailType {

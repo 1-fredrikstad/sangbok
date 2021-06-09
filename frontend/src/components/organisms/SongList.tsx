@@ -11,6 +11,9 @@ interface Props {
 
 const SongList: React.FC<Props> = ({ songs }) => {
   const { colorMode } = useColorMode();
+  console.log(songs.map(s => s.number
+
+  ))
 
   return (
     <Stack spacing={6}>
@@ -27,7 +30,7 @@ const SongList: React.FC<Props> = ({ songs }) => {
           >
             <Stack key={song.slug.current} maxWidth="95%">
               <Text isTruncated>
-                {song.order + 1}. {song.title}
+                {song.number ? song.number + "." : ""} {song.title}
               </Text>
               <Flex alignItems="center" color={colorMode === 'light' ? 'green.700' : 'green.200'}>
                 {song.melody && (
