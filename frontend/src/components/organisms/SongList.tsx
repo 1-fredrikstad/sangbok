@@ -11,7 +11,6 @@ interface Props {
 
 const SongList: React.FC<Props> = ({ songs }) => {
   const { colorMode } = useColorMode();
-  console.log(songs.map((s) => s.number));
 
   return (
     <Stack spacing={6}>

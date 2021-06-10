@@ -9,6 +9,7 @@ const SONG_LIST_QUERY = groq`
     slug,
     melody,
     order,
+    number,
     spotifyuri,
     'audioUrl': audio.asset -> url
   }
@@ -24,6 +25,7 @@ export const SONG_DETAIL_QUERY = groq`
     author,
     melody,
     order,
+    number,
     slug,
     chorus,
     title,
